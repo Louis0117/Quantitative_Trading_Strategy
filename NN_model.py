@@ -33,9 +33,9 @@ class RobertaClass(torch.nn.Module):
 
 
 # load english text classifier
-def English_classifer_model():
+def english_classifer_model():
     model = XLNetForSequenceClassification.from_pretrained("xlnet-base-cased", num_labels=2)
-    model.load_state_dict(torch.load('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/English_classifer.pth', map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/english_classifer.pth', map_location=torch.device('cpu')))
     return model
 
 # load sentiment analysis model
@@ -93,10 +93,4 @@ def sentiment_classifier_prediction(model, dataloader, device):
             else:
               prediction = torch.cat((prediction, big_idx))
     prediction = prediction.detach().cpu().numpy() 
-    return prediction
-             
-
-
-
-
-
+    return prediction           

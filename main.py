@@ -10,13 +10,18 @@ Created on Wed Feb 22 12:22:05 2023
 import torch
 from tqdm import tqdm, trange
 import numpy as np
+import time
+from datetime import datetime
+import pytz
 # import python file
 from collect_text_from_twitter import connect_tweepy_client, get_starttime_endtime, get_user_tweet_info, connect_twarc2_client, get_reply_data, different_date_filter
 from preprocessing import strip_emoji, strip_all_entities, clean_hashtags, filter_chars, remove_mult_spaces, delete_short_text
 from create_dataset import create_XLNet_dataset, create_RoBerta_dataset
-from NN_model import English_classifer_model, get_predictions
+from NN_model import english_classifer_model, english_classifier_predictions , sentiment_classifer_model, sentiment_classifier_prediction
 from utils import drop_element
-
+from price_data import current_crypto_price, history_crypto_price
+from strategy import trading_strategy
+from binance_api import binance_trading
 
 # perparameters
 API_KEY = ''
@@ -28,6 +33,8 @@ ACCESS_TOKEN_SECRET= ''
 TWITTER_COUNT_ID = '957716432430641152'
 TWARC2_BEARER_TOKEN = ''
 PRETRAINED_MODEL_NAME = "bert-base-cased"
+TIME_ZONE = pytz.timezone("utc")
+ORDER_SIZE = 11
 device = torch.device("cpu")
 
 
@@ -72,13 +79,89 @@ if __name__ == '__main__':
     dataloader_english_classifier = create_XLNet_dataset(dataset['conversation_text'], 128, 32)
     #%%
     # classification of English text
-    english_classifer_model = English_classifer_model()
-    english_text_predictions = get_predictions(english_classifer_model, dataloader_english_classifier, device)
+    english_classifer_model = english_classifer_model()
+    english_text_predictions = english_classifier_predictions(english_classifer_model, dataloader_english_classifier, device)
     #%%
     # drop elements which class equal 0
     dataset_english = drop_element(dataset, list(english_text_predictions)) 
     #%%
     # sentiment analysis sentence 
-    dataloader_english_classifier = create_RoBerta_dataset(dataset, 8, 256)
-        
+    dataloader_sentiment_classifier = create_RoBerta_dataset(dataset, 8, 256)
+    #%%    
+    sentiment_classifer = sentiment_classifer_model()
+    #%%
+    sentiment_text_predictions = sentiment_classifier_prediction(sentiment_classifer, dataloader_sentiment_classifier, device)
+    # calculate sentiment analysis score
+    # 
+    #%%
+    #info = current_crypto_price('AXSUSDT')
+    #info_data = info.json() # type dict
+    AXS_hist_price = history_crypto_price('AXSUSDT', '1d')
+    #%%
+    # 10.328 / 8.872
+    long_price, short_price = trading_strategy(AXS_hist_price, 5, 0.7, 0.7)
+    #%%
+    #binance_trading(long_price, short_price, 11)
     
+    #UTC +0 get sentiment score / calculate trigger price long price, short price
+    # set loop update current price 
+    count = 0
+    while count!=100:
+        current_price = float(current_crypto_price('AXSUSDT').json()['price'])
+        print('AXS current price:', current_price)
+        print(type(current_price))
+        print('-'*30)
+        time.sleep(10)
+        count+=1 
+        
+    #%%
+    '''
+    (version without sentiment(dual thrust only))
+    2-layer of while loop
+    * first - while 1 無窮迴圈 -> update price trigger 
+    * second - while (when date change) -> detect wheather touch price trigger / trading 
+    
+    (version combine sentiment & dual thrust strategy)
+    2-layer of while loop
+    * first - while 1 無窮迴圈 ->  get sentiment score -> use score adject parameter (k1, k2, order size) / update price trigger
+    * second - while (when date change) -> detect wheather touch price trigger / trading
+    '''
+    while True:
+        AXS_hist_price = history_crypto_price('AXSUSDT', '1d')
+        long_price, short_price = trading_strategy(AXS_hist_price, 5, 0.7, 0.7)
+        long_price, short_price = round(long_price, 3), round(short_price, 3)
+        utc_time = datetime.now(TIME_ZONE)
+        data_update_date = utc_time.strftime("%Y-%m-%d")
+        current_date = utc_time.strftime("%Y-%m-%d")
+        while data_update_date==current_date:
+            current_price = float(current_crypto_price('AXSUSDT').json()['price'])
+            
+            # discreminate whether touch off trigger 
+            if current_price > long_price:
+                # buy signal 
+                binance_trading(True , False , current_price, ORDER_SIZE)
+                long_price = long_price*100
+                
+            elif current_price < short_price:
+                # sell signal
+                binance_trading(False , True , current_price, ORDER_SIZE)
+                short_price = short_price/100
+
+            time.sleep(20)
+            utc_time = datetime.now(TIME_ZONE)
+            current_date = utc_time.strftime("%Y-%m-%d")
+            print('data update date:', data_update_date)
+            print('current date:', current_date)
+            print('long trigger price:', long_price)
+            print('short trigger price:', short_price)
+            print('current time:', utc_time.strftime("%Y-%m-%d %H:%M:%S"))
+            print('AXS current price:', current_price)
+            print('-'*30)
+           
+#%%
+'''
+# test
+current_price = float(current_crypto_price('AXSUSDT').json()['price'])
+print('current price:', current_price)
+binance_trading(False , True , current_price, ORDER_SIZE)
+'''
