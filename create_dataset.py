@@ -52,7 +52,7 @@ def create_RoBerta_dataset(df, batch_size, MAX_LEN):
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base', truncation=True, do_lower_case=True)
     dataset = RoBertaData(df, tokenizer, MAX_LEN)
     params = {'batch_size': batch_size,
-                    'shuffle': True,
+                    'shuffle': False,
                     'num_workers': 0
                     }
     dataloader = DataLoader(dataset, **params)
