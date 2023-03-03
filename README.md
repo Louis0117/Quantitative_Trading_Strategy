@@ -8,7 +8,8 @@
 * Trading strategy
 
 * Data collection
-1. price data  
-2. sentiment score
+1. price data:  
+    使用binance api獲取current price, 每20秒請求一次價格資訊 -> (price_data.py)  
+2. sentiment score  
 
     
