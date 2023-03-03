@@ -16,9 +16,9 @@ step1. 獲取official twitter user reply text, 實現方法為使用python tweep
 
 step2. 對文本做前處理, 移除無意義的文字(e.g. emoji, hashtags...)降低文本雜訊 -> (preprocessing.py)
 
-step3. 透過fine-tune XLNet(詳細內容https://github.com/Louis0117/XLNet)所訓練出的英文文本分類器對文本做分類, 分為英文文本以及非英文文本兩類, 過濾掉非英文文本 -> (NN_model.py)
+step3. 透過fine-tune XLNet(詳細內容https://github.com/Louis0117/XLNet) 所訓練出的英文文本分類器對文本做分類, 分為英文文本以及非英文文本兩類, 過濾掉非英文文本 -> (NN_model.py)
 
-step4. 透過fine-tune RoBerta(詳細內容https://github.com/Louis0117/Bert)所訓練出的情感分類器對文本做情感分類, 分為positive, negitive, neutral-> (NN_model.py)
+step4. 透過fine-tune RoBerta(詳細內容https://github.com/Louis0117/Bert) 所訓練出的情感分類器對文本做情感分類, 分為positive, negitive, neutral-> (NN_model.py)
 
 step5. 對每天的user reply情感分析結果做加總, positive給予+1的權重, negative給予-1的權重, neutral給予0的權重,得到每日的sentiment socre的分數 
 
