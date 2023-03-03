@@ -4,4 +4,11 @@
 
 ## 實現  
 (fig. system flow chart)  
+
 * Trading strategy
+
+* Data collection
+1. price data  
+2. sentiment score
+
+    
