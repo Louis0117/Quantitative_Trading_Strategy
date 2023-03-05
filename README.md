@@ -7,7 +7,7 @@
 
 * Trading strategy
 1. Dual Thrust Strategy introduction  
-
+![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
 
 2. optimize  
 
@@ -32,3 +32,4 @@
 * Sent email to client  
 
     
+(English)
