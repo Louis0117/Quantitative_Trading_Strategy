@@ -8,7 +8,9 @@
 * Trading strategy
 1. Dual Thrust Strategy introduction  
  
-Dual Trust Stratgy 判斷交易訊號邏輯如下圖, 當$$price>open+k1*Range$視為做多訊好$$,  $$price<open+k2*Range$$視為看空訊號
+Dual Trust Stratgy 判斷交易訊號邏輯如下圖, 當$$price>open+k1*Range$$ 視為做多訊號 , $$price<open+k2*Range$$ 視為看空訊號
+
+
 ![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
 
 ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
