@@ -1,4 +1,4 @@
-(English)  
+(English document)  
 
 # Quantitative trading system
 By improving the classic quantitative strategy Dual Thrust, it is used as the basis for the system to create trading signals, and through the connection of Binance API to realize transactions, email notifications can be set for users to allow users to track the current transaction status of the system.
@@ -29,7 +29,7 @@ The figure below shows the method of calculating range value, find HH, HC, LC, L
 ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
 
 
-2. optimize  
+2. optimization  
 Regarding the Dual Thrust strategy, this project considers the following disadvantages.  
  
     `a.` Trading strategies only consider price movements to generate trading signals.
@@ -81,7 +81,7 @@ Regarding the Dual Thrust strategy, this project considers the following disadva
 
 --------
 
-(繁體中文) 
+(繁體中文文檔) 
  
 # 量化交易系統
 透過改良經典量化策略Dual Thrust, 作為本系統判斷交易訊號的依據,  並透過串接Binance API  實現交易, 針對使用者可以設置email通知, 讓用戶追蹤系統當前交易狀況   
