@@ -8,7 +8,7 @@
 * Trading strategy
 1. Dual Thrust Strategy introduction  
  
-Dual Trust Stratgy 判斷交易訊號邏輯如下圖, 當價格像上突破cap line為看多訊號, 向下突破floor line為看空訊號 
+    Dual Trust Stratgy 判斷交易訊號邏輯如下圖, 當價格像上突破cap line為看多訊號, 向下突破floor line為看空訊號 
 $$cap line = open+k1*Range$$   
 
 $$short line = open-k2*Range$$ 
@@ -23,11 +23,11 @@ $$short line = open-k2*Range$$
 
 2. optimize  
 針對Dual Thrust策略, 本專案認為有以下缺點   
-a. 交易策略只考慮價格的變動作為判斷訊號  
+    a. 交易策略只考慮價格的變動作為判斷訊號  
 
-b. k1, k2參數沒有一個特定的規則去做調整, 大部分時間都是透過回測歷史數據去給定一組固定的k1, k2, 但市場變化萬千, 固定的k1, k2很難去適應市場不同的狀態   
+    b. k1, k2參數沒有一個特定的規則去做調整, 大部分時間都是透過回測歷史數據去給定一組固定的k1, k2, 但市場變化萬千, 固定的k1, k2很難去適應市場不同的狀態   
 
-c. 採用單一個order size  
+    c. 採用單一個order size  
 
 
 * Data collection
