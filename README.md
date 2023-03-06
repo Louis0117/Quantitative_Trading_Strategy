@@ -2,6 +2,9 @@
 # 量化交易系統
 透過改良經典量化策略Dual Thrust, 作為本系統判斷交易訊號的依據,  並透過串接Binance API  實現交易, 針對使用者可以設置email通知, 讓用戶追蹤系統當前交易狀況   
 
+## 構想
+
+
 ## 實現  
 (fig. system flow chart)  
 
@@ -30,9 +33,16 @@ $$short line = open-k2*Range$$
 
     `c.` 採用單一個order size  
 
-    本專案針對Dual Thrust策略做改進  
-        `A.` 針對上述a.交易策略只考慮價格變動作為判斷交易訊號部分, 本專案透過對twiiter user reply進行情感分析, 將結果量化作為判斷市場情緒的指標, 使得交易策略不僅能夠考慮價格變化, 參考市場情緒作為判斷, 提升交易策略的維度, 把原本簡單的買賣訊號,可以依照情感分數再更進一步的拆分成更細粒度的買賣狀態, 可以讓決策更精細化
-         ![Sentiment score in AXS](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25.png)
+    本專案想對Dral Thrust策略進行改進, 進行實驗後發現研究標的的官方twitter  tweet底下的使用者留言情緒, 與價格存在關聯, 因此透過對twitter user reply 進行情感分析, 量化結果為情感分數, 作為優化策略的指標之一, 下圖為價格與情感分數的可視化圖,藍色曲線為加密貨幣的價格, 綠色點為回測時間段情感分數最高的前5/15/25/35%,紅色點為回測時間段內情感分數最低後的5/15/25/35%
+             ![Sentiment score in AXS](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25.png)  
+             
+                          ![Sentiment score in AXS](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25.png)  
+      
+    `A.` 針對上述a.交易策略只考慮價格變動作為判斷交易訊號部分, 本專案透過對twitter user reply進行情感分析, 將結果量化作為判斷市場情緒的指標, 使得交易策略不僅能夠考慮價格變化, 參考市場情緒作為判斷, 提升交易策略的維度, 把原本簡單的買賣訊號,可以依照情感分數再更進一步的拆分成更細粒度的買賣狀態, 可以讓決策更精細化
+        
+        
+        本專案想透過
+
        
     
         
