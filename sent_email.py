@@ -15,14 +15,14 @@ def sent_mail(system_mail_address, app_pwd, client_mail_address , msg):
 
     Parameters
     ----------
-    system_mail_address : TYPE
-        DESCRIPTION.
-    app_pwd : TYPE
-        DESCRIPTION.
-    client_mail_address : TYPE
-        DESCRIPTION.
-    msg : TYPE
-        DESCRIPTION.
+    system_mail_address : str
+        the trading system mail address        
+    app_pwd : str
+        the trading system mail pwd       
+    client_mail_address : str
+        client mail address
+    msg : str
+        system notification letter content
 
     Returns
     -------

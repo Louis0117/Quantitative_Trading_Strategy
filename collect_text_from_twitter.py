@@ -180,8 +180,23 @@ def get_reply_data(client, dataset, start_time, end_time):
     dataset = pd.DataFrame({'conversation_time':conversation_time,'conversation_text':conversation_text})               
     return dataset
 
-
+# filter different date data
 def different_date_filter(dataset , start_time):
+    '''
+
+    Parameters
+    ----------
+    dataset : dataframe
+        user reply dataset
+    start_time : datetime.datetime
+        today's  date
+        
+    Returns
+    -------
+    dataset : dataframe
+        
+    
+    '''
     start_time = str(start_time)[:10]
     for i in range(len(dataset['conversation_time'])):
        date = str(dataset['conversation_time'][i])[1:11]

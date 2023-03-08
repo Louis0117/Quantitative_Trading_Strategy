@@ -116,20 +116,21 @@ def remove_mult_spaces(text):
     return re.sub("\s\s+" , " ", text)
 
 
+# delete sentence length short than 5 words
 def delete_short_text(dataset, data):
     '''
 
     Parameters
     ----------
-    dataset : TYPE
-        DESCRIPTION.
-    data : TYPE
-        DESCRIPTION.
+    dataset : dataframe
+        complete text dataset  
+    data : Series
+        text data which have done data preprocessing 
 
     Returns
     -------
-    dataset : TYPE
-        DESCRIPTION.
+    dataset : dataframe
+        complete text dataset 
 
     '''
     

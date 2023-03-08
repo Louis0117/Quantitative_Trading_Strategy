@@ -13,6 +13,7 @@ from tqdm import tqdm, trange
 from transformers import XLNetForSequenceClassification, RobertaModel, RobertaTokenizer
 
 
+# Roberta model architecture
 class RobertaClass(torch.nn.Module):
     def __init__(self):
         super(RobertaClass, self).__init__()
@@ -34,26 +35,27 @@ class RobertaClass(torch.nn.Module):
 
 # load english text classifier
 def english_classifer_model():
+    # load XLNet pretrain model
     model = XLNetForSequenceClassification.from_pretrained("xlnet-base-cased", num_labels=2)
+    # Load the trained model parameters
     model.load_state_dict(torch.load('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/english_classifer.pth', map_location=torch.device('cpu')))
     return model
 
 # load sentiment analysis model
 def sentiment_classifer_model():
+    # load Roberta pretrain model
     model = RobertaClass()
+    # Load the trained model parameters
     model.load_state_dict(torch.load('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/sentiment_analysis_classifier.pth', map_location=torch.device('cpu')))
     return model
 
 
-# sentiment analysis
+# English, non-English text classification
 def english_classifier_predictions(model, dataloader, device):
     # Put model in evaluation mode
     model.eval() 
-    # 
     predictions = []
-    #
     for batch in  dataloader:
-        #batch = tuple(t.to(device) for t in batch)
         b_input_ids, b_input_mask, b_labels = batch
         # Telling the model not to compute or store gradients, saving memory and speeding up prediction
         with torch.no_grad():
@@ -62,9 +64,6 @@ def english_classifier_predictions(model, dataloader, device):
           logits = outputs[0]
           # Move logits and labels to CPU
           logits = logits.detach().cpu().numpy() 
-          #
-          #print('logits', logits)
-          #print('logit_type:', type(logits))
           pred = np.argmax(logits, axis=1)
           # Store predictions and true labels
           predictions.append(pred)
@@ -78,8 +77,10 @@ def english_classifier_predictions(model, dataloader, device):
     return predictions_stack
 
 
+# sentiment analysis
 def sentiment_classifier_prediction(model, dataloader, device):
     prediction = None
+    # Put model in evaluation mode
     model.eval()
     with torch.no_grad():
         for _, data in tqdm(enumerate(dataloader, 0)):
@@ -87,6 +88,7 @@ def sentiment_classifier_prediction(model, dataloader, device):
             mask = data['mask'].to(device, dtype = torch.long)
             token_type_ids = data['token_type_ids'].to(device, dtype=torch.long)
             outputs = model(ids, mask, token_type_ids).squeeze()
+            # get prediction result
             big_val, big_idx = torch.max(outputs.data, dim=1)
             if prediction == None:
                prediction = big_idx          

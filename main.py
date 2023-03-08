@@ -22,6 +22,7 @@ from utils import drop_element
 from price_data import current_crypto_price, history_crypto_price
 from strategy import trading_strategy
 from binance_api import binance_trading
+from sent_email import sent_mail
 
 # perparameters
 API_KEY = ''
@@ -105,6 +106,7 @@ if __name__ == '__main__':
     
     #UTC +0 get sentiment score / calculate trigger price long price, short price
     # set loop update current price 
+    '''
     count = 0
     while count!=100:
         current_price = float(current_crypto_price('AXSUSDT').json()['price'])
@@ -113,9 +115,12 @@ if __name__ == '__main__':
         print('-'*30)
         time.sleep(10)
         count+=1 
+    '''
         
     #%%
     '''
+    mode1 - dual thrust strategy (long-only)
+    
     (version without sentiment(dual thrust only))
     2-layer of while loop
     * first - while 1 無窮迴圈 -> update price trigger 
@@ -134,7 +139,7 @@ if __name__ == '__main__':
         data_update_date = utc_time.strftime("%Y-%m-%d")
         current_date = utc_time.strftime("%Y-%m-%d")
         while data_update_date==current_date:
-            current_price = float(current_crypto_price('AXSUSDT').json()['price'])
+            current_price = current_crypto_price('AXSUSDT')
             
             # discreminate whether touch off trigger 
             if current_price > long_price:
@@ -159,9 +164,25 @@ if __name__ == '__main__':
             print('-'*30)
            
 #%%
-'''
-# test
-current_price = float(current_crypto_price('AXSUSDT').json()['price'])
-print('current price:', current_price)
-binance_trading(False , True , current_price, ORDER_SIZE)
-'''
+    '''
+    # test block
+    current_price = float(current_crypto_price('AXSUSDT').json()['price'])
+    print('current price:', current_price)
+    binance_trading(False , True , current_price, ORDER_SIZE)
+    '''
+#%%
+    '''
+    # test block
+    system_mail_address, app_pwd, client_mail_address , msg
+    交易系統以xxx一顆的價格買入xxx顆AXS加密貨幣,一共價值xxxUSDT/ 
+    
+    The trading system place a buying order at the AXS cryptocurrencies price {current price}, 
+    with a total value of {order size} USDT 
+    
+    The trading system buys xxx AXS cryptocurrencies at the price of xxx one, 
+    with a total value of xxxUSDT
+    '''    
+    #msg = "Subject:Trading system complete transaction notification email\nThe trading system buys xxx AXS cryptocurrencies at the price of xxx one, with a total value of xxxUSDT"
+    #sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
+    #msg = f"Subject:Trading system complete transaction notification email\nThe trading system place a buying order at the AXS cryptocurrency price {current_price} with a total value of {ORDER_SIZE} USDT"
+    #sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)

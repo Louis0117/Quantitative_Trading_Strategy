@@ -17,17 +17,18 @@ def history_crypto_price(tradingpair, period):
 
     Parameters
     ----------
-    tradingpair : TYPE
-        DESCRIPTION.
-    period : TYPE
-        DESCRIPTION.
-
+    tradingpair : str
+        cryptocurency trading pair
+    period : str
+        the time which create a candlestick
+        
     Returns
     -------
-    price_data : TYPE
-        DESCRIPTION.
+    price_data : data
+        crypto history price data
 
     ''' 
+    # get crypto price from Binance
     price_data = finlab_crypto.crawler.get_all_binance(tradingpair, period)
     return price_data
 
@@ -37,14 +38,17 @@ def current_crypto_price(tradingpair):
 
     Parameters
     ----------
-    tradingpair : TYPE
-        DESCRIPTION.
+    tradingpair : str
+        cryptocurency trading pair
 
     Returns
     -------
-    current_price : TYPE
-        DESCRIPTION.
+    current_price : float
+        cryptocurrency current price
 
     '''
-    current_price = requests.get('https://api.binance.com/api/v3/ticker/price?symbol='+tradingpair)
+    
+    # get current price from Binance
+    current_price = requests.get('https://api.binance.com/api/v3/ticker/price?symbol='+tradingpair)  
+    current_price = float(current_price.json()['price'])
     return current_price

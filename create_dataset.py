@@ -49,6 +49,23 @@ class RoBertaData(Dataset):
 
 
 def create_RoBerta_dataset(df, batch_size, MAX_LEN):
+    '''
+
+    Parameters
+    ----------
+    df : dataframe
+        user reply dataset
+    batch_size : int 
+        dataloader's batch size
+    MAX_LEN : int
+        the sentence max len
+
+    Returns
+    -------
+    dataloader : 
+        dataloader for RoBerta
+
+    '''
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base', truncation=True, do_lower_case=True)
     dataset = RoBertaData(df, tokenizer, MAX_LEN)
     params = {'batch_size': batch_size,
@@ -59,34 +76,37 @@ def create_RoBerta_dataset(df, batch_size, MAX_LEN):
     return dataloader
     
 
+# create dataset for XLNet
 def create_XLNet_dataset(data, max_len, batch_size):
     '''
 
     Parameters
     ----------
-    data : TYPE
-        DESCRIPTION.
-    max_len : TYPE
-        DESCRIPTION.
-    batch_size : TYPE
-        DESCRIPTION.
+    data : Series
+        the text series data which have done data-preprocessing 
+    max_len : int 
+        the sentence max len 
+    batch_size : int
+        the dataset's batch size  
 
     Returns
     -------
-    dataloader : TYPE
-        DESCRIPTION.
+    dataloader : 
+        dataloader for XLNet
 
     '''
     
+    # text data
     data = data.values
     # add special token
     data = [sentence + " [SEP] [CLS]" for sentence in data]
-    # 
+    # load tokenizer
     tokenizer = XLNetTokenizer.from_pretrained('xlnet-base-cased', do_lower_case=True)
+    # tokenize sentence data by tokenizer
     tokenized_data = [tokenizer.tokenize(sent) for sent in data] 
     # Use the XLNet tokenizer to convert the tokens to their index numbers in the XLNet vocabulary
     input_ids = [tokenizer.convert_tokens_to_ids(x) for x in tokenized_data]
-    #
+    # do zero padding, fill up the part of sentence that is less than max len
     input_ids = pad_sequences(input_ids, maxlen=max_len, dtype="long", truncating="post", padding="post")
     
     # Create attention masks
@@ -103,7 +123,6 @@ def create_XLNet_dataset(data, max_len, batch_size):
     # create dataset
     dataset = TensorDataset(tensor_input_ids, tensor_test_masks, label)
     dataset_sampler = SequentialSampler(dataset)
+    # create dataloader
     dataloader = DataLoader(dataset, sampler=dataset_sampler, batch_size=batch_size)
     return dataloader
-
-

@@ -10,20 +10,19 @@ from tqdm import tqdm, trange
 
 # drop element according data
 def drop_element(df, data):
-    '''
-    
+    '''    
 
     Parameters
     ----------
-    df : TYPE
-        DESCRIPTION.
-    data : TYPE
-        DESCRIPTION.
+    df : dataframe
+        A dataframe which need to drop element
+    data : list
+        The basis for dataframe to delete element
 
     Returns
     -------
-    new_df : TYPE
-        DESCRIPTION.
+    new_df : dataframe
+        A dataframe which have done drop element
 
     '''
     for i in trange(len(data)):
