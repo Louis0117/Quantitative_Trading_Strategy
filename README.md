@@ -102,14 +102,14 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
         $$short line = open-k2*Range$$ 
 
 
-        ![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
+        ![Dual Thrust Strategy](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png)
+
 
 
         下圖為計算Range的方法, 找N-days內的HH, HC, LC, LL, 用以下公式求Range value $$Range value = Max(HH-LC, HC-LL)$$
 
 
-        ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
-
+        ![Dual Thrust Strategy- calculate range value](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust_range_value.png)
 
     2. optimize  
     針對Dual Thrust策略, 本專案認為有以下缺點  
@@ -140,10 +140,10 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     (incomplete)
         
 * Data collection  
-1. price data:  
-    使用binance api獲取current price, 每20秒請求一次價格資訊 -> (price_data.py)  
+    1. price data:  
+        使用binance api獲取current price, 每20秒請求一次價格資訊 -> (price_data.py)  
       
-2. sentiment score:獲取sentiment score 一共分為以下步驟 ->   
+    2. sentiment score:獲取sentiment score 一共分為以下步驟 ->   
 
     `step1.` 獲取official twitter user reply text, 實現方法為使用python tweepy package 獲取目標時間段的official twitter 的tweet, 接著使用twarc2獲取每則tweet的user reply -> (collect_text_from_twitter.py)  
     
