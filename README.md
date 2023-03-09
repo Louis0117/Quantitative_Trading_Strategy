@@ -19,13 +19,13 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     $$short  line = open-k2*Range$$ 
 
-![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
+        ![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
 
 
     The figure below shows the method of calculating range value, find HH, HC, LC, LL in N-days, use the following formula to find range value $$Range value = Max(HH-LC, HC-LL)$$
 
 
-![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
+        ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
 
 
     2. optimization  
