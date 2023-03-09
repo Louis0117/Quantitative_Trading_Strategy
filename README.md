@@ -19,15 +19,10 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     $$short  line = open-k2*Range$$ 
 
-
-
-
 ![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
 
 
 The figure below shows the method of calculating range value, find HH, HC, LC, LL in N-days, use the following formula to find range value $$Range value = Max(HH-LC, HC-LL)$$
-
-
 
 
 ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
@@ -62,10 +57,10 @@ Regarding the Dual Thrust strategy, this project considers the following disadva
 (incomplete)
         
 * Data collection  
-1. price data:  
+    1. price data:  
     Use the binance api to get the current price, and request price information every 20 seconds. -> (price_data.py)  
       
-2. Sentiment score: Obtaining the sentiment score is divided into the following steps. ->   
+    2. Sentiment score: Obtaining the sentiment score is divided into the following steps. ->   
 
     `step1.` Obtain official twitter user reply text, the implementation method is to use python tweepy package to obtain official twitter tweets in the target time period, and then use twarc2 to obtain the user reply of each tweet. -> (collect_text_from_twitter.py)  
     
