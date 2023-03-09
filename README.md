@@ -92,27 +92,27 @@ Regarding the Dual Thrust strategy, this project considers the following disadva
 (fig. system flow chart) (incomplete)
 
 * Trading strategy
-1. Dual Thrust Strategy introduction  
+    1. Dual Thrust Strategy introduction  
  
-    Dual Trust Stratgy 產生交易訊號邏輯如下圖, 當價格像上突破cap line為看多訊號, 向下突破floor line為看空訊號 
+        Dual Trust Stratgy 產生交易訊號邏輯如下圖, 當價格像上突破cap line為看多訊號, 向下突破floor line為看空訊號 
     
-$$cap line = open+k1*Range$$   
+        $$cap line = open+k1*Range$$   
 
 
-$$short line = open-k2*Range$$ 
+        $$short line = open-k2*Range$$ 
 
 
-![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
+        ![Dual Thrust Strategy](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-trading.png)
 
 
-下圖為計算Range的方法, 找N-days內的HH, HC, LC, LL, 用以下公式求Range value $$Range value = Max(HH-LC, HC-LL)$$
+        下圖為計算Range的方法, 找N-days內的HH, HC, LC, LL, 用以下公式求Range value $$Range value = Max(HH-LC, HC-LL)$$
 
 
-![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
+        ![Dual Thrust Strategy- calculate range value](https://cdn.quantconnect.com/tutorials/i/Tutorial05-dual-thrust-price-range.png)
 
 
-2. optimize  
-針對Dual Thrust策略, 本專案認為有以下缺點  
+    2. optimize  
+    針對Dual Thrust策略, 本專案認為有以下缺點  
  
     `a.` 交易策略只考慮價格的變動來產生交易訊號  
 
@@ -136,8 +136,8 @@ $$short line = open-k2*Range$$
     
     `C.` 針對上述c. 我們也能夠利用分析市場情緒(情感分數)來優化, 可以簡單將市場情緒與買賣訊號做排列組合, 針對不同情況設置不同的order size, 產生買入訊號+市場情緒正面/產生買入訊號+市場情緒負面/產生賣出訊號+市場情緒正面/產生賣出訊號+市場情緒負面, 用上述邏輯制定不同的order size, 優化策略
 
-3. Algorithm    
-(incomplete)
+    3. Algorithm    
+    (incomplete)
         
 * Data collection  
 1. price data:  
