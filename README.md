@@ -60,7 +60,7 @@ Regarding the Dual Thrust strategy, this project considers the following disadva
     1. price data:  
     Use the binance api to get the current price, and request price information every 20 seconds. -> (price_data.py)  
       
-    2. Sentiment score: Obtaining the sentiment score is divided into the following steps. ->   
+    2. Sentiment score: Obtaining the sentiment score is divided into the following steps.  
 
     `step1.` Obtain official twitter user reply text, the implementation method is to use python tweepy package to obtain official twitter tweets in the target time period, and then use twarc2 to obtain the user reply of each tweet. -> (collect_text_from_twitter.py)  
     
