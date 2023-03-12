@@ -5,6 +5,8 @@ Created on Wed Mar  1 16:53:16 2023
 
 @author: welcome870117
 """
+# import package
+import numpy as np
 
 
 # calculate range
@@ -67,21 +69,53 @@ def trading_strategy(df, n_day, k1, k2):
     return long_price, short_price
 
 
-def _get_sentiment_threshold(df):
-    df['sentiment_score']
+def _get_sentiment_threshold(df, window_size_s, p1, p2):
+    # turn sentiment socre from type Series to np.array
+    sentiment_score_array = np.array(df['sentiment_score'].iloc[-window_size_s:])
+    # sort sentiemt score small > big
+    sort_sentiment_score = np.argsort(sentiment_score_array)
+    # get index value 
+    index_small = int(p1*window_size_s)
+    index_big = int((1-p2)*window_size_s)
+    # get threshold value
+    small_threshold = sentiment_score_array[sort_sentiment_score[index_small]]
+    # last 25% value, k = 45
+    large_threshold = sentiment_score_array[sort_sentiment_score[index_big]]
+    return small_threshold, large_threshold
 
+
+def _adject_k1_k2_order_size(sentiment_data, small_threshold, large_threshold, lookback_s, order_size, k1, k2): # -> 
+    lookback_day_sentiment = list(sentiment_data['sentiment_score'].iloc[-lookback_s:])
+    adjusted_value = 0
+    for sentiment_score in lookback_day_sentiment:
+        if sentiment_score > large_threshold:
+            adjusted_value+=1
+        elif sentiment_score < small_threshold:
+            adjusted_value-=1
+    adjusted_k1 = (k1-(adjusted_value/lookback_s)*0.15)
+    adjusted_k2 = (k2+(adjusted_value/lookback_s)*0.15)
+    adjusted_order_size = (1+adjusted_value/lookback_s)*order_size
+    return adjusted_k1, adjusted_k2, adjusted_order_size
+            
+            
 # optimized_dual_thrust_spot
-def optimized_dual_thrust_spot(price_data, sentiment_data, lookback_r, lookback_s, window_size_s,order_size, k1, k2):
+def optimized_dual_thrust_spot(price_data, sentiment_data, lookback_r, lookback_s, window_size_s,order_size, p1, p2, k1, k2):
     # df, lookback-day-range, lookback-day-sentiment, order-size
     # -> -> long / short price, order size
     # calculate range value
     range_value = _calculate_range(price_data, lookback_r)
     # get optimized k1, k2
-    
-    
-    
+    small_threshold, large_threshold = _get_sentiment_threshold(sentiment_data, window_size_s, p1, p2)
+    #print('small threshold:', small_threshold)
+    #print('large threshold:', large_threshold)
+    adjusted_k1, adjusted_k2, adjusted_order_size = _adject_k1_k2_order_size(sentiment_data, small_threshold, large_threshold, lookback_s, order_size, k1, k2)
+    #print('adj k1:', adjusted_k1)
+    #print('adj k2:', adjusted_k2)
+    #print('odsize:', adjusted_order_size)
     # get open price
     open_price = price_data['open'][-1]
     # calculate long(cap line) price / short(floor line) price 
-    long_price = open_price + k1*range_value
-    short_price = open_price - k2*range_value
+    long_price = round(open_price + adjusted_k1*range_value, 3)
+    short_price = round(open_price - adjusted_k2*range_value, 3)
+    adjusted_order_size = round(adjusted_order_size, 1)
+    return long_price, short_price, adjusted_order_size
