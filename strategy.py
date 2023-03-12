@@ -65,3 +65,23 @@ def trading_strategy(df, n_day, k1, k2):
     long_price = open_price + k1*range_value
     short_price = open_price - k2*range_value
     return long_price, short_price
+
+
+def _get_sentiment_threshold(df):
+    df['sentiment_score']
+
+# optimized_dual_thrust_spot
+def optimized_dual_thrust_spot(price_data, sentiment_data, lookback_r, lookback_s, window_size_s,order_size, k1, k2):
+    # df, lookback-day-range, lookback-day-sentiment, order-size
+    # -> -> long / short price, order size
+    # calculate range value
+    range_value = _calculate_range(price_data, lookback_r)
+    # get optimized k1, k2
+    
+    
+    
+    # get open price
+    open_price = price_data['open'][-1]
+    # calculate long(cap line) price / short(floor line) price 
+    long_price = open_price + k1*range_value
+    short_price = open_price - k2*range_value
