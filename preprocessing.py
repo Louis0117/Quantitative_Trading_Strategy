@@ -140,3 +140,24 @@ def delete_short_text(dataset, data):
          dataset = dataset.drop(i,axis=0)
     dataset.reset_index(inplace=True, drop=True)
     return dataset
+
+
+def delete_same_text(df, subset):
+    '''
+
+    Parameters
+    ----------
+    df : TYPE
+        DESCRIPTION.
+    subset : TYPE
+        DESCRIPTION.
+    Returns
+
+    -------
+    new_df : TYPE
+        DESCRIPTION.
+
+    '''
+
+    new_df = df.drop_duplicates(subset = [subset])
+    return new_df
