@@ -25,8 +25,31 @@ def drop_element(df, data):
         A dataframe which have done drop element
 
     '''
+    
     for i in trange(len(data)):
         if data[i] == 0 :
-           new_df  = df.drop(i, axis=0, inplace=False)
-    new_df.reset_index(inplace=True, drop=True)
-    return new_df
+           df.drop(i, axis=0, inplace=False)
+    df.reset_index(inplace=True, drop=True)
+    return df
+
+
+def add_new_column(df, column_name, data):
+    '''
+
+    Parameters
+    ----------
+    df : TYPE
+        DESCRIPTION.
+    column_name : TYPE
+        DESCRIPTION.
+    data : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    df : TYPE
+        DESCRIPTION.
+
+    '''
+    df[column_name] = data
+    return df
