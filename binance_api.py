@@ -41,8 +41,8 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
 
     '''
     # Binance API key
-    KEY = 'IRAfTFz5xXh67IbOyJ5tIJjff5BssjlIfFYsWBUOmhNLkWERWbl6g12BpFYwlA2A'
-    SECRET =  'bSV7rcgNixh0HAMBjN1abLeClL2W3kuWV9RQgltyNqRHYdewkFeyPnCZfuhyki2O'
+    KEY = ''
+    SECRET =  ''
     # build binance connect
     client = Client(KEY, SECRET)
     # Get the number of axs in account
