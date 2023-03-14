@@ -12,12 +12,15 @@ Created on Wed Mar  1 17:36:57 2023
 
 from binance.client import Client
 from sent_email import sent_mail
+from binance.enums import *
+from binance.exceptions import BinanceAPIException, BinanceOrderException
 
 SYS_MAIL_ADDRESS = ''
 APP_PWD = ''
 
+
 # Dual Thrust strategy - long only
-def binance_trading(buying_signal , selling_signal , current_price, order_size):
+def binance_spot_trading(buying_signal , selling_signal , current_price, order_size):
     '''
 
     Parameters
@@ -38,8 +41,8 @@ def binance_trading(buying_signal , selling_signal , current_price, order_size):
 
     '''
     # Binance API key
-    KEY = ''
-    SECRET = ''
+    KEY = 'IRAfTFz5xXh67IbOyJ5tIJjff5BssjlIfFYsWBUOmhNLkWERWbl6g12BpFYwlA2A'
+    SECRET =  'bSV7rcgNixh0HAMBjN1abLeClL2W3kuWV9RQgltyNqRHYdewkFeyPnCZfuhyki2O'
     # build binance connect
     client = Client(KEY, SECRET)
     # Get the number of axs in account
@@ -89,3 +92,203 @@ def binance_trading(buying_signal , selling_signal , current_price, order_size):
             msg = f"Subject:Trading system notification email\nThe trading system place a selling order at the AXS cryptocurrency price {current_price} with a total value of {order_size} USDT"
             # sent mail to client
             sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
+            
+            
+
+# place perpetual contract order 
+def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side, leverage, price=None, stop_loss=None, take_profit=None):
+    '''
+
+    Parameters
+    ----------
+    api_key : TYPE
+        DESCRIPTION.
+    api_secret : TYPE
+        DESCRIPTION.
+    symbol : TYPE
+        DESCRIPTION.
+    order_size : TYPE
+        DESCRIPTION.
+    side : TYPE
+        DESCRIPTION.
+    leverage : TYPE
+        DESCRIPTION.
+    price : TYPE, optional
+        DESCRIPTION. The default is None.
+    stop_loss : TYPE, optional
+        DESCRIPTION. The default is None.
+    take_profit : TYPE, optional
+        DESCRIPTION. The default is None.
+
+    Returns
+    -------
+    None.
+
+    '''
+    # Create a Binance API client object
+    client = Client(api_key, api_secret)
+    
+    # Get the symbol's current price
+    ticker = client.futures_symbol_ticker(symbol=symbol)
+    current_price = float(ticker['price'])
+    quantity = round(order_size/current_price,4)
+
+    # Set the order type based on the parameters provided
+    if price is not None:
+        order_type = Client.ORDER_TYPE_LIMIT
+    else:
+        order_type = Client.ORDER_TYPE_MARKET
+    # Place the order
+    if side == 'BUY':
+        if order_type == Client.ORDER_TYPE_LIMIT:
+            try:
+                order = client.futures_create_order(
+                    symbol=symbol,
+                    side=side,
+                    type=order_type,
+                    quantity=quantity,
+                    price=price,
+                    timeInForce=Client.TIME_IN_FORCE_GTC
+                )
+                print('Order executed successfully!')
+                print(order)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')
+        else:
+            try:
+                order = client.futures_create_order(
+                    symbol=symbol,
+                    side=side,
+                    type=order_type,
+                    quantity=quantity
+                )
+                print('Order executed successfully!')
+                print(order)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')
+                
+    elif side == 'SELL':
+        if order_type == Client.ORDER_TYPE_LIMIT:
+            try:
+                order = client.futures_create_order(
+                    symbol=symbol,
+                    side=side,
+                    type=order_type,
+                    quantity=quantity,
+                    price=price,
+                    timeInForce=Client.TIME_IN_FORCE_GTC
+                )
+                print('Order executed successfully!')
+                print(order)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')
+        else:
+            try:
+                order = client.futures_create_order(
+                    symbol=symbol,
+                    side=side,
+                    type=order_type,
+                    quantity=quantity
+                )
+                print('Order executed successfully!')
+                print(order)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')   
+
+
+# close position
+def binance_future_perpetual_close_position(api_keys, api_secret, symbol):
+    '''
+
+    Parameters
+    ----------
+    api_keys : TYPE
+        DESCRIPTION.
+    api_secret : TYPE
+        DESCRIPTION.
+    symbol : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    '''
+    client = Client(api_key, api_secret)
+    position = client.futures_position_information(symbol=symbol)
+    # Determine the current position direction
+    if float(position[0]["positionAmt"])>0 :
+        side = "SELL"
+    else:
+        side = "BUY"
+    # place the order to close position
+    try:
+        order = client.futures_create_order(
+            symbol=symbol,
+            side=side,
+            type=ORDER_TYPE_MARKET,
+            quantity=abs(float(position[0]["positionAmt"]))
+        )
+        print('close position successfully!')
+        print(order)
+    except BinanceAPIException as e:
+        print(f'Error message: {e.message}')
+    except BinanceOrderException as e:
+        print(f'Error code: {e.code}, message: {e.message}')
+    except Exception as e:
+        print(f'Unexpected error: {e}')
+
+
+def binance_future_check_position(api_keys, api_secret, symbol=None):
+    '''
+
+    Parameters
+    ----------
+    api_keys : TYPE
+        DESCRIPTION.
+    api_secret : TYPE
+        DESCRIPTION.
+    symbol : TYPE, optional
+        DESCRIPTION. The default is None.
+
+    Returns
+    -------
+    position : TYPE
+        DESCRIPTION.
+
+    '''
+    client = Client(api_key, api_secret)
+    if symbol is not None:
+        position = client.futures_position_information(symbol=symbol)
+
+    else:
+        position = client.futures_position_information() 
+    return position
+
+
+def binance_future_adjust_leverage(api_key, api_secret, symbol, leverage):
+    client = Client(api_key, api_secret)
+    client.futures_change_leverage(symbol=symbol, leverage=leverage)
+    
+#%%
+'''
+#test block
+binance_perpetual_trade('IRAfTFz5xXh67IbOyJ5tIJjff5BssjlIfFYsWBUOmhNLkWERWbl6g12BpFYwlA2A', 'bSV7rcgNixh0HAMBjN1abLeClL2W3kuWV9RQgltyNqRHYdewkFeyPnCZfuhyki2O', 'BTCUSDT', 0.001, 'BUY', 2, None)
+client.futures_change_leverage(symbol='BTCUSDT', leverage=2)
+'''
