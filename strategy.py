@@ -70,6 +70,27 @@ def trading_strategy(df, n_day, k1, k2):
 
 
 def _get_sentiment_threshold(df, window_size_s, p1, p2):
+    '''
+
+    Parameters
+    ----------
+    df : TYPE
+        DESCRIPTION.
+    window_size_s : TYPE
+        DESCRIPTION.
+    p1 : TYPE
+        DESCRIPTION.
+    p2 : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    small_threshold : TYPE
+        DESCRIPTION.
+    large_threshold : TYPE
+        DESCRIPTION.
+
+    '''
     # turn sentiment socre from type Series to np.array
     sentiment_score_array = np.array(df['sentiment_score'].iloc[-window_size_s:])
     # sort sentiemt score small > big
@@ -84,7 +105,36 @@ def _get_sentiment_threshold(df, window_size_s, p1, p2):
     return small_threshold, large_threshold
 
 
-def _adject_k1_k2_order_size(sentiment_data, small_threshold, large_threshold, lookback_s, order_size, k1, k2): # -> 
+def _adject_k1_k2_order_size(sentiment_data, small_threshold, large_threshold, lookback_s, order_size, k1, k2):  
+    '''
+
+    Parameters
+    ----------
+    sentiment_data : TYPE
+        DESCRIPTION.
+    small_threshold : TYPE
+        DESCRIPTION.
+    large_threshold : TYPE
+        DESCRIPTION.
+    lookback_s : TYPE
+        DESCRIPTION.
+    order_size : TYPE
+        DESCRIPTION.
+    k1 : TYPE
+        DESCRIPTION.
+    k2 : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    adjusted_k1 : TYPE
+        DESCRIPTION.
+    adjusted_k2 : TYPE
+        DESCRIPTION.
+    adjusted_order_size : TYPE
+        DESCRIPTION.
+
+    '''
     lookback_day_sentiment = list(sentiment_data['sentiment_score'].iloc[-lookback_s:])
     adjusted_value = 0
     for sentiment_score in lookback_day_sentiment:
@@ -100,6 +150,41 @@ def _adject_k1_k2_order_size(sentiment_data, small_threshold, large_threshold, l
             
 # optimized_dual_thrust_spot
 def optimized_dual_thrust_spot(price_data, sentiment_data, lookback_r, lookback_s, window_size_s,order_size, p1, p2, k1, k2):
+    '''
+
+    Parameters
+    ----------
+    price_data : TYPE
+        DESCRIPTION.
+    sentiment_data : TYPE
+        DESCRIPTION.
+    lookback_r : TYPE
+        DESCRIPTION.
+    lookback_s : TYPE
+        DESCRIPTION.
+    window_size_s : TYPE
+        DESCRIPTION.
+    order_size : TYPE
+        DESCRIPTION.
+    p1 : TYPE
+        DESCRIPTION.
+    p2 : TYPE
+        DESCRIPTION.
+    k1 : TYPE
+        DESCRIPTION.
+    k2 : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    long_price : TYPE
+        DESCRIPTION.
+    short_price : TYPE
+        DESCRIPTION.
+    adjusted_order_size : TYPE
+        DESCRIPTION.
+
+    '''
     # df, lookback-day-range, lookback-day-sentiment, order-size
     # -> -> long / short price, order size
     # calculate range value
