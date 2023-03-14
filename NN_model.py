@@ -94,5 +94,10 @@ def sentiment_classifier_prediction(model, dataloader, device):
                prediction = big_idx          
             else:
               prediction = torch.cat((prediction, big_idx))
-    prediction = prediction.detach().cpu().numpy() 
+    prediction = list(prediction.detach().cpu().numpy() )
+    # convert label 2 to -1
+    # * I think it has better code to implement 
+    for i in range(len(prediction)):
+        if prediction[i] == 2:
+            prediction[i] = -1   
     return prediction           
