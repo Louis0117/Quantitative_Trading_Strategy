@@ -45,7 +45,7 @@ XLNET_MAX_LEN = 128
 ROBERTA_BATCH_SZIE = 8
 ROBERTA_MAX_LEN = 256
 
-#%%
+
 def _getting_twitter_daily(BEAR_TOKEN, TWARC2_BEARER_TOKEN, TWITTER_COUNT_ID):
     # print information
     print('-----get twitter reply data-----')
