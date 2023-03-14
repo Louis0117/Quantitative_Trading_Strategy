@@ -87,11 +87,13 @@ def get_user_tweet_info(client, user_id, end_time):
 
     '''
     get target user tweets&reply
+    
     Parameters
     ----------
     client: created by function 'connect_tweepy_client' 
     user_id: twitter id of the target account, get from function 'getting_user_id'
     end_time: The newest or most recent UTC timestamp from which the Tweets will be provided. format->YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
+    
     Returns
     -------
     dataset: a dataframe which contains each tweets create time, tweet content, language, conversation id, retweet count, reply count, like count, quote count
@@ -204,4 +206,3 @@ def different_date_filter(dataset , start_time):
            dataset.drop(i,inplace=True)
     dataset.reset_index(drop=True, inplace=True)
     return dataset
-
