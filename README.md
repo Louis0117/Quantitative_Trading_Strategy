@@ -78,30 +78,9 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     `C.` For the above c, we can also use the analysis of market sentiment to optimize, we can simply arrange and combine market sentiment and buying and selling signals, set different order sizes for different situations, generate buying signals + positive market sentiment / generate buying signals + negative market sentiment/generate a sell signal + positive market sentiment/generate a sell signal + negative market sentiment, use the above logic to formulate different order sizes and optimize strategies.
 
     3. Algorithm    
-    \begin{algorithm}[htb]
-      \caption{ Framework of ensemble learning for our system.}
-      \label{alg:Framwork}
-      \begin{algorithmic}[1]
-        \Require
-          The set of positive samples for current batch, $P_n$;
-          The set of unlabelled samples for current batch, $U_n$;
-          Ensemble of classifiers on former batches, $E_{n-1}$;
-        \Ensure
-          Ensemble of classifiers on the current batch, $E_n$;
-        \State Extracting the set of reliable negative and/or positive samples $T_n$ from $U_n$ with help of $P_n$;
-        \label{code:fram:extract}
-        \State Training ensemble of classifiers $E$ on $T_n \cup P_n$, with help of data in former batches;
-        \label{code:fram:trainbase}
-        \State $E_n=E_{n-1}cup E$;
-        \label{code:fram:add}
-        \State Classifying samples in $U_n-T_n$ by $E_n$;
-        \label{code:fram:classify}
-        \State Deleting some weak classifiers in $E_n$ so as to keep the capacity of $E_n$;
-        \label{code:fram:select} \\
-        \Return $E_n$;
-      \end{algorithmic}
-    \end{algorithm}
-        
+
+
+
 * Data collection  
     1. price data:  
     Use the binance api to get the current price, and request price information every 20 seconds. -> (price_data.py)  
@@ -119,11 +98,11 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     `step5.` Sum up the daily user reply sentiment analysis results, give positive a weight of +1, negative give a weight of -1, and neutral give a weight of 0 to get the daily sentiment socre score 
   
 * Trade in Binance   
-    Call the unofficial SDK (https://python-binance.readthedocs.io/en/latest/account.html) to connect with the Binance account, and realize the program to control account trading
+    Call the unofficial SDK (https://python-binance.readthedocs.io/en/latest/account.html) to connect with the Binance account, and realize the program to control account trading  -> (binance_api.py)
     
     
 * Sent email to client   
-    Use SMTP to implement email transmission, send a letter to the user when the transaction is completed, or send a letter to the developer -> when the system has a problem.
+    Use SMTP to implement email transmission, send a letter to the user when the transaction is completed, or send a letter to the developer when the system has a problem -> (sent_email.py)
 
 
 --------
