@@ -20,8 +20,9 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     $$short  line = open-k2*Range$$ 
     
-    <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png" alt="Dual Thrust Strategy" style="width:200px;height:300px;">
-
+    <p align="center">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png" alt="Dual Thrust Strategy" style="width:400px;height:200px;">
+    </p>
 
     ![Dual Thrust Strategy](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png)
 
