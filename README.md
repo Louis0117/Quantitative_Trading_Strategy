@@ -23,14 +23,16 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     <p align="center">
         <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png" alt="Dual Thrust Strategy" style="width:400px;height:200px;">
     </p>
-
-    ![Dual Thrust Strategy](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust.png)
+    
 
 
     The figure below shows the method of calculating range value, find HH, HC, LC, LL in N-days, use the following formula to find range value $$Range value = Max(HH-LC, HC-LL)$$
 
 
-    ![Dual Thrust Strategy- calculate range value](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust_range_value.png)
+    <p align="center">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/dual_thrust_range_value.png" alt="Dual Thrust Strategy range value" style="width:400px;height:200px;">
+    </p>
+
 
 
     2. optimization  
@@ -43,8 +45,11 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     `c.` Use a single order size. 
 
     This project wants to improve the Dual Thrust strategy. After the experiment, it is found that the sentiment of the user's message under the official twitter tweet of the research target is related to the price. Therefore, through the sentiment analysis of the twitter user reply, the quantified result is the sentiment score, which is used as an optimization One of the indicators of the strategy, the figure below is a visualization of price and sentiment score, the blue curve is the price of cryptocurrency, the green point is the top 5/15/25/35% of the highest sentiment score during the backtest period, and the red point is The 5/15/25/35% after the lowest sentiment score in the backtest time period, it can be seen from the figure that when the green dots are densely distributed, it can be regarded as a positive market sentiment, and there is a high probability that the price will rise. When the red dots are densely distributed, it can be seen Because the market sentiment is negative, the price has a higher probability of falling. When the distribution of red and green dots turns into an average, it is likely to be a price turning signal.
-     
-    ![Sentiment score in AXS 5%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png)  
+    
+    
+    <p align="center">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:400px;height:200px;">
+    </p>
         
     ![Sentiment score in AXS 10%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png)  
 
