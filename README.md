@@ -7,7 +7,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 (incomplete)
 
 ## implementation 
-![trading system flow chat](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/trading_system_flow_chart.png)
+![trading system flow chat](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/trading_system_flow_chart.png)"trading system flow chart"
 (fig. system flow chart) 
 
 * Trading strategy  
