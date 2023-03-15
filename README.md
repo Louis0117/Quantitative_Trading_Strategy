@@ -48,26 +48,26 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     
     
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:800px;height:600px;">
     </p>
     
     
     
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png" alt="Sentiment score in AXS 10%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png" alt="Sentiment score in AXS 10%" style="width:800px;height:600px;">
     </p>
         
  
 
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25_new.png" alt="Sentiment score in AXS 15%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25_new.png" alt="Sentiment score in AXS 15%" style="width:800px;height:600px;">
     </p>
 
 
 
 
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:800px;height:600px;">
     </p>
 
 
@@ -154,26 +154,26 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     本專案想對Dral Thrust策略進行改進, 進行實驗後發現研究標的的官方twitter  tweet底下的使用者留言情緒, 與價格存在關聯, 因此透過對twitter user reply 進行情感分析, 量化結果為情感分數, 作為優化策略的指標之一, 下圖為價格與情感分數的可視化圖,藍色曲線為加密貨幣的價格, 綠色點為回測時間段情感分數最高的前5/10/15/25%,紅色點為回測時間段內情感分數最低後的5/10/15/25% ,從圖中可以發現當綠點分佈密集時可以視為市場情緒正面有較高機率價格上漲, 當紅點分佈密集時可以視為市場情緒負面, 價格有較高的機率下跌, 當紅綠點分佈轉為平均時很有可能會是一個價格轉折訊號
      
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:800px;height:600px;">
     </p>
     
     
     
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png" alt="Sentiment score in AXS 10%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png" alt="Sentiment score in AXS 10%" style="width:800px;height:600px;">
     </p>
         
  
 
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25_new.png" alt="Sentiment score in AXS 15%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25_new.png" alt="Sentiment score in AXS 15%" style="width:800px;height:600px;">
     </p>
 
 
 
 
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:800px;height:400px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:800px;height:600px;">
     </p>
       
     `A.` 針對上述a.交易策略只考慮價格變動來產生交易訊號, 本專案透過對twitter user reply進行情感分析, 將結果量化作為判斷市場情緒的指標, 使得交易策略不僅能夠考慮價格變化, 也能參考市場情緒, 提升交易策略的維度, 把原本簡單的買賣訊號,可以依照市場情緒(情感分數)再更進一步的拆分成更細粒度的買賣狀態, 可以讓決策更精細化
