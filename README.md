@@ -98,10 +98,12 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     
     `step5.` Sum up the daily user reply sentiment analysis results, give positive a weight of +1, negative give a weight of -1, and neutral give a weight of 0 to get the daily sentiment socre score 
   
-* Trade in Binance  
-(incomplete)
-* Sent email to client  
-(incomplete)
+* Trade in Binance   
+    Call the unofficial SDK to connect with the Binance account, and realize the program to control account trading
+    
+    
+* Sent email to client   
+    Use SMTP to implement email transmission, send a letter to the user when the transaction is completed, or send a letter to the developer -> when the system has a problem.
 
 
 --------
@@ -202,7 +204,8 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     `step5.` 對每天的user reply情感分析結果做加總, positive給予+1的權重, negative給予-1的權重, neutral給予0的權重,得到每日的sentiment score的分數 
   
 * Trade in Binance  
-(incomplete)
+    調用非官方SDK(https://python-binance.readthedocs.io/en/latest/account.html) 與Binance帳戶對接, 實現用程式控制帳戶買賣 -> (binance_api.py)
+    
 * Sent email to client  
-(incomplete)
+    利用SMTP(simple mail transfer protocol)實現email傳輸, 當完成交易寄信給使用者, 或是系統出問題時寄信給開發者 -> (sent_email.py)
     
