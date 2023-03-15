@@ -99,7 +99,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     `step5.` Sum up the daily user reply sentiment analysis results, give positive a weight of +1, negative give a weight of -1, and neutral give a weight of 0 to get the daily sentiment socre score 
   
 * Trade in Binance   
-    Call the unofficial SDK to connect with the Binance account, and realize the program to control account trading
+    Call the unofficial SDK (https://python-binance.readthedocs.io/en/latest/account.html) to connect with the Binance account, and realize the program to control account trading
     
     
 * Sent email to client   
@@ -175,7 +175,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
 
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:800px;height:600px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png" alt="Sentiment score in AXS 25%" style="width:600px;height:400px;">
     </p>
       
     `A.` 針對上述a.交易策略只考慮價格變動來產生交易訊號, 本專案透過對twitter user reply進行情感分析, 將結果量化作為判斷市場情緒的指標, 使得交易策略不僅能夠考慮價格變化, 也能參考市場情緒, 提升交易策略的維度, 把原本簡單的買賣訊號,可以依照市場情緒(情感分數)再更進一步的拆分成更細粒度的買賣狀態, 可以讓決策更精細化
