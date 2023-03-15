@@ -26,17 +26,12 @@ from strategy import trading_strategy, optimized_dual_thrust_spot
 from binance_api import binance_spot_trading, binance_future_perpetual_order, binance_future_perpetual_close_position, binance_future_check_position, binance_future_adjust_leverage
 from sent_email import sent_mail
 
+
 # perparameters
 BINANCE_KEY = ''
 BINANCE_SECRET =  ''
-API_KEY = ''
-API_KEY_SECRET = ''
 BEAR_TOKEN = ''
-ACCESS_TOKEN =''
-ACCESS_TOKEN_SECRET= ''
-# Axie infinity official twitter
 TWITTER_COUNT_ID = '957716432430641152'
-TWARC2_BEARER_TOKEN = ''
 TIME_ZONE = pytz.timezone("utc")
 ORDER_SIZE = 11
 DEVICE = torch.device("cpu")
@@ -269,6 +264,11 @@ def dual_thrust_future_strategy():
             print('AXS current price:', current_price)
             print('-'*30)          
             
+
+def optimize_dual_thrust_future_strategy():
+    pass
+    
+    
 if __name__ == '__main__':   
     
     #optimized_dual_thrust_spot_strategy()

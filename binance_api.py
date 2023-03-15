@@ -14,6 +14,7 @@ from binance.client import Client
 from sent_email import sent_mail
 from binance.enums import *
 from binance.exceptions import BinanceAPIException, BinanceOrderException
+import math 
 
 SYS_MAIL_ADDRESS = ''
 APP_PWD = ''
@@ -46,10 +47,10 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
     # build binance connect
     client = Client(KEY, SECRET)
     # Get the number of axs in account
-    account_axs = round(float(client.get_asset_balance(asset = 'AXS')['free']),2)
+    account_axs = float(client.get_asset_balance(asset = 'AXS')['free'])
     print('account axs:',account_axs)
     # Get the number of usdt in account
-    account_usdt = round(float(client.get_asset_balance(asset = 'USDT')['free']),2)
+    account_usdt = float(client.get_asset_balance(asset = 'USDT')['free'])
     print('account usdt:',account_usdt)
     
     
@@ -64,7 +65,7 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
             return 0
         else:
             # calculate quantity of buying coins
-            buying_quantity = round(order_size/current_price)
+            buying_quantity = math.floor((order_size/current_price)*100)/100.0
             # place a limit buying order
             order = client.order_limit_buy(symbol ='AXSUSDT', quantity = buying_quantity, price = current_price)
             print('buy axs.....')
@@ -84,7 +85,7 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
             return 0
         else:
             # calculate quantity of selling coins
-            selling_quantity = round(account_axs*0.999,2)
+            selling_quantity = math.floor(account_axs*100)/100.0
             # place a limit selling order
             client.order_limit_sell(symbol ='AXSUSDT', quantity = selling_quantity, price = current_price)
             print('sell axs.....')
@@ -132,7 +133,6 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
     ticker = client.futures_symbol_ticker(symbol=symbol)
     current_price = float(ticker['price'])
     quantity = round(order_size/current_price,4)
-
     # Set the order type based on the parameters provided
     if price is not None:
         order_type = Client.ORDER_TYPE_LIMIT
@@ -285,10 +285,4 @@ def binance_future_check_position(api_keys, api_secret, symbol=None):
 def binance_future_adjust_leverage(api_key, api_secret, symbol, leverage):
     client = Client(api_key, api_secret)
     client.futures_change_leverage(symbol=symbol, leverage=leverage)
-    
-#%%
-'''
-#test block
-binance_perpetual_trade('IRAfTFz5xXh67IbOyJ5tIJjff5BssjlIfFYsWBUOmhNLkWERWbl6g12BpFYwlA2A', 'bSV7rcgNixh0HAMBjN1abLeClL2W3kuWV9RQgltyNqRHYdewkFeyPnCZfuhyki2O', 'BTCUSDT', 0.001, 'BUY', 2, None)
-client.futures_change_leverage(symbol='BTCUSDT', leverage=2)
-'''
+
