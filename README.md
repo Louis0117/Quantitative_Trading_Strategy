@@ -44,8 +44,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     `c.` Use a single order size. 
 
-    This project wants to improve the Dual Thrust strategy. After the experiment, it is found that the sentiment of the user's message under the official twitter tweet of the research target is related to the price. Therefore, through the sentiment analysis of the twitter user reply, the quantified result is the sentiment score, which is used as an optimization One of the indicators of the strategy, the figure below is a visualization of price and sentiment score, the blue curve is the price of cryptocurrency, the green point is the top 5/15/25/35% of the highest sentiment score during the backtest period, and the red point is The 5/15/25/35% after the lowest sentiment score in the backtest time period, it can be seen from the figure that when the green dots are densely distributed, it can be regarded as a positive market sentiment, and there is a high probability that the price will rise. When the red dots are densely distributed, it can be seen Because the market sentiment is negative, the price has a higher probability of falling. When the distribution of red and green dots turns into an average, it is likely to be a price turning signal.
-    
+    This project wants to improve the Dual Thrust strategy. After the experiment, it is found that the sentiment of the user's message under the official twitter tweet of the research target is related to the price. Therefore, through the sentiment analysis of the twitter user reply, the quantified result is the sentiment score, which is used as an optimization One of the indicators of the strategy, the figure below is a visualization of price and sentiment score, the blue curve is the price of cryptocurrency, the green point is the top 5/10/15/25% of the highest sentiment score during the backtest period, and the red point is The last 5/10/15/25% of the lowest sentiment score in the backtest period. From the figure, it can be seen that when the green dots are densely distributed, it can be regarded as a positive market sentiment, and there is a higher probability of price rise. When the red dots are densely distributed, it can be seen that Because the market sentiment is negative, the price has a higher probability of falling. When the distribution of red and green dots turns into an average, it is likely to be a price turning signal.
     
     <p align="center">
         <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:600px;height:400px;">
@@ -153,7 +152,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     `c.` 採用單一個order size  
 
-    本專案想對Dral Thrust策略進行改進, 進行實驗後發現研究標的的官方twitter  tweet底下的使用者留言情緒, 與價格存在關聯, 因此透過對twitter user reply 進行情感分析, 量化結果為情感分數, 作為優化策略的指標之一, 下圖為價格與情感分數的可視化圖,藍色曲線為加密貨幣的價格, 綠色點為回測時間段情感分數最高的前5/10/15/25%,紅色點為回測時間段內情感分數最低的後5/10/15/25% ,從圖中可以發現當綠點分佈密集時可以視為市場情緒正面有較高機率價格上漲, 當紅點分佈密集時可以視為市場情緒負面, 價格有較高的機率下跌, 當紅綠點分佈轉為平均時很有可能會是一個價格轉折訊號
+    本專案想對Dual Thrust策略進行改進, 進行實驗後發現研究標的的官方twitter  tweet底下的使用者留言情緒, 與價格存在關聯, 因此透過對twitter user reply 進行情感分析, 量化結果為情感分數, 作為優化策略的指標之一, 下圖為價格與情感分數的可視化圖,藍色曲線為加密貨幣的價格, 綠色點為回測時間段情感分數最高的前5/10/15/25%,紅色點為回測時間段內情感分數最低的後5/10/15/25% ,從圖中可以發現當綠點分佈密集時可以視為市場情緒正面有較高機率價格上漲, 當紅點分佈密集時可以視為市場情緒負面, 價格有較高的機率下跌, 當紅綠點分佈轉為平均時很有可能會是一個價格轉折訊號
      
     <p align="center">
         <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:600px;height:400px;">
