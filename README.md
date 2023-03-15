@@ -40,13 +40,13 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
 
     This project wants to improve the Dual Thrust strategy. After the experiment, it is found that the sentiment of the user's message under the official twitter tweet of the research target is related to the price. Therefore, through the sentiment analysis of the twitter user reply, the quantified result is the sentiment score, which is used as an optimization One of the indicators of the strategy, the figure below is a visualization of price and sentiment score, the blue curve is the price of cryptocurrency, the green point is the top 5/15/25/35% of the highest sentiment score during the backtest period, and the red point is The 5/15/25/35% after the lowest sentiment score in the backtest time period, it can be seen from the figure that when the green dots are densely distributed, it can be regarded as a positive market sentiment, and there is a high probability that the price will rise. When the red dots are densely distributed, it can be seen Because the market sentiment is negative, the price has a higher probability of falling. When the distribution of red and green dots turns into an average, it is likely to be a price turning signal.
      
-    ![Sentiment score in AXS 5%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25.png)  
+    ![Sentiment score in AXS 5%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png)  
         
-    ![Sentiment score in AXS 15%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25.png)  
+    ![Sentiment score in AXS 10%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png)  
 
-    ![Sentiment score in AXS 25%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25.png)
+    ![Sentiment score in AXS 15%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_15%25_new.png)
 
-    ![Sentiment score in AXS 35%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_35%25.png)
+    ![Sentiment score in AXS 25%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_25%25_new.png)
       
     `A.` For the above-mentioned a. trading strategy only considers price changes to generate trading signals, this project conducts sentiment analysis on twitter user replies, and quantifies the results as an indicator for judging market sentiment, so that trading strategies can not only consider price changes, but also refer to market sentiment , to enhance the dimension of trading strategies, the original simple buying and selling signals can be further split into finer-grained buying and selling states according to market sentiment, which can make decision-making more refined.
         
