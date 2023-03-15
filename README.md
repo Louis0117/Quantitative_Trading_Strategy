@@ -48,7 +48,7 @@ By improving the classic quantitative strategy Dual Thrust, it is used as the ba
     
     
     <p align="center">
-        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:400px;height:200px;">
+        <img src="https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_5%25_new.png" alt="Sentiment score in AXS 5%" style="width:800px;height:500px;">
     </p>
         
     ![Sentiment score in AXS 10%](https://github.com/Louis0117/Quantitative_Trading_Strategy/blob/main/IMG/sentiment_score_price_AXS_10%25_new.png)  
