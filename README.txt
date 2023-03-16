@@ -1,5 +1,5 @@
 (繁體中文)
-* 量化交易系統 -> 根據Strategy交易邏輯, 執行可靠的交易, 並且設置email通知, 讓用戶追蹤系統當前交易情況 
+* 量化交易系統 -> 
 
 * 構想
 
@@ -7,8 +7,10 @@
 
 * 實現
 (fig. system flow chart)
+1. Trading strategy
 
-1. Data collection -> a. price data / b. sentiment score
+
+2. Data collection -> a. price data / b. sentiment score
 
 a. price data: 使用binance api獲取current price, 每20秒請求一次價格資訊 -> (price_data.py)
 
@@ -24,7 +26,6 @@ step4. 透過fine-tune RoBerta(詳細內容https://github.com/Louis0117/Bert) �
 
 step5. 對每天的user reply情感分析結果做加總, positive給予+1的權重, negative給予-1的權重, neutral給予0的權重,得到每日的sentiment socre的分數 
 
-2. Trading strategy
 
 3. Trade in Binance
 
