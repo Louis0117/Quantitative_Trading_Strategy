@@ -16,36 +16,34 @@ from binance.enums import *
 from binance.exceptions import BinanceAPIException, BinanceOrderException
 import math 
 
-SYS_MAIL_ADDRESS = ''
-APP_PWD = ''
-
 
 # Dual Thrust strategy - long only
-def binance_spot_trading(buying_signal , selling_signal , current_price, order_size):
+def binance_spot_trading(SYS_MAIL_ADDRESS,APP_PWD, api_key, api_secret, buying_signal , selling_signal , current_price, order_size):
     '''
 
     Parameters
     ----------
-    buying_signal : bool
-        True -> buy cryptocurrencies / False -> do nothing
-    selling_signal : bool
-        True -> sell cryptocurrencies / False -> do nothing
-    current_price : float
-        current cryptocurrencies price
-    order_size : float
-        The size of the transaction required
+    api_key : TYPE
+        DESCRIPTION.
+    api_secret : TYPE
+        DESCRIPTION.
+    buying_signal : TYPE
+        DESCRIPTION.
+    selling_signal : TYPE
+        DESCRIPTION.
+    current_price : TYPE
+        DESCRIPTION.
+    order_size : TYPE
+        DESCRIPTION.
 
     Returns
     -------
     int
-        Unexecuted transaction, return 0
+        DESCRIPTION.
 
     '''
-    # Binance API key
-    KEY = ''
-    SECRET =  ''
     # build binance connect
-    client = Client(KEY, SECRET)
+    client = Client(api_key, api_secret)
     # Get the number of axs in account
     account_axs = float(client.get_asset_balance(asset = 'AXS')['free'])
     print('account axs:',account_axs)
@@ -64,15 +62,23 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
             sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             return 0
         else:
-            # calculate quantity of buying coins
-            buying_quantity = math.floor((order_size/current_price)*100)/100.0
-            # place a limit buying order
-            order = client.order_limit_buy(symbol ='AXSUSDT', quantity = buying_quantity, price = current_price)
-            print('buy axs.....')
-            # The content of the system notification letter
-            msg = f"Subject:Trading system notification email\nThe trading system place a buying order at the AXS cryptocurrency price {current_price} with a total value of {order_size} USDT"
-            # sent mail to client
-            sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
+            try:
+                # calculate quantity of buying coins
+                buying_quantity = math.floor((order_size/current_price)*100)/100.0
+                # place a limit buying order
+                order = client.order_limit_buy(symbol ='AXSUSDT', quantity = buying_quantity, price = current_price)
+                print('buy axs spot.....')
+                # The content of the system notification letter
+                msg = f"Subject:Trading system notification email\nThe trading system place a buying order at the AXS cryptocurrency price {current_price} with a total value of {order_size} USDT"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')
+
             
     elif selling_signal:
         # Determine whether the AXS value in the account is greater than 10 usdt (the minima transation value = 10)
@@ -84,20 +90,27 @@ def binance_spot_trading(buying_signal , selling_signal , current_price, order_s
             sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             return 0
         else:
-            # calculate quantity of selling coins
-            selling_quantity = math.floor(account_axs*100)/100.0
-            # place a limit selling order
-            client.order_limit_sell(symbol ='AXSUSDT', quantity = selling_quantity, price = current_price)
-            print('sell axs.....')
-            # the content of the system notification letter
-            msg = f"Subject:Trading system notification email\nThe trading system place a selling order at the AXS cryptocurrency price {current_price} with a total value of {order_size} USDT"
-            # sent mail to client
-            sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
-            
-            
+            try:
+                # calculate quantity of selling coins
+                selling_quantity = math.floor(account_axs*100)/100.0
+                # place a limit selling order
+                client.order_limit_sell(symbol ='AXSUSDT', quantity = selling_quantity, price = current_price)
+                print('sell axs spot.....')
+                # the content of the system notification letter
+                msg = f"Subject:Trading system notification email\nThe trading system place a selling order at the AXS cryptocurrency price {current_price} with a total value of {order_size} USDT"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
+            except BinanceAPIException as e:
+                print(f'Error message: {e.message}')
+            except BinanceOrderException as e:
+                print(f'Error code: {e.code}, message: {e.message}')
+            except Exception as e:
+                print(f'Unexpected error: {e}')
 
+            
+            
 # place perpetual contract order 
-def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side, leverage, price=None, stop_loss=None, take_profit=None):
+def binance_future_perpetual_order(SYS_MAIL_ADDRESS, APP_PWD, api_key, api_secret, symbol, order_size, side, leverage, price=None, stop_loss=None, take_profit=None):
     '''
 
     Parameters
@@ -127,13 +140,12 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
 
     '''
     # Create a Binance API client object
-    client = Client(api_key, api_secret)
-    
+    client = Client(api_key, api_secret)    
     # Get the symbol's current price
     ticker = client.futures_symbol_ticker(symbol=symbol)
     current_price = float(ticker['price'])
     quantity = math.floor(order_size/current_price)
-    print(quantity)
+    total_value = current_price*quantity
     # Set the order type based on the parameters provided
     if price is not None:
         order_type = Client.ORDER_TYPE_LIMIT
@@ -152,7 +164,9 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
                     timeInForce=Client.TIME_IN_FORCE_GTC
                 )
                 print('Order executed successfully!')
-                print(order)
+                msg = f"Subject:Trading system notification email\nThe trading system place a long limit price futures order, at the price of one AXS {current_price} usdt, establish a position of {quantity} AXS with a total value of {total_value} usdt, and the leverage multiple is {leverage}"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
             except BinanceOrderException as e:
@@ -168,7 +182,9 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
                     quantity=quantity
                 )
                 print('Order executed successfully!')
-                print(order)
+                msg = f"Subject:Trading system notification email\nThe trading system place a long market price futures order, at the price of one AXS {current_price} usdt, establish a position of {quantity} AXS with a total value of {total_value} usdt, and the leverage multiple is {leverage}"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
             except BinanceOrderException as e:
@@ -188,7 +204,9 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
                     timeInForce=Client.TIME_IN_FORCE_GTC
                 )
                 print('Order executed successfully!')
-                print(order)
+                msg = f"Subject:Trading system notification email\nThe trading system place a short limit price futures order, at the price of one AXS {current_price} usdt, establish a position of {quantity} AXS with a total value of {total_value} usdt, and the leverage multiple is {leverage}"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
             except BinanceOrderException as e:
@@ -204,7 +222,9 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
                     quantity=quantity
                 )
                 print('Order executed successfully!')
-                print(order)
+                msg = f"Subject:Trading system notification email\nThe trading system place a short market price futures order, at the price of one AXS {current_price} usdt, establish a position of {quantity} AXS with a total value of {total_value} usdt, and the leverage multiple is {leverage}"
+                # sent mail to client
+                sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
             except BinanceOrderException as e:
@@ -214,7 +234,7 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
 
 
 # close position
-def binance_future_perpetual_close_position(api_key, api_secret, symbol):
+def binance_future_perpetual_close_position(SYS_MAIL_ADDRESS, APP_PWD, api_key, api_secret, symbol):
     '''
 
     Parameters
@@ -232,7 +252,13 @@ def binance_future_perpetual_close_position(api_key, api_secret, symbol):
 
     '''
     client = Client(api_key, api_secret)
+    ticker = client.futures_symbol_ticker(symbol=symbol)
+    current_price = float(ticker['price'])
     position = client.futures_position_information(symbol=symbol)
+    realized_profit = float(position[0]["positionAmt"])*float(position[0]["unRealizedProfit"])*float(position[0]["entryPrice"])
+    print('realized_profit:', realized_profit)
+    realized_profit = round(realized_profit,2)
+    print('realized_profit:', realized_profit)
     # Determine the current position direction
     if float(position[0]["positionAmt"])>0 :
         side = "SELL"
@@ -247,7 +273,9 @@ def binance_future_perpetual_close_position(api_key, api_secret, symbol):
             quantity=abs(float(position[0]["positionAmt"]))
         )
         print('close position successfully!')
-        print(order)
+        msg = f"Subject:Trading system notification email\nThe trading system close position, at the price of one AXS {current_price} usdt, total profit is {realized_profit} usdt"
+        # sent mail to client
+        sent_mail(SYS_MAIL_ADDRESS, APP_PWD, 'welcome870117@gmail.com', msg)
     except BinanceAPIException as e:
         print(f'Error message: {e.message}')
     except BinanceOrderException as e:
@@ -277,7 +305,6 @@ def binance_future_check_position(api_key, api_secret, symbol=None):
     client = Client(api_key, api_secret)
     if symbol is not None:
         position = client.futures_position_information(symbol=symbol)
-
     else:
         position = client.futures_position_information() 
     return position
