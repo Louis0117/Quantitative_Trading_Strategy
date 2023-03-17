@@ -29,7 +29,7 @@ from sent_email import sent_mail
 
 # perparameters
 BINANCE_KEY = ''
-BINANCE_SECRET =  ''
+BINANCE_SECRET = ''
 BEAR_TOKEN = ''
 TWITTER_COUNT_ID = '957716432430641152'
 TIME_ZONE = pytz.timezone("utc")
@@ -39,7 +39,7 @@ XLNET_BATCH_SIZE = 32
 XLNET_MAX_LEN = 128
 ROBERTA_BATCH_SZIE = 8
 ROBERTA_MAX_LEN = 256
-
+#%%
 
 def _getting_twitter_daily(BEAR_TOKEN, TWARC2_BEARER_TOKEN, TWITTER_COUNT_ID):
     # print information
@@ -266,14 +266,91 @@ def dual_thrust_future_strategy():
             
 
 def optimize_dual_thrust_future_strategy():
-    pass
+    while True:
+        # get current time -> type: datetime
+        utc_time = datetime.now(TIME_ZONE)
+        # get the day before yesterday date -> type: str
+        before_yest_date = (utc_time+timedelta(days=-2)).strftime("%Y-%m-%d")
+        # get yesterday date -> type: str
+        yest_date = (utc_time+timedelta(days=-1)).strftime("%Y-%m-%d")
+        # data_update_date is used to tag the date which data updated 
+        # current_date is used to keep update current time
+        # use two variable to distingush weather date change
+        data_update_date = utc_time.strftime("%Y-%m-%d")
+        current_date = utc_time.strftime("%Y-%m-%d")
+        # get user reply text data
+        user_all_tweet_info, reply_data = _getting_twitter_daily(BEAR_TOKEN, BEAR_TOKEN, TWITTER_COUNT_ID)
+        # datapreprocessing 
+        dataset = _return_preprocessing_data(reply_data, reply_data['conversation_text'])
+        # use english text classifer to filter non-english text
+        dataset_english = _english_text_classification(dataset)
+        # sentiment analysis and calculate sentiment score
+        dataset_english, daily_sentiment_score = _sentiment_analysis(dataset_english)
+        # read_csv -> sentiment data
+        sentiment_data = pd.read_csv(f'/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/system_data/daily_sentiment_data/{before_yest_date}_sentiment_score.csv', index_col=False)
+        # sentiment write into csv
+        updated_sentiment_data = sentiment_data.append({'date':yest_date, 'sentiment_score':daily_sentiment_score}, ignore_index=True, sort=False)
+        # save csv file
+        updated_sentiment_data.to_csv(f'/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/system_data/daily_sentiment_data/{yest_date}_sentiment_score.csv', index=False)
+        dataset_english.to_csv(f'/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/system_data/text_data/{yest_date}_text_data.csv', index=False)
+        # get AXS 1d history price 
+        AXS_hist_price = history_crypto_price('AXSUSDT', '1d')
+        # get trigger price 
+        long_price, short_price, adjusted_order_size = optimized_dual_thrust_spot(price_data = AXS_hist_price, sentiment_data = updated_sentiment_data, 
+                                                                                  lookback_r = 5, lookback_s = 4, window_size_s=70, order_size=ORDER_SIZE, 
+                                                                                  p1 = 0.05, p2 = 0.05, k1 = 0.75, k2 = 0.75)
+        
+        while data_update_date==current_date:
+            current_price = current_crypto_price('AXSUSDT')
+            
+            # discreminate whether touch off trigger 
+            if current_price > long_price:
+                # check position 
+                position = binance_future_check_position(api_keys=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT')
+                if float(position[0]["positionAmt"])<0:
+                    # if account has short position, close short position and place the long order
+                    binance_future_perpetual_close_position(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT')
+                    # place the buy order
+                    binance_future_perpetual_order(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT', order_size=ORDER_SIZE, 
+                                                side='BUY', leverage=None, price=None, stop_loss=None, take_profit=None)
+                    long_price = long_price*100
+                else:
+                    # place the buy order
+                    binance_future_perpetual_order(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT', order_size=ORDER_SIZE, 
+                                                side='BUY', leverage=None, price=None, stop_loss=None, take_profit=None)
+                    long_price = long_price*100
+                    
+            # discreminate whether touch off trigger      
+            elif current_price < short_price:
+                if float(position[0]["positionAmt"])>0:
+                    # if account has long position, close short position and place the short order
+                    binance_future_perpetual_close_position(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT')
+                    # create sell order
+                    binance_future_perpetual_order(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT', order_size=ORDER_SIZE, 
+                                                    side='SELL', leverage=None, price=None, stop_loss=None, take_profit=None)
+                    short_price = short_price/100
+                else:
+                    # create sell order
+                    binance_future_perpetual_order(api_key=BINANCE_KEY, api_secret=BINANCE_SECRET, symbol='AXSUSDT', order_size=ORDER_SIZE, 
+                                                    side='SELL', leverage=None, price=None, stop_loss=None, take_profit=None)
+                    short_price = short_price/100
     
+            time.sleep(20)
+            utc_time = datetime.now(TIME_ZONE)
+            current_date = utc_time.strftime("%Y-%m-%d")
+            print('data update date:', data_update_date)
+            print('current date:', current_date)
+            print('long trigger price:', long_price)
+            print('short trigger price:', short_price)
+            print('current time:', utc_time.strftime("%Y-%m-%d %H:%M:%S"))
+            print('AXS current price:', current_price)
+            print('-'*30)     
     
+ #%%   
 if __name__ == '__main__':   
-    
+    #dual_thrust_spot_strategy()
     #optimized_dual_thrust_spot_strategy()
-    
-    
+    #optimize_dual_thrust_future_strategy()
     
     '''
     *** menu ***

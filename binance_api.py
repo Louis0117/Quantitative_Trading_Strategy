@@ -132,7 +132,8 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
     # Get the symbol's current price
     ticker = client.futures_symbol_ticker(symbol=symbol)
     current_price = float(ticker['price'])
-    quantity = round(order_size/current_price,4)
+    quantity = math.floor(order_size/current_price)
+    print(quantity)
     # Set the order type based on the parameters provided
     if price is not None:
         order_type = Client.ORDER_TYPE_LIMIT
@@ -213,7 +214,7 @@ def binance_future_perpetual_order(api_key, api_secret, symbol, order_size, side
 
 
 # close position
-def binance_future_perpetual_close_position(api_keys, api_secret, symbol):
+def binance_future_perpetual_close_position(api_key, api_secret, symbol):
     '''
 
     Parameters
@@ -255,7 +256,7 @@ def binance_future_perpetual_close_position(api_keys, api_secret, symbol):
         print(f'Unexpected error: {e}')
 
 
-def binance_future_check_position(api_keys, api_secret, symbol=None):
+def binance_future_check_position(api_key, api_secret, symbol=None):
     '''
 
     Parameters
@@ -285,4 +286,3 @@ def binance_future_check_position(api_keys, api_secret, symbol=None):
 def binance_future_adjust_leverage(api_key, api_secret, symbol, leverage):
     client = Client(api_key, api_secret)
     client.futures_change_leverage(symbol=symbol, leverage=leverage)
-
