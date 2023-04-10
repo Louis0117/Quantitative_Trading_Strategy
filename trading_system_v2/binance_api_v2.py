@@ -76,6 +76,8 @@ class Binance_transaction:
                 print('selling_quantity:', selling_quantity)
             else:
                 selling_quantity = math.floor(order_size*100)/100.0
+                if selling_quantity>account_coin_sell:
+                    selling_quantity = math.floor(account_coin_sell*100)/100.0
             # place a limit selling order
             self.binance_client.order_limit_sell(symbol =symbol, quantity = selling_quantity, price = order_price)
             print('place {coin_sell} spot selling order.....')

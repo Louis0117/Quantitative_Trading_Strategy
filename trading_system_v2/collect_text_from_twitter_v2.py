@@ -15,7 +15,7 @@ from tqdm import tqdm, trange
 from twarc import Twarc2, expansions
 
 
-class Twitter_data :
+class TwitterData :
     def __init__(self, bear_token, start_time, end_time):
         self.bear_token = bear_token
         self.start_time = start_time
@@ -73,7 +73,7 @@ class Twitter_data :
             # get conversation id from dataset
             conversation_id = str(df['conversation_id'][i])
             # get user reply information under tweets
-            conversation_data = _get_reply(conversation_id)
+            conversation_data = self._get_reply(conversation_id)
             for page in conversation_data:
                 #  function flatten() for "flattening" a result set, including all expansions inline.
                 result = expansions.flatten(page)         
