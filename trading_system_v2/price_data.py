@@ -9,6 +9,8 @@ Created on Wed Mar  1 14:31:21 2023
 import finlab_crypto
 import numpy as np
 import requests
+import json
+import pandas as pd
 
 
 # get history crypto price
@@ -31,6 +33,47 @@ def history_crypto_price(tradingpair, period):
     # get crypto price from Binance
     price_data = finlab_crypto.crawler.get_all_binance(tradingpair, period)
     return price_data
+
+def hist_crypto_price(tradingpair, period):
+    '''
+
+    Parameters
+    ----------
+    tradingpair : str
+        cryptocurency trading pair
+    period : str
+        the time which create a candlestick
+        
+    Returns
+    -------
+    price_data : data
+        crypto history price data
+
+    ''' 
+    
+    # 設置 API endpoint 和參數
+    endpoint = 'https://api.binance.com/api/v3/klines'
+    params = {
+        'symbol': tradingpair,  # 設置要查詢的交易對
+        'interval': period,    # 設置時間間隔 (1d = 1 day)
+        'limit': 1000        # 設置獲取歷史價格的數量 (最多1000)
+    }
+    # 請求歷史價格數據
+    response = requests.get(endpoint, params=params)
+    data = json.loads(response.text)
+    
+    # 將數據轉換為 pandas DataFrame
+    df = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume',
+                                     'close_time', 'quote_asset_volume', 'number_of_trades',
+                                     'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume',
+                                     'ignore'])
+    # 轉換時間戳 (timestamp) 到日期格式
+    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+    # 列印 DataFrame
+    #print(df)
+    return df
+
+    
 
 # get current crypto price
 def current_crypto_price(tradingpair):
