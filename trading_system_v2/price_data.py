@@ -6,33 +6,13 @@ Created on Wed Mar  1 14:31:21 2023
 @author: welcome870117
 """
 
-import finlab_crypto
+#import finlab_crypto
 import numpy as np
 import requests
 import json
 import pandas as pd
 
 
-# get history crypto price
-def history_crypto_price(tradingpair, period):
-    '''
-
-    Parameters
-    ----------
-    tradingpair : str
-        cryptocurency trading pair
-    period : str
-        the time which create a candlestick
-        
-    Returns
-    -------
-    price_data : data
-        crypto history price data
-
-    ''' 
-    # get crypto price from Binance
-    price_data = finlab_crypto.crawler.get_all_binance(tradingpair, period)
-    return price_data
 
 def hist_crypto_price(tradingpair, period):
     '''
@@ -69,6 +49,10 @@ def hist_crypto_price(tradingpair, period):
                                      'ignore'])
     # 轉換時間戳 (timestamp) 到日期格式
     df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+    df = df.astype({'open':float, 'high':float, 'low':float, 'close':float, 'volume':float,
+                                     'close_time':float, 'quote_asset_volume':float, 'number_of_trades':float,
+                                     'taker_buy_base_asset_volume':float, 'taker_buy_quote_asset_volume':float,
+                                     'ignore':float})
     # 列印 DataFrame
     #print(df)
     return df
@@ -95,3 +79,13 @@ def current_crypto_price(tradingpair):
     current_price = requests.get('https://api.binance.com/api/v3/ticker/price?symbol='+tradingpair)  
     current_price = float(current_price.json()['price'])
     return current_price
+
+
+'''
+# get history crypto price
+def history_crypto_price(tradingpair, period):
+
+    # get crypto price from Binance
+    price_data = finlab_crypto.crawler.get_all_binance(tradingpair, period)
+    return price_data
+'''
