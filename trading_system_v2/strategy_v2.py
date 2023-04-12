@@ -201,7 +201,7 @@ class Strategy:
         #print('adj k2:', adjusted_k2)
         #print('odsize:', adjusted_order_size)
         # get open price
-        open_price = df_price['open'][-1]
+        open_price = df_price['open'].iloc[-1]
         # calculate long(cap line) price / short(floor line) price 
         long_price = round(open_price + adjusted_k1*range_value, 3)
         short_price = round(open_price - adjusted_k2*range_value, 3)

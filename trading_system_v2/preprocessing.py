@@ -8,6 +8,7 @@ Created on Thu Feb 23 21:19:46 2023
 
 import re , string
 import emoji
+import demoji
 
 
 # Clean emojis from text
@@ -32,7 +33,9 @@ def strip_emoji(text):
     emoji.get_emoji_regexp() : get the regular expression of emoji
     '''
     
-    return re.sub(emoji.get_emoji_regexp(), r"", text) # remove emoji
+    #return re.sub(emoji.get_emoji_regexp(), r"", text) # remove emoji
+    return demoji.replace(text, '')
+
 
 
 # Remove punctuations, links, mentions and \r\n new line characters
