@@ -89,6 +89,9 @@ def sentiment_classifier_prediction(model, dataloader, device):
             token_type_ids = data['token_type_ids'].to(device, dtype=torch.long)
             outputs = model(ids, mask, token_type_ids).squeeze()
             # get prediction result
+            print('outputs:', outputs)
+            print('outputs shape:', outputs.shape)
+            outputs = torch.reshape(outputs, (-1, 3))
             big_val, big_idx = torch.max(outputs.data, dim=1)
             if prediction == None:
                prediction = big_idx          
