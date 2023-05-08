@@ -7,10 +7,14 @@
 #### requirement
 (python package)  
 numpy  
-pandas
-requests
-bs4
-json
-binance
-math
-smtplib
+pandas  
+requests  
+bs4  
+json  
+binance  
+math  
+smtplib  
+
+(API)  
+Binance API  
+Gmail API 
