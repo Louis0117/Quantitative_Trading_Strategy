@@ -152,6 +152,6 @@ if __name__ == '__main__':
     long_positions = build_long_position(binance_transaction, sorted_dict, 0.2)
     short_positions = build_short_position(binance_transaction, sorted_dict, 0.2)
     # define hoding period
-    time.sleep(90*86400)
+    time.sleep(K_VALUE*86400)
     # close position
     close_all_position(binance_transaction, long_positions, short_positions)    
