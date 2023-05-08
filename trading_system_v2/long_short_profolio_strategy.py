@@ -10,12 +10,11 @@ import numpy as np
 import pandas as pd
 import requests as rq
 from bs4 import BeautifulSoup
-import time
-import datetime
-import pytz
 import json
 from price_data import current_crypto_price, hist_crypto_price
 from binance_api_v2 import Binance_transaction
+import sys
+import time
 
 # parameters
 SYS_MAIL_ADDRESS = ''
@@ -24,9 +23,9 @@ APP_PWD = ''
 BINANCE_KEY = ''
 BINANCE_SECRET = ''
 
-POSITION_SIZE = 90
-J_VALUE = 90  # lookback month
-K_VALUE = 90 # hold month
+POSITION_SIZE = sys.argv[0]
+J_VALUE = sys.argv[1] # lookback month
+K_VALUE = sys.argv[2] # hold month
 
 
 def get_top100_crypto(url):
