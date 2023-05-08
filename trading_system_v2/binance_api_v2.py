@@ -100,13 +100,16 @@ class Binance_transaction:
     
     ### The limit order function has not been tested
     ### XXXUSDT, XXXUSDC, XXXBUSD only!!!
-    def future_perpetual_buy(self, symbol, coin_buy, coin_sell, order_size, quantitative_precision, order_price = None):
+    def future_perpetual_buy(self, symbol, coin_buy, coin_sell, order_size, quantitative_precision=None, order_price = None):
         # Create a Binance API client object
         #client = Client(api_key, api_secret)    
         # Get the symbol's current price
         ticker = self.binance_client.futures_symbol_ticker(symbol=symbol)
         current_price = float(ticker['price'])
-        # different symbol quantity precision is different
+        if quantitative_precision is None:
+            # different symbol quantity precision is different
+            num_digits = len(str(int(current_price)))
+            quantitative_precision = max(num_digits-1, 0)
         # given quantity precision
         q_p = pow(10,quantitative_precision)
         # Set the order type based on the parameters provided
@@ -161,6 +164,8 @@ class Binance_transaction:
                 print(f'Error message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
                 sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                if e.message == 'Precision is over the maximum defined for this asset.':
+                    return max(quantitative_precision-1, 0)
             except BinanceOrderException as e:
                 print(f'Error code: {e.code}, message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
@@ -170,7 +175,7 @@ class Binance_transaction:
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
                 sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
     
-    def future_perpetual_sell(self, symbol, coin_buy, coin_sell, order_size, quantitative_precision, order_price = None):
+    def future_perpetual_sell(self, symbol, coin_buy, coin_sell, order_size, quantitative_precision=None, order_price = None):
         # Create a Binance API client object
         #client = Client(api_key, api_secret)    
         # Get the symbol's current price
@@ -178,6 +183,10 @@ class Binance_transaction:
         current_price = float(ticker['price'])
         # different symbol quantity precision is different
         # given quantity precision
+        if quantitative_precision is None:
+            # different symbol quantity precision is different
+            num_digits = len(str(int(current_price)))
+            quantitative_precision = max(num_digits-1, 0)
         q_p = pow(10,quantitative_precision)
         # Set the order type based on the parameters provided
         if order_price is not None:
