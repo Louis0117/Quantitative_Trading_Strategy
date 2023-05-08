@@ -2,9 +2,9 @@
 
 ## `long-short strategy`
 
-#### introduction
+### introduction
 
-#### requirement
+### requirement
 (python package)  
 numpy  
 pandas  
