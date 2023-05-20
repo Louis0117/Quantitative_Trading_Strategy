@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 19 01:47:04 2023
+Created on Fri May 19 23:20:52 2023
 
 @author: welcome870117
 """
@@ -9,10 +9,10 @@ Created on Fri May 19 01:47:04 2023
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sun May  7 02:26:30 2023
+Created on Fri May 19 01:47:04 2023
 
 @author: welcome870117
-""" 
+"""
 
 import numpy as np
 import pandas as pd
@@ -30,18 +30,19 @@ import os
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-#BINANCE_KEY = 'vAj3USjwe4s1wZ9vR6fFW0xVzkujzsEqq8xWn7poUudVsbCejTYvIX220qcq0rh9'
-#BINANCE_SECRET = 'JIrDWhMoPmSTprOiiDgtwzED6JukUcLTkjlMf5aACRhiM6yiPLjf7ydpQlgLBWZ4'
-BINANCE_KEY = 'zCc44IStYQFElNjL8X7SYh1QCyMsnR6Q2wf9ncvIUmEmsjJRFk2vwlxR2YkKc2Ul'
-BINANCE_SECRET = 'mfIYDrPjNja50qjyTk9aM7zqlWUjMiFGLtMxzlKa2HnDxNZ8yTIxTdWZWbeYjNJE'
+BINANCE_KEY = 'vAj3USjwe4s1wZ9vR6fFW0xVzkujzsEqq8xWn7poUudVsbCejTYvIX220qcq0rh9'
+BINANCE_SECRET = 'JIrDWhMoPmSTprOiiDgtwzED6JukUcLTkjlMf5aACRhiM6yiPLjf7ydpQlgLBWZ4'
+#BINANCE_KEY = 'zCc44IStYQFElNjL8X7SYh1QCyMsnR6Q2wf9ncvIUmEmsjJRFk2vwlxR2YkKc2Ul'
+#BINANCE_SECRET = 'mfIYDrPjNja50qjyTk9aM7zqlWUjMiFGLtMxzlKa2HnDxNZ8yTIxTdWZWbeYjNJE'
 
-if len(sys.argv)!=5:
+if len(sys.argv)!=6:
     print('input error')
   
 POSITION_SIZE = int(sys.argv[1])
 LEVERAGE = int(sys.argv[2])
 J_VALUE = int(sys.argv[3]) # lookback month
 K_VALUE = int(sys.argv[4]) # hold month
+day = int(sys.argv[5]) 
 
 log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v2/long_short_strategy_log.csv'
 
@@ -128,17 +129,15 @@ def build_long_position(client, price_list, pct):
                         long_position.append(data[0])
                         print('----- long position -----')
                         print('symbol:', data[0])
-                        print('----------')
                         break
             else:
                 count+=1
                 long_position.append(data[0])
                 print('----- long position -----')
                 print('symbol:', data[0])
-                print('----------')
         except:
             pass
-        
+        print('----------')
     return long_position
                            
 
@@ -162,17 +161,15 @@ def build_short_position(client, price_list, pct):
                         short_position.append(price_list[i][0])
                         print('----- short position -----')
                         print('symbol:', price_list[i][0])
-                        print('----------')
                         break
             else:
                 count+=1
                 short_position.append(price_list[i][0])
                 print('----- short position -----')
                 print('symbol:', price_list[i][0])
-                print('----------')
         except:
             pass
-        
+        print('----------')
    
     return short_position
 
@@ -190,7 +187,7 @@ def _adject_leverage(client, price_list, leverage):
         except:
              pass
 
-def add_trade_log(client, df, csv_dir, long_position, short_position):
+def add_trade_log(client, current_time, df, csv_dir, long_position, short_position):
     #trade_info = binance_transaction.check_future_trade_history()
     #time_str = pd.to_datetime(datetime.fromtimestamp(trade_info[0]['time'] / 1000).strftime('%Y-%m-%d %H:%M:%S'))
     #shift_time = pd.Timedelta(weeks=0,days=0,hours=0,minutes=5,seconds=0)
@@ -214,11 +211,11 @@ def add_trade_log(client, df, csv_dir, long_position, short_position):
         
         print('symbol:', symbol) 
         print('side:', trade_info[-1]['side'])
-        print('time:', pd.to_datetime(datetime.fromtimestamp(trade_info[-1]['time'] / 1000).strftime('%Y-%m-%d %H:%M:%S')))
+        print('time:', current_time)
         print('quantity:', quantity)
         print('--------')
         
-        timestamp = pd.to_datetime(datetime.fromtimestamp(trade_info[-1]['time'] / 1000).strftime('%Y-%m-%d %H:%M:%S'))
+        timestamp = current_time
         side = trade_info[-1]['side']
         new_row = {'timestamp': timestamp,'symbol':symbol, 'side':side, 'quantity':quantity, 'K_value':K_VALUE}
         df = df.append(new_row, ignore_index=True)
@@ -235,20 +232,19 @@ def add_trade_log(client, df, csv_dir, long_position, short_position):
         
         print('symbol:', symbol) 
         print('side:', trade_info[-1]['side'])
-        print('time:', pd.to_datetime(datetime.fromtimestamp(trade_info[-1]['time'] / 1000).strftime('%Y-%m-%d %H:%M:%S')))
+        print('time:', current_time)
         print('quantity:', quantity)
         print('--------')
         
         side = trade_info[-1]['side']
-        new_row = {'timestamp': timestamp,'symbol':symbol, 'side':side, 'quantity':quantity, 'K_value':K_VALUE}
+        new_row = {'timestamp': current_time,'symbol':symbol, 'side':side, 'quantity':quantity, 'K_value':K_VALUE}
         df = df.append(new_row, ignore_index=True)
     df.to_csv(csv_dir, index=False)
 
 #判斷是否達到關倉條件    
-def close_position_conditional_judgment(client, csv_dir):
+def close_position_conditional_judgment(client, current_time, csv_dir):
     print('Determining whether to close position.....')
     log_file = pd.read_csv(log_file_dir, index_col=False)
-    current_time = pd.to_datetime(datetime.now())
     for i in range(len(log_file)):
         
         k_value = pd.Timedelta(weeks=0,days=log_file['K_value'][i],hours=0,minutes=0,seconds=0)
@@ -270,7 +266,7 @@ def close_position_conditional_judgment(client, csv_dir):
     log_file.to_csv(csv_dir, index=False)   
     
 # 判斷是否開倉
-def open_position_conditional_judgment(client, csv_dir):
+def open_position_conditional_judgment(client, current_time, csv_dir):
     print('Determining whether to establish an investment portfolio.....')
     log_file = pd.read_csv(log_file_dir, index_col=False)
     # 判斷log file have data
@@ -278,7 +274,6 @@ def open_position_conditional_judgment(client, csv_dir):
         # 判斷最新交易是否隔一個月
         # check last trade log 
         last_trade = pd.to_datetime(log_file['timestamp'].iloc[-1])
-        current_time = pd.to_datetime(datetime.now())
         one_month = pd.Timedelta(weeks=0, days=30,hours=0,minutes=0,seconds=0)
         if  last_trade + one_month < current_time:
             # open position signal 
@@ -308,56 +303,74 @@ def long_short_strategy(client):
     ##########################################################################################
     return long_positions, short_positions
 
-    
+def test_data(day):
+    test_dataset = []
+    # current time 
+    current_time = pd.to_datetime(datetime.now())
+    #day = pd.Timedelta(weeks=0, days=1,hours=0,minutes=0,seconds=0)
+    # create datset
+    for i in range(day):
+        shift_day = pd.Timedelta(weeks=0, days=i,hours=0,minutes=0,seconds=0)
+        test_dataset.append(current_time+shift_day)
+    return test_dataset
+
+
 if __name__ == '__main__':
-    # client object
-    binance_transaction = Binance_transaction(BINANCE_KEY, BINANCE_SECRET, SYS_MAIL_ADDRESS, APP_PWD, CLINET_MAIL_ADDRESS)
-    # 检查文件是否存在
-    if os.path.exists(log_file_dir):
-        print(f"CSV file {log_file_dir} exist")
-        log_file = pd.read_csv(log_file_dir, index_col=False)
-        # 判斷是否平倉
-        close_position_conditional_judgment(binance_transaction, log_file_dir)
-        # 判斷是否開倉
-        create_profolio = open_position_conditional_judgment(binance_transaction, log_file_dir)
-        if create_profolio == True:
+    
+    # create dataset
+    test_dataset = test_data(day)
+    # for loop dataset
+    for date in test_dataset:
+  
+        # client object
+        binance_transaction = Binance_transaction(BINANCE_KEY, BINANCE_SECRET, SYS_MAIL_ADDRESS, APP_PWD, CLINET_MAIL_ADDRESS)
+        # 检查文件是否存在
+        if os.path.exists(log_file_dir):
+            print(f"CSV file {log_file_dir} exist")
+            log_file = pd.read_csv(log_file_dir, index_col=False)
+            # 判斷是否平倉
+            close_position_conditional_judgment(binance_transaction, date, log_file_dir)
+            # 判斷是否開倉
+            create_profolio = open_position_conditional_judgment(binance_transaction, date, log_file_dir)
+            if create_profolio == True:
+                sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
+                if sufficient_account_balance:  
+                    # 建立profolio
+                    long_position, short_position = long_short_strategy(binance_transaction) 
+                    # 等待訂單建立
+                    print('---- wait for create order ------')
+                    time.sleep(20)
+                    # add trade log
+                    add_trade_log(binance_transaction, date, log_file, log_file_dir, long_position, short_position)
+    
+        else:
+            # 不存在新增log file
+            print(f"CSV flie {log_file_dir} not exist")
+            log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'quantity', 'K_value'])
+            log_file.to_csv(log_file_dir, index=True)
+            print("create csv file")
+            # 檢查餘額
             sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
             if sufficient_account_balance:  
                 # 建立profolio
-                long_position, short_position = long_short_strategy(binance_transaction) 
+                long_position, short_position =  long_short_strategy(binance_transaction) 
                 # 等待訂單建立
                 print('---- wait for create order ------')
-                time.sleep(60)
+                #time.sleep(60)
                 # add trade log
-                add_trade_log(binance_transaction, log_file, log_file_dir, long_position, short_position)
+                add_trade_log(binance_transaction, date, log_file, log_file_dir, long_position, short_position)
+        
+        # sleep one day
+        print('---- sleep one day ------')
+        #time.sleep(86200)
+        
+#%%
 
-    else:
-        # 不存在新增log file
-        print(f"CSV flie {log_file_dir} not exist")
-        log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'quantity', 'K_value'])
-        log_file.to_csv(log_file_dir, index=True)
-        print("create csv file")
-        # 檢查餘額
-        sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
-        if sufficient_account_balance:  
-            # 建立profolio
-            long_position, short_position = long_short_strategy(binance_transaction) 
-            # 等待訂單建立
-            print('---- wait for create order ------')
-            time.sleep(60)
-            # add trade log
-            add_trade_log(binance_transaction, log_file, log_file_dir, long_position, short_position)
-    
-    # sleep one day
-    print('---- sleep one day ------')
-    time.sleep(86200)
-    
-    
-    
     # 判斷是否開倉
         # 檢查餘額
         # 開倉 (建立投資組合)
         # 紀錄
         
     # sleep
-
+log_file = pd.read_csv(log_file_dir, index_col=False)
+log_file.drop(1, inplace=True)
