@@ -30,10 +30,10 @@ import os
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-#BINANCE_KEY = 'vAj3USjwe4s1wZ9vR6fFW0xVzkujzsEqq8xWn7poUudVsbCejTYvIX220qcq0rh9'
-#BINANCE_SECRET = 'JIrDWhMoPmSTprOiiDgtwzED6JukUcLTkjlMf5aACRhiM6yiPLjf7ydpQlgLBWZ4'
-BINANCE_KEY = 'zCc44IStYQFElNjL8X7SYh1QCyMsnR6Q2wf9ncvIUmEmsjJRFk2vwlxR2YkKc2Ul'
-BINANCE_SECRET = 'mfIYDrPjNja50qjyTk9aM7zqlWUjMiFGLtMxzlKa2HnDxNZ8yTIxTdWZWbeYjNJE'
+#BINANCE_KEY = ''
+#BINANCE_SECRET = ''
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 
 if len(sys.argv)!=5:
     print('input error')

@@ -45,19 +45,19 @@ class Binance_transaction:
             # The content of the system notification letter
             msg = f"Subject:Trading system notification email\nThe trading system place a buying order at the {coin_buy} cryptocurrency price {order_price} with a total value of {order_size} {coin_sell}"
             # sent mail to client
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceAPIException as e:
             print(f'Error message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceOrderException as e:
             print(f'Error code: {e.code}, message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except Exception as e:
             print(f'Unexpected error: {e}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
     
     #### only limit order!!!
     def spot_sell(self, symbol, coin_buy, coin_sell, order_size, order_price):
@@ -84,19 +84,19 @@ class Binance_transaction:
             # the content of the system notification letter
             msg = f"Subject:Trading system notification email\nThe trading system place a selling order at the {coin_sell} cryptocurrency price {order_price} USDT"
             # sent mail to client
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceAPIException as e:
             print(f'Error message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceOrderException as e:
             print(f'Error code: {e.code}, message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except Exception as e:
             print(f'Unexpected error: {e}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
     
     ### The limit order function has not been tested
     ### XXXUSDT, XXXUSDC, XXXBUSD only!!!
@@ -136,19 +136,19 @@ class Binance_transaction:
                 print('Order executed successfully!')
                 msg = f"Subject:Trading system notification email\nThe trading system place a long limit price futures order, at the price of one {coin_buy} {order_price} usdt, establish a position of {quantity} {coin_buy} with a total value of {total_value} usdt"
                 # sent mail to client
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceOrderException as e:
                 print(f'Error code: {e.code}, message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except Exception as e:
                 print(f'Unexpected error: {e}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         else:
             try:
                 order = self.binance_client.futures_create_order(
@@ -159,21 +159,23 @@ class Binance_transaction:
                 )
                 print('Order executed successfully!')
                 msg = msg = f"Subject:Trading system notification email\nThe trading system place a long market price futures order, at the price of one {coin_buy} {order_price} usdt, establish a position of {quantity} {coin_buy} with a total value of {total_value} usdt"
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceAPIException as e:
-                print(f'Error message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                
                 if e.message == 'Precision is over the maximum defined for this asset.':
                     return max(quantitative_precision-1, 0)
+                if e.message == 'Quantity less than or equal to zero.':
+                    return -1
             except BinanceOrderException as e:
                 print(f'Error code: {e.code}, message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except Exception as e:
                 print(f'Unexpected error: {e}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
     
     def future_perpetual_sell(self, symbol, coin_buy, coin_sell, order_size, quantitative_precision=None, order_price = None):
         # Create a Binance API client object
@@ -210,19 +212,19 @@ class Binance_transaction:
                 print('Order executed successfully!')
                 msg = f"Subject:Trading system notification email\nThe trading system place a short limit price futures order\n-------------------\n{coin_sell} market order price:${order_price}\n{coin_sell} order number:{quantity}\ntotal value:${total_value} usdt\n{coin_sell} current price:${current_price}"
                 # sent mail to client
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceAPIException as e:
                 print(f'Error message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceOrderException as e:
                 print(f'Error code: {e.code}, message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except Exception as e:
                 print(f'Unexpected error: {e}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         else:
             try:
                 order = self.binance_client.futures_create_order(
@@ -234,19 +236,23 @@ class Binance_transaction:
                 print('Order executed successfully!')
                 msg = f"Subject:Trading system notification email\nThe trading system place a short market price futures order\n-------------------\n{coin_sell} market order price:${current_price}\n{coin_sell} order number:{quantity}\ntotal value:${total_value} usdt\n{coin_sell} current price:${current_price}"
                 # sent mail to client
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceAPIException as e:
-                print(f'Error message: {e.message}')
+                #print(f'Error message: {e.message}')
+                if e.message == 'Precision is over the maximum defined for this asset.':
+                    return max(quantitative_precision-1, 0)
+                if e.message == 'Quantity less than or equal to zero.':
+                    return -1
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except BinanceOrderException as e:
                 print(f'Error code: {e.code}, message: {e.message}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             except Exception as e:
                 print(f'Unexpected error: {e}')
                 msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-                sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+                #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         
     def future_perpetual_close_position(self, symbol):
         position = self.binance_client.futures_position_information(symbol=symbol)
@@ -267,23 +273,77 @@ class Binance_transaction:
             print('close position successfully!')
             msg = f"Subject:Trading system notification email\nThe trading system close position\n-------------------\ntotal profit: ${unrealized_profit} USDT"
             # sent mail to client
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceAPIException as e:
             print(f'Error message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except BinanceOrderException as e:
             print(f'Error code: {e.code}, message: {e.message}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
         except Exception as e:
             print(f'Unexpected error: {e}')
             msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
-            sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
             
-    def future_check_position(self, symbol):
+    def future_perpetual_partial_close_position(self, symbol, quantity):
+        # 判斷方向
+        if quantity > 0:
+            side = "SELL"
+        else:
+            side = "BUY"
+        position = self.binance_client.futures_position_information(symbol=symbol)
+        if abs(float(position[0]["positionAmt"]))< abs(quantity):
+            quantity = abs(float(position[0]["positionAmt"]))
+        # 建立訂單
+        # 例外排除
+        try:
+            order = self.binance_client.futures_create_order(
+                symbol=symbol,
+                side=side,
+                type=ORDER_TYPE_MARKET,
+                quantity=abs(quantity)
+            )
+            
+            print('close position successfully!')
+            #msg = f"Subject:Trading system notification email\nThe trading system close position\n-------------------\ntotal profit: ${unrealized_profit} USDT"
+            return True
+            # sent mail to client
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+        except BinanceAPIException as e:
+            print(f'Error message: {e.message}')
+            msg = f'Subject:Trading system notification email\n--------------------------------------\nError message: {e.message}'
+            return False
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+        except BinanceOrderException as e:
+            print(f'Error code: {e.code}, message: {e.message}')
+            msg = f'Subject:Trading system notification email\n--------------------------------------\nError code: {e.code}, message: {e.message}'
+            return False
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+        except Exception as e:
+            print(f'Unexpected error: {e}')
+            if e == "Unexpected error: name 'unrealized_profit' is not defined":
+                print('yes')
+            msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
+            return False
+            #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
+            
+    def future_check_position(self, symbol=None):
         if symbol is not None:
             position = self.binance_client.futures_position_information(symbol=symbol)
         else:
             position = self.binance_client.futures_position_information() 
         return position
+    
+    def binance_future_adjust_leverage(self, symbol, leverage):
+        self.binance_client.futures_change_leverage(symbol=symbol, leverage=leverage)
+        
+    def check_future_account(self):
+        return self.binance_client.futures_account()
+    
+    def check_future_trade_history(self, symbol=None):
+        if symbol is not None:
+            return self.binance_client.futures_account_trades(symbol=symbol)
+        else:
+            return self.binance_client.futures_account_trades()    
