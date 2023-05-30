@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 19 01:47:04 2023
-
-@author: welcome870117
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
 Created on Sun May  7 02:26:30 2023
 
 @author: welcome870117
@@ -43,12 +35,8 @@ LEVERAGE = int(sys.argv[2])
 J_VALUE = int(sys.argv[3]) # lookback month
 K_VALUE = int(sys.argv[4]) # hold month
 
+# 
 log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v2/long_short_strategy_log.csv'
-
-#POSITION_SIZE = 10
-#J_VALUE = 90 # lookback month
-#K_VALUE = 90 # hold month
-#LEVERAGE = 3
 
 def check_account_usdt_balance(client, position_size, leverage):
     account_info = client.check_future_account()
@@ -159,7 +147,6 @@ def build_short_position(client, price_list, pct):
                     quantitative_precision = client.future_perpetual_sell(price_list[i][0], 'USDT', price_list[i][0][:-4], POSITION_SIZE, quantitative_precision)
                     if quantitative_precision is None:
                         count+=1
-                        short_position.append(price_list[i][0])
                         print('----- short position -----')
                         print('symbol:', price_list[i][0])
                         print('----------')
@@ -313,14 +300,32 @@ if __name__ == '__main__':
     # client object
     binance_transaction = Binance_transaction(BINANCE_KEY, BINANCE_SECRET, SYS_MAIL_ADDRESS, APP_PWD, CLINET_MAIL_ADDRESS)
     # 检查文件是否存在
-    if os.path.exists(log_file_dir):
-        print(f"CSV file {log_file_dir} exist")
-        log_file = pd.read_csv(log_file_dir, index_col=False)
-        # 判斷是否平倉
-        close_position_conditional_judgment(binance_transaction, log_file_dir)
-        # 判斷是否開倉
-        create_profolio = open_position_conditional_judgment(binance_transaction, log_file_dir)
-        if create_profolio == True:
+    while(1):
+        if os.path.exists(log_file_dir):
+            print(f"CSV file {log_file_dir} exist")
+            log_file = pd.read_csv(log_file_dir, index_col=False)
+            # 判斷是否平倉
+            close_position_conditional_judgment(binance_transaction, log_file_dir)
+            # 判斷是否開倉
+            create_profolio = open_position_conditional_judgment(binance_transaction, log_file_dir)
+            if create_profolio == True:
+                sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
+                if sufficient_account_balance:  
+                    # 建立profolio
+                    long_position, short_position = long_short_strategy(binance_transaction) 
+                    # 等待訂單建立
+                    print('---- wait for create order ------')
+                    time.sleep(60)
+                    # add trade log
+                    add_trade_log(binance_transaction, log_file, log_file_dir, long_position, short_position)
+    
+        else:
+            # 不存在新增log file
+            print(f"CSV flie {log_file_dir} not exist")
+            log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'quantity', 'K_value'])
+            log_file.to_csv(log_file_dir, index=True)
+            print("create csv file")
+            # 檢查餘額
             sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
             if sufficient_account_balance:  
                 # 建立profolio
@@ -330,34 +335,16 @@ if __name__ == '__main__':
                 time.sleep(60)
                 # add trade log
                 add_trade_log(binance_transaction, log_file, log_file_dir, long_position, short_position)
-
-    else:
-        # 不存在新增log file
-        print(f"CSV flie {log_file_dir} not exist")
-        log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'quantity', 'K_value'])
-        log_file.to_csv(log_file_dir, index=True)
-        print("create csv file")
-        # 檢查餘額
-        sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
-        if sufficient_account_balance:  
-            # 建立profolio
-            long_position, short_position = long_short_strategy(binance_transaction) 
-            # 等待訂單建立
-            print('---- wait for create order ------')
-            time.sleep(60)
-            # add trade log
-            add_trade_log(binance_transaction, log_file, log_file_dir, long_position, short_position)
-    
-    # sleep one day
-    print('---- sleep one day ------')
-    time.sleep(86200)
-    
+        
+        # sleep one day
+        print('---- sleep one day ------')
+        time.sleep(86200)
+        
     
     
     # 判斷是否開倉
         # 檢查餘額
         # 開倉 (建立投資組合)
-        # 紀錄
-        
+        # 紀錄  
     # sleep
 
