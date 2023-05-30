@@ -31,6 +31,15 @@ log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_st
 ```  
 `step3.`
 run python code
+  
+  there four parameters:    
+  1. position size of each asset in the investment portfolio  
+  2. leverage size  
+  3. J_value -> number of days referencing past historical data. typically set to three months, six months, nine months, and twelve months.
+To convert the number of months to days, you can multiply the number of months by 30.  
+  4. k_value -> portfolio holding period. typically set to three months, six months, nine months, and twelve months.
+To convert the number of months to days, you can multiply the number of months by 30.  
+
 ```
 python long_short_v2.py 10 3 90 90 
 ```
