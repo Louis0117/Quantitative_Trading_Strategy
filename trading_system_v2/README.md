@@ -30,6 +30,14 @@ change "log_file_dir" in file long_short_v2.py to your dir
 log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v2/long_short_strategy_log.csv'
 ```  
 `step3.`
+  
+  add your Binance API key  
+```
+BINANCE_KEY = ''  
+BINANCE_SECRET = ''  
+```
+
+`step4.`
 run python code
   
   there four parameters:    
