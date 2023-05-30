@@ -17,7 +17,7 @@ smtplib
 
 (API)  
 Binance API  
-Gmail API 
+Gmail API (Not necessary)
 
 ### Execute program
 `step1.`
@@ -35,9 +35,9 @@ run python code
   there four parameters:    
   1. position size of each asset in the investment portfolio  
   2. leverage size  
-  3. J_value -> number of days referencing past historical data. typically set to three months, six months, nine months, and twelve months.
+  3. J_value -> number of days referencing past historical data. Typically set to three months, six months, nine months, and twelve months.
 To convert the number of months to days, you can multiply the number of months by 30.  
-  4. k_value -> portfolio holding period. typically set to three months, six months, nine months, and twelve months.
+  4. k_value -> portfolio holding period. Typically set to three months, six months, nine months, and twelve months.
 To convert the number of months to days, you can multiply the number of months by 30.  
 
 ```
