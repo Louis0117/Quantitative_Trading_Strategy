@@ -61,7 +61,8 @@ def check_account_usdt_balance(client, position_size, leverage):
     usdt_balance = round(float(account_info['assets'][8]['availableBalance']), 2) #['USDT'])#['availableBalance'])
     print('check account USDT balance')
     print("availableUSDT:", usdt_balance)
-    requirement_of_usdt = 30*position_size/leverage
+    ##########################################
+    requirement_of_usdt = 20*position_size/leverage
     print("requirement of USDT", requirement_of_usdt)
     if requirement_of_usdt> usdt_balance:
         print("account doesn't have enough USDT")
@@ -81,7 +82,7 @@ def _get_top100_crypto(url):
     Returns
     -------
     coins : list
-        top 100 market value coin
+        top 50 market value coin
 
     '''
     response = rq.get(url)
@@ -93,7 +94,8 @@ def _get_top100_crypto(url):
     listings=json.loads(coin_data["props"]["initialState"])["cryptocurrency"]['listingLatest']['data']
     for i in listings[1:]: 
         coins.append(i[-4])
-    return coins
+    # only return top 50
+    return coins[:56]
 
 
 # get top 100 market value coin history data
@@ -154,7 +156,7 @@ def _calculate_std(df):
     return std_value
 
 
-def _build_long_position(client, price_list, pct):
+def _build_long_position(client, price_list, pct=0.2):
     '''
 
     Parameters
@@ -174,7 +176,8 @@ def _build_long_position(client, price_list, pct):
         The long-position established in Binance.
 
     '''
-    number_of_target = int(len(price_list)*pct)
+    #number_of_target = int(len(price_list)*pct)
+    number_of_target = 10
     count = 0
     long_position = []
     
@@ -211,8 +214,9 @@ def _build_long_position(client, price_list, pct):
     return long_position
                            
 
-def _build_short_position(client, price_list, pct):
-    number_of_target = int(len(price_list)*pct)
+def _build_short_position(client, price_list, pct=0.2):
+    #number_of_target = int(len(price_list)*pct)
+    number_of_target = 10
     count = 0
     short_position = []
     
@@ -411,9 +415,9 @@ def long_short_strategy(client):
     # set leverage
     _adject_leverage(binance_transaction, sorted_dict, LEVERAGE)
     # create long position
-    long_positions = _build_long_position(binance_transaction, sorted_dict, 0.2)
+    long_positions = _build_long_position(binance_transaction, sorted_dict)
     # create short position
-    short_positions = _build_short_position(binance_transaction, sorted_dict, 0.2)
+    short_positions = _build_short_position(binance_transaction, sorted_dict)
     return long_positions, short_positions
 
   
@@ -462,3 +466,5 @@ if __name__ == '__main__':
         # sleep one day
         print('---- sleep one day ------')
         time.sleep(86200)
+
+
