@@ -50,7 +50,7 @@ BINANCE_SECRET = ''
 run python code
   
   there four parameters:    
-  1. position size of each asset in the investment portfolio  
+  1. position size(USDT) of each asset in the investment portfolio, This strategy will generate a portfolio of 20 cryptocurrencies at once, so constructing the portfolio will require a total of $position size * 20 / leverage$ USDT. Please ensure that you have sufficient margin to cover it.  
     
   2. leverage size  
     
