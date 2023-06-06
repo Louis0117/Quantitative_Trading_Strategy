@@ -21,24 +21,32 @@ Gmail API (Not necessary)
 
 ### Execute program
 `step1.`
+If the mentioned package is not installed.
 ```
-git clone https://github.com/Louis0117/Quantitative_Trading_Strategy.git
-```  
+pip install (package)  
+```    
+  
 `step2.`  
+download this repository code  
+  
+  
+`step3.`  
   
    change "log_file_dir" in file long_short_v2.py to your dir  
 ```  
-log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v2/long_short_strategy_log.csv'
+log_file_dir = '(your directory path)/long_short_strategy_log.csv'
 ```  
-`step3.`
+  
+`step4.`
   
   add your Binance API key  
 ```
 BINANCE_KEY = ''  
 BINANCE_SECRET = ''  
 ```
-
-`step4.`
+  
+  
+`step5.`
 run python code
   
   there four parameters:    
