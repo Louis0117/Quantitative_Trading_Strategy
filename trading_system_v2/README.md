@@ -16,11 +16,12 @@ math
 smtplib  
 
 (API)  
-Binance API  * The user guide is available in the Binance_API_Key.pdf for instructions on how to use it.  
+Binance API  ＊ The user guide is available in the "Binance_API_Key.pdf" for instructions on how to use it.  
 Gmail API (Not necessary)
 
 ### Execute program
 `step1.`  
+  
 If the mentioned package is not installed.
 ```
 pip install (package)  
