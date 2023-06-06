@@ -22,25 +22,44 @@ import os
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-#BINANCE_KEY = ''
-#BINANCE_SECRET = ''
-BINANCE_KEY = ''
-BINANCE_SECRET = ''
+BINANCE_KEY = 'dOU7bHquozHp5ACeDoxWia2qFYgFiFckWic3ypcKEuuj7WrPCKgY0mfkWOYvykqk'
+BINANCE_SECRET = '75bcYyqtmTQ3E5sMCMbFyM95cn61nngDo9PQNOTbhZCzxXUx11uLG1VcBLVS1wdB'
 
 if len(sys.argv)!=5:
-    print('input error')
+    print('input parameter number error')
   
-POSITION_SIZE = int(sys.argv[1])
+POSITION_SIZE = int(sys.argv[1]) 
 LEVERAGE = int(sys.argv[2])
-J_VALUE = int(sys.argv[3]) # lookback month
-K_VALUE = int(sys.argv[4]) # hold month
-
-# 
+J_VALUE = int(sys.argv[3]) # lookback days
+K_VALUE = int(sys.argv[4]) # hold days
+# profolio log file address
 log_file_dir = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v2/long_short_strategy_log.csv'
 
+# check account USDT balance  
 def check_account_usdt_balance(client, position_size, leverage):
+    '''
+
+    Parameters
+    ----------
+    client : TYPE
+        Binance clinet 
+        
+    position_size : float
+        position size of each asset in the investment portfolio
+        
+    leverage : float
+        leverage size
+
+    Returns
+    -------
+    bool 
+        Determine if the USDT balance in the account is sufficient to establish an investment portfolio.
+        
+    '''
+    
     account_info = client.check_future_account()
-    usdt_balance = round(float(account_info['assets'][8]['availableBalance']), 2)#['USDT'])#['availableBalance'])
+    usdt_balance = round(float(account_info['assets'][8]['availableBalance']), 2) #['USDT'])#['availableBalance'])
+    print('check account USDT balance')
     print("availableUSDT:", usdt_balance)
     requirement_of_usdt = 30*position_size/leverage
     print("requirement of USDT", requirement_of_usdt)
@@ -49,8 +68,22 @@ def check_account_usdt_balance(client, position_size, leverage):
         return False
     return True
 
+
+# get top 100 market value coin
 def _get_top100_crypto(url):
-    #url = 'https://coinmarketcap.com'
+    '''
+
+    Parameters
+    ----------
+    url : str       
+        url of marketcap    
+    
+    Returns
+    -------
+    coins : list
+        top 100 market value coin
+
+    '''
     response = rq.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     data= soup.find('script',id="__NEXT_DATA__",type="application/json")
@@ -63,7 +96,21 @@ def _get_top100_crypto(url):
     return coins
 
 
+# get top 100 market value coin history data
 def _get_top100_crypto_hist_price(coin_list):
+    '''
+
+    Parameters
+    ----------
+    coin_list : list
+        top 100 market value of coin.
+
+    Returns
+    -------
+    top_100_hist_price : list
+        list of top 100 market value history price data
+
+    '''
     top_100_hist_price = {}
     for coin in coin_list:
         coin = coin+'USDT'
@@ -73,44 +120,78 @@ def _get_top100_crypto_hist_price(coin_list):
     return top_100_hist_price
 
 
+
 def _split_hist_price(price_dict, window_size):
-    dataset = {}
-    
+    '''
+
+    Parameters
+    ----------
+    price_dict : dict
+        key = Symbol, value = price data(df)
+        
+    window_size : int
+        J value.
+
+    Returns
+    -------
+    dataset : dict
+        key = Symbol, value = price data(df) -> Data from the past J value days.
+
+    '''
+    dataset = {}  
     for crypto, price  in price_dict.items():
         if len(price)>window_size:
             dataset.update({crypto:price.iloc[-window_size:].reset_index(drop=True)})
     return dataset
 
 
-def calculate_daily_return(df):
+def _calculate_daily_return(df):
     df['daily_return'] = df['close'].pct_change()
 
 
-def calculate_std(df):
+def _calculate_std(df):
     std_value = df['daily_return'].std()
     return std_value
 
 
-def build_long_position(client, price_list, pct):
+def _build_long_position(client, price_list, pct):
+    '''
+
+    Parameters
+    ----------
+    client : TYPE
+        Binance client.
+        
+    price_list : list
+        DESCRIPTION.
+        
+    pct : float
+        DESCRIPTION.
+
+    Returns
+    -------
+    long_position : list 
+        The long-position established in Binance.
+
+    '''
     number_of_target = int(len(price_list)*pct)
     count = 0
     long_position = []
     
+    # traverse price_list
     for data in price_list:
         if count == number_of_target:
             break
         try:
+            # not add USD in profolio
             if data[0][:-4]=='USDC':
                 continue
-            
-            quantitative_precision = client.future_perpetual_buy(data[0], data[0][:-4],'USDT',POSITION_SIZE)
-            #client.binance_future_adjust_leverage(data[0], leverage)
-            
+            # create long future order
+            quantitative_precision = client.future_perpetual_buy(data[0], data[0][:-4],'USDT', POSITION_SIZE)   
+            #  different crypto have different quantitive precision, sometime need to adjust  
             if quantitative_precision is not None:
-                for i in range(5):
-                    
-                    quantitative_precision = client.future_perpetual_buy(data[0], data[0][:-4],'USDT',POSITION_SIZE,quantitative_precision)
-                    #client.binance_future_adjust_leverage(data[0], leverage)
+                for i in range(5): 
+                    quantitative_precision = client.future_perpetual_buy(data[0], data[0][:-4], 'USDT', POSITION_SIZE, quantitative_precision)
                     if quantitative_precision is None:
                         count+=1
                         long_position.append(data[0])
@@ -130,7 +211,7 @@ def build_long_position(client, price_list, pct):
     return long_position
                            
 
-def build_short_position(client, price_list, pct):
+def _build_short_position(client, price_list, pct):
     number_of_target = int(len(price_list)*pct)
     count = 0
     short_position = []
@@ -169,6 +250,7 @@ def close_all_position(client, long_positions, short_positions):
         client.future_perpetual_close_position(long_position)
         client.future_perpetual_close_position(short_position)
 
+
 def _adject_leverage(client, price_list, leverage):
     print('----- adject leverage -----')
     for data in price_list:
@@ -176,6 +258,7 @@ def _adject_leverage(client, price_list, leverage):
             client.binance_future_adjust_leverage(data[0], leverage)
         except:
              pass
+
 
 def add_trade_log(client, df, csv_dir, long_position, short_position):
     #trade_info = binance_transaction.check_future_trade_history()
@@ -231,18 +314,35 @@ def add_trade_log(client, df, csv_dir, long_position, short_position):
         df = df.append(new_row, ignore_index=True)
     df.to_csv(csv_dir, index=False)
 
-#判斷是否達到關倉條件    
+
+# Determine if the closing conditions have been met.
 def close_position_conditional_judgment(client, csv_dir):
-    print('Determining whether to close position.....')
-    log_file = pd.read_csv(log_file_dir, index_col=False)
-    current_time = pd.to_datetime(datetime.now())
-    for i in range(len(log_file)):
+    '''
+
+    Parameters
+    ----------
+    client : TYPE
+        Binance client.
         
+    csv_dir : str
+        log file dir
+
+    Returns
+    -------
+    None.
+    
+    '''
+    print('Determining whether to close position.....')
+    log_file = pd.read_csv(csv_dir, index_col=False)
+    # get current time
+    current_time = pd.to_datetime(datetime.now())
+    # traverse log file
+    for i in range(len(log_file)):
         k_value = pd.Timedelta(weeks=0,days=log_file['K_value'][i],hours=0,minutes=0,seconds=0)
         timestamp = pd.to_datetime(log_file['timestamp'][i])
-        # 判斷否超過持倉時間
+        # Determine if the holding period has exceeded.
         if timestamp + k_value < current_time:
-            # 平倉
+            # close position
             print('close')
             res = client.future_perpetual_partial_close_position(log_file['symbol'][i], log_file['quantity'][i])
             if res == True:
@@ -255,15 +355,14 @@ def close_position_conditional_judgment(client, csv_dir):
     log_file.reset_index(inplace=True, drop=True)
     # save csv
     log_file.to_csv(csv_dir, index=False)   
+ 
     
-# 判斷是否開倉
+# Determine if an investment portfolio has been established.
 def open_position_conditional_judgment(client, csv_dir):
     print('Determining whether to establish an investment portfolio.....')
-    log_file = pd.read_csv(log_file_dir, index_col=False)
-    # 判斷log file have data
+    log_file = pd.read_csv(csv_dir, index_col=False)
     if len(log_file)>0:
-        # 判斷最新交易是否隔一個月
-        # check last trade log 
+        # check last trade log, Determine if the latest transaction is separated by one month.
         last_trade = pd.to_datetime(log_file['timestamp'].iloc[-1])
         current_time = pd.to_datetime(datetime.now())
         one_month = pd.Timedelta(weeks=0, days=30,hours=0,minutes=0,seconds=0)
@@ -272,48 +371,72 @@ def open_position_conditional_judgment(client, csv_dir):
             return True
         else:
             return False
+    # if len(log file) = 0, create profolio
+    return True
 
+
+# long-short Strategy
 def long_short_strategy(client):
-    # strategy
-    ###########################################################################################
-    coins = _get_top100_crypto('https://coinmarketcap.com')   
+    '''
+
+    Parameters
+    ----------
+    client : TYPE
+        Binance client.
+
+    Returns
+    -------
+    long_positions : TYPE
+        DESCRIPTION.
+    short_positions : TYPE
+        DESCRIPTION.
+
+    '''
+    # get top 100 crypto
+    coins = _get_top100_crypto('https://coinmarketcap.com')  
+    # get history price data
     top_100_hist_price = _get_top100_crypto_hist_price(coins)
+    # Retrieve price data for J value days.
     dataset = _split_hist_price(top_100_hist_price, window_size=J_VALUE)
     # calculate daily return -> SD -> sort(ascending)
     for price_data in dataset.values():
-        calculate_daily_return(price_data)
+        _calculate_daily_return(price_data)
     # calculate SD
     crypto_std = {}
     for crypto, price_data in dataset.items():
-        crypto_std.update({crypto:calculate_std(price_data.iloc[1:].reset_index(drop=True))})
+        crypto_std.update({crypto:_calculate_std(price_data.iloc[1:].reset_index(drop=True))})
+    # sort crypto std
     sorted_dict = sorted(crypto_std.items(), key=lambda x: (x[1], x[0]))    
     # build profolio
-    # create order
+    # set leverage
     _adject_leverage(binance_transaction, sorted_dict, LEVERAGE)
-    long_positions = build_long_position(binance_transaction, sorted_dict, 0.2)
-    short_positions = build_short_position(binance_transaction, sorted_dict, 0.2)
-    ##########################################################################################
+    # create long position
+    long_positions = _build_long_position(binance_transaction, sorted_dict, 0.2)
+    # create short position
+    short_positions = _build_short_position(binance_transaction, sorted_dict, 0.2)
     return long_positions, short_positions
 
-    
+  
+  
 if __name__ == '__main__':
     # client object
     binance_transaction = Binance_transaction(BINANCE_KEY, BINANCE_SECRET, SYS_MAIL_ADDRESS, APP_PWD, CLINET_MAIL_ADDRESS)
-    # 检查文件是否存在
+    # Check if the portfolio log file exists.
     while(1):
         if os.path.exists(log_file_dir):
             print(f"CSV file {log_file_dir} exist")
             log_file = pd.read_csv(log_file_dir, index_col=False)
-            # 判斷是否平倉
+            # Determine if there is a need to close the position.
             close_position_conditional_judgment(binance_transaction, log_file_dir)
-            # 判斷是否開倉
+            # Determine if an investment portfolio has been established.
             create_profolio = open_position_conditional_judgment(binance_transaction, log_file_dir)
             if create_profolio == True:
+                # check account USDT value
                 sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
                 if sufficient_account_balance:  
-                    # 建立profolio
+                    # create profolio
                     long_position, short_position = long_short_strategy(binance_transaction) 
-                    # 等待訂單建立
+                    # Waiting for the order to be created.
                     print('---- wait for create order ------')
                     time.sleep(60)
                     # add trade log
@@ -323,7 +446,7 @@ if __name__ == '__main__':
             # 不存在新增log file
             print(f"CSV flie {log_file_dir} not exist")
             log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'quantity', 'K_value'])
-            log_file.to_csv(log_file_dir, index=True)
+            log_file.to_csv(log_file_dir, index=False)
             print("create csv file")
             # 檢查餘額
             sufficient_account_balance = check_account_usdt_balance(binance_transaction, POSITION_SIZE, LEVERAGE)
@@ -339,12 +462,3 @@ if __name__ == '__main__':
         # sleep one day
         print('---- sleep one day ------')
         time.sleep(86200)
-        
-    
-    
-    # 判斷是否開倉
-        # 檢查餘額
-        # 開倉 (建立投資組合)
-        # 紀錄  
-    # sleep
-
