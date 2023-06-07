@@ -22,8 +22,8 @@ import os
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-BINANCE_KEY = 'dOU7bHquozHp5ACeDoxWia2qFYgFiFckWic3ypcKEuuj7WrPCKgY0mfkWOYvykqk'
-BINANCE_SECRET = '75bcYyqtmTQ3E5sMCMbFyM95cn61nngDo9PQNOTbhZCzxXUx11uLG1VcBLVS1wdB'
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 
 if len(sys.argv)!=5:
     print('input parameter number error')
@@ -62,7 +62,7 @@ def check_account_usdt_balance(client, position_size, leverage):
     print('check account USDT balance')
     print("availableUSDT:", usdt_balance)
     ##########################################
-    requirement_of_usdt = 20*position_size/leverage
+    requirement_of_usdt = 21*position_size/leverage
     print("requirement of USDT", requirement_of_usdt)
     if requirement_of_usdt> usdt_balance:
         print("account doesn't have enough USDT")
