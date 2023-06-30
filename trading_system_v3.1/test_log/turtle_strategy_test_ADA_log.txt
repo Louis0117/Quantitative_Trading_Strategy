@@ -1,0 +1,2043 @@
+date: 2022-12-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2603
+20day high: 0.329
+20day low: 0.2465
+10day high: 0.3086
+10dat low: 0.2465
+-----------------------------------
+date: 2022-12-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2482
+20day high: 0.3211
+20day low: 0.2465
+10day high: 0.3013
+10dat low: 0.2465
+-----------------------------------
+date: 2022-12-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.244
+20day high: 0.3199
+20day low: 0.2465
+10day high: 0.2713
+10dat low: 0.2465
+USDT Value: 75.5424
+Order executed successfully!
+quantity: 309.0
+-----------------------------------
+date: 2022-12-28 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2458
+20day high: 0.3187
+20day low: 0.2465
+10day high: 0.2713
+10dat low: 0.2465
+-----------------------------------
+date: 2022-12-29 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2458
+20day high: 0.3187
+20day low: 0.2465
+10day high: 0.2694
+10dat low: 0.2465
+-----------------------------------
+date: 2022-12-30 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2499
+20day high: 0.3187
+20day low: 0.2396
+10day high: 0.2665
+10dat low: 0.2396
+-----------------------------------
+date: 2022-12-31 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2538
+20day high: 0.3187
+20day low: 0.2392
+10day high: 0.2665
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-01 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2529
+20day high: 0.3187
+20day low: 0.2392
+10day high: 0.2665
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-02 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.26338
+add position: 0.239155
+current price: 0.2678
+20day high: 0.3187
+20day low: 0.2392
+10day high: 0.2665
+10dat low: 0.2392
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-01-03 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2692
+20day high: 0.3157
+20day low: 0.2392
+10day high: 0.2665
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-04 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2786
+20day high: 0.3086
+20day low: 0.2392
+10day high: 0.2665
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-05 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2768
+20day high: 0.3013
+20day low: 0.2392
+10day high: 0.2708
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-06 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.2974
+20day high: 0.2713
+20day low: 0.2392
+10day high: 0.2713
+10dat low: 0.2392
+USDT Value: 91.694368
+Order executed successfully!
+quantity: 308.0
+-----------------------------------
+date: 2023-01-07 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.2779399999999999
+add position: 0.302265
+current price: 0.3168
+20day high: 0.2798
+20day low: 0.2392
+10day high: 0.2798
+10dat low: 0.2392
+USDT Value: 95.23008000000002
+Order executed successfully!
+quantity: 300.0
+-----------------------------------
+date: 2023-01-08 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.29684
+add position: 0.32179
+current price: 0.3222
+20day high: 0.2806
+20day low: 0.2392
+10day high: 0.2806
+10dat low: 0.2392
+USDT Value: 103.04922599999999
+Order executed successfully!
+quantity: 319.0
+-----------------------------------
+date: 2023-01-09 00:00:00
+position units: 3
+side: BUY
+stop loss: 0.30344
+add position: 0.32689
+current price: 0.323
+20day high: 0.299
+20day low: 0.2392
+10day high: 0.299
+10dat low: 0.2392
+-----------------------------------
+date: 2023-01-10 00:00:00
+position units: 3
+side: BUY
+stop loss: 0.30344
+add position: 0.32689
+current price: 0.3293
+20day high: 0.346
+20day low: 0.2392
+10day high: 0.346
+10dat low: 0.2434
+USDT Value: 64.483526
+Order executed successfully!
+quantity: 195.0
+-----------------------------------
+date: 2023-01-11 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3456
+20day high: 0.346
+20day low: 0.2392
+10day high: 0.346
+10dat low: 0.2434
+-----------------------------------
+date: 2023-01-12 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3525
+20day high: 0.346
+20day low: 0.2392
+10day high: 0.346
+10dat low: 0.2466
+-----------------------------------
+date: 2023-01-13 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3507
+20day high: 0.346
+20day low: 0.2392
+10day high: 0.346
+10dat low: 0.2502
+-----------------------------------
+date: 2023-01-14 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3504
+20day high: 0.3509
+20day low: 0.2392
+10day high: 0.3509
+10dat low: 0.2518
+-----------------------------------
+date: 2023-01-15 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3455
+20day high: 0.3697
+20day low: 0.2392
+10day high: 0.3697
+10dat low: 0.2633
+-----------------------------------
+date: 2023-01-16 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3264
+20day high: 0.3697
+20day low: 0.2392
+10day high: 0.3697
+10dat low: 0.2671
+-----------------------------------
+date: 2023-01-17 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3379
+20day high: 0.3697
+20day low: 0.2392
+10day high: 0.3697
+10dat low: 0.2723
+-----------------------------------
+date: 2023-01-18 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3652
+20day high: 0.3697
+20day low: 0.2392
+10day high: 0.3697
+10dat low: 0.2742
+-----------------------------------
+date: 2023-01-19 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3687
+20day high: 0.3697
+20day low: 0.2392
+10day high: 0.3697
+10dat low: 0.2955
+-----------------------------------
+date: 2023-01-20 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3764
+20day high: 0.3697
+20day low: 0.2434
+10day high: 0.3697
+10dat low: 0.3063
+-----------------------------------
+date: 2023-01-21 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.375
+20day high: 0.3697
+20day low: 0.2434
+10day high: 0.3697
+10dat low: 0.3075
+-----------------------------------
+date: 2023-01-22 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3587
+20day high: 0.3807
+20day low: 0.2466
+10day high: 0.3807
+10dat low: 0.3154
+-----------------------------------
+date: 2023-01-23 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3732
+20day high: 0.3872
+20day low: 0.2502
+10day high: 0.3872
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-24 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3796
+20day high: 0.3872
+20day low: 0.2518
+10day high: 0.3872
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-25 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3898
+20day high: 0.3872
+20day low: 0.2633
+10day high: 0.3872
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-26 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3819
+20day high: 0.3872
+20day low: 0.2671
+10day high: 0.3872
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-27 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3975
+20day high: 0.3892
+20day low: 0.2723
+10day high: 0.3892
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-28 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3725
+20day high: 0.391
+20day low: 0.2742
+10day high: 0.391
+10dat low: 0.3237
+-----------------------------------
+date: 2023-01-29 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3902
+20day high: 0.398
+20day low: 0.2955
+10day high: 0.398
+10dat low: 0.3255
+-----------------------------------
+date: 2023-01-30 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.397
+20day high: 0.3991
+20day low: 0.3063
+10day high: 0.3991
+10dat low: 0.3336
+-----------------------------------
+date: 2023-01-31 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3981
+20day high: 0.3991
+20day low: 0.3075
+10day high: 0.3991
+10dat low: 0.3469
+-----------------------------------
+date: 2023-02-01 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.4038
+20day high: 0.3998
+20day low: 0.3154
+10day high: 0.3998
+10dat low: 0.3469
+-----------------------------------
+date: 2023-02-02 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3994
+20day high: 0.4018
+20day low: 0.3237
+10day high: 0.4018
+10dat low: 0.3469
+-----------------------------------
+date: 2023-02-03 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3923
+20day high: 0.4136
+20day low: 0.3237
+10day high: 0.4136
+10dat low: 0.3469
+-----------------------------------
+date: 2023-02-04 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3823
+20day high: 0.4136
+20day low: 0.3237
+10day high: 0.4136
+10dat low: 0.3469
+-----------------------------------
+date: 2023-02-05 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3989
+20day high: 0.4136
+20day low: 0.3237
+10day high: 0.4136
+10dat low: 0.3652
+-----------------------------------
+date: 2023-02-06 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3942
+20day high: 0.4136
+20day low: 0.3237
+10day high: 0.4136
+10dat low: 0.3652
+-----------------------------------
+date: 2023-02-07 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.29866
+add position: 0.33696
+current price: 0.3622
+20day high: 0.4136
+20day low: 0.3237
+10day high: 0.4136
+10dat low: 0.3652
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-02-08 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3581
+20day high: 0.4136
+20day low: 0.3255
+10day high: 0.4136
+10dat low: 0.3652
+-----------------------------------
+date: 2023-02-09 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3684
+20day high: 0.4136
+20day low: 0.3336
+10day high: 0.4136
+10dat low: 0.3652
+-----------------------------------
+date: 2023-02-10 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3641
+20day high: 0.4136
+20day low: 0.3469
+10day high: 0.4136
+10dat low: 0.3543
+-----------------------------------
+date: 2023-02-11 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3593
+20day high: 0.4136
+20day low: 0.3469
+10day high: 0.4136
+10dat low: 0.3534
+-----------------------------------
+date: 2023-02-12 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3867
+20day high: 0.4136
+20day low: 0.3469
+10day high: 0.4136
+10dat low: 0.3534
+-----------------------------------
+date: 2023-02-13 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.419
+20day high: 0.4136
+20day low: 0.3469
+10day high: 0.407
+10dat low: 0.3534
+USDT Value: 69.02606
+Order executed successfully!
+quantity: 164.0
+-----------------------------------
+date: 2023-02-14 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.3874
+20day high: 0.4136
+20day low: 0.345
+10day high: 0.4055
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-15 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.4033
+20day high: 0.4136
+20day low: 0.345
+10day high: 0.4035
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-16 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.406
+20day high: 0.42
+20day low: 0.345
+10day high: 0.42
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-17 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.3995
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-18 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.4038
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-19 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.3925
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-20 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.3888
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-21 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.38258
+add position: 0.4281049999999999
+current price: 0.3824
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-02-22 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3658
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-23 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.362
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.345
+-----------------------------------
+date: 2023-02-24 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3691
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.3545
+-----------------------------------
+date: 2023-02-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3647
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.358
+-----------------------------------
+date: 2023-02-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3517
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4213
+10dat low: 0.3512
+-----------------------------------
+date: 2023-02-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3601
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4184
+10dat low: 0.3512
+-----------------------------------
+date: 2023-02-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3504
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4184
+10dat low: 0.3512
+-----------------------------------
+date: 2023-03-01 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3431
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4122
+10dat low: 0.3485
+USDT Value: 58.381896000000005
+Order executed successfully!
+quantity: 170.0
+-----------------------------------
+date: 2023-03-02 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.37836
+add position: 0.334285
+current price: 0.3366
+20day high: 0.4213
+20day low: 0.345
+10day high: 0.4098
+10dat low: 0.3485
+-----------------------------------
+date: 2023-03-03 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.37836
+add position: 0.334285
+current price: 0.337
+20day high: 0.4213
+20day low: 0.3445
+10day high: 0.4059
+10dat low: 0.3445
+-----------------------------------
+date: 2023-03-04 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.37836
+add position: 0.334285
+current price: 0.3305
+20day high: 0.4213
+20day low: 0.3212
+10day high: 0.3949
+10dat low: 0.3212
+USDT Value: 54.53911000000001
+Order executed successfully!
+quantity: 165.0
+-----------------------------------
+date: 2023-03-05 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.36686
+add position: 0.32141
+current price: 0.3306
+20day high: 0.4213
+20day low: 0.3212
+10day high: 0.3949
+10dat low: 0.3212
+-----------------------------------
+date: 2023-03-06 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.36686
+add position: 0.32141
+current price: 0.3175
+20day high: 0.4213
+20day low: 0.3212
+10day high: 0.3852
+10dat low: 0.3212
+USDT Value: 54.994175000000006
+Order executed successfully!
+quantity: 173.0
+-----------------------------------
+date: 2023-03-07 00:00:00
+position units: 3
+side: SELL
+stop loss: 0.35214
+add position: 0.30884
+current price: 0.3101
+20day high: 0.4213
+20day low: 0.3212
+10day high: 0.3704
+10dat low: 0.3212
+-----------------------------------
+date: 2023-03-08 00:00:00
+position units: 3
+side: SELL
+stop loss: 0.35214
+add position: 0.30884
+current price: 0.3149
+20day high: 0.4213
+20day low: 0.3209
+10day high: 0.3704
+10dat low: 0.3209
+-----------------------------------
+date: 2023-03-09 00:00:00
+position units: 3
+side: SELL
+stop loss: 0.35214
+add position: 0.30884
+current price: 0.3051
+20day high: 0.4184
+20day low: 0.3133
+10day high: 0.3702
+10dat low: 0.3133
+USDT Value: 57.276422999999994
+Order executed successfully!
+quantity: 187.0
+-----------------------------------
+date: 2023-03-10 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3370599999999999
+add position: 0.29711
+current price: 0.3298
+20day high: 0.4184
+20day low: 0.3012
+10day high: 0.368
+10dat low: 0.3012
+-----------------------------------
+date: 2023-03-11 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3370599999999999
+add position: 0.29711
+current price: 0.3433
+20day high: 0.4122
+20day low: 0.2976
+10day high: 0.3644
+10dat low: 0.2976
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-03-12 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3429
+20day high: 0.4098
+20day low: 0.2976
+10day high: 0.3615
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-13 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3241
+20day high: 0.4059
+20day low: 0.2976
+10day high: 0.3509
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-14 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3249
+20day high: 0.3949
+20day low: 0.2976
+10day high: 0.3517
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-15 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3494
+20day high: 0.3949
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-16 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3371
+20day high: 0.3852
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-17 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3448
+20day high: 0.3704
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-18 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3321
+20day high: 0.3704
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-19 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3696
+20day high: 0.3702
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-20 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3596
+20day high: 0.368
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.2976
+-----------------------------------
+date: 2023-03-21 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3715
+20day high: 0.3677
+20day low: 0.2976
+10day high: 0.3677
+10dat low: 0.3013
+USDT Value: 47.9978
+Order executed successfully!
+quantity: 129.0
+-----------------------------------
+date: 2023-03-22 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3596
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3013
+-----------------------------------
+date: 2023-03-23 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3514
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3157
+-----------------------------------
+date: 2023-03-24 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3557
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3157
+-----------------------------------
+date: 2023-03-25 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3455
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3157
+-----------------------------------
+date: 2023-03-26 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3681
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3171
+-----------------------------------
+date: 2023-03-27 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3811
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3212
+-----------------------------------
+date: 2023-03-28 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3761
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3291
+-----------------------------------
+date: 2023-03-29 00:00:00
+position units: 1
+side: BUY
+stop loss: 0.32506
+add position: 0.38311
+current price: 0.3989
+20day high: 0.387
+20day low: 0.2976
+10day high: 0.387
+10dat low: 0.3291
+USDT Value: 47.600736999999995
+Order executed successfully!
+quantity: 119.0
+-----------------------------------
+date: 2023-03-30 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3919
+20day high: 0.39
+20day low: 0.2976
+10day high: 0.39
+10dat low: 0.3291
+-----------------------------------
+date: 2023-03-31 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3815
+20day high: 0.39
+20day low: 0.3013
+10day high: 0.39
+10dat low: 0.3291
+-----------------------------------
+date: 2023-04-01 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3872
+20day high: 0.4093
+20day low: 0.3013
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-02 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3894
+20day high: 0.4093
+20day low: 0.3157
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-03 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3923
+20day high: 0.4093
+20day low: 0.3157
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-04 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3829
+20day high: 0.4093
+20day low: 0.3157
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-05 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3835
+20day high: 0.4093
+20day low: 0.3171
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-06 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3853
+20day high: 0.4093
+20day low: 0.3212
+10day high: 0.4093
+10dat low: 0.3366
+-----------------------------------
+date: 2023-04-07 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3894
+20day high: 0.4093
+20day low: 0.3291
+10day high: 0.4093
+10dat low: 0.3427
+-----------------------------------
+date: 2023-04-08 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.3971
+20day high: 0.4093
+20day low: 0.3291
+10day high: 0.4093
+10dat low: 0.3666
+-----------------------------------
+date: 2023-04-09 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.4014
+20day high: 0.4093
+20day low: 0.3291
+10day high: 0.4093
+10dat low: 0.3697
+-----------------------------------
+date: 2023-04-10 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.4047
+20day high: 0.4093
+20day low: 0.3291
+10day high: 0.4093
+10dat low: 0.3708
+-----------------------------------
+date: 2023-04-11 00:00:00
+position units: 2
+side: BUY
+stop loss: 0.34862
+add position: 0.41147
+current price: 0.4251
+20day high: 0.4093
+20day low: 0.3366
+10day high: 0.405
+10dat low: 0.3708
+USDT Value: 83.353608
+Order executed successfully!
+quantity: 196.0
+-----------------------------------
+date: 2023-04-12 00:00:00
+position units: 3
+side: BUY
+stop loss: 0.3944999999999999
+add position: 0.4327499999999999
+current price: 0.4381
+20day high: 0.413
+20day low: 0.3366
+10day high: 0.413
+10dat low: 0.3708
+USDT Value: 83.76472
+Order executed successfully!
+quantity: 191.0
+-----------------------------------
+date: 2023-04-13 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4522
+20day high: 0.413
+20day low: 0.3366
+10day high: 0.413
+10dat low: 0.3708
+-----------------------------------
+date: 2023-04-14 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4513
+20day high: 0.4288
+20day low: 0.3366
+10day high: 0.4288
+10dat low: 0.3756
+-----------------------------------
+date: 2023-04-15 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4341
+20day high: 0.444
+20day low: 0.3366
+10day high: 0.444
+10dat low: 0.3756
+-----------------------------------
+date: 2023-04-16 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4435
+20day high: 0.4617
+20day low: 0.3366
+10day high: 0.4617
+10dat low: 0.3756
+-----------------------------------
+date: 2023-04-17 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4163
+20day high: 0.4617
+20day low: 0.3427
+10day high: 0.4617
+10dat low: 0.3756
+-----------------------------------
+date: 2023-04-18 00:00:00
+position units: 4
+side: BUY
+stop loss: 0.4067199999999999
+add position: 0.445945
+current price: 0.4007
+20day high: 0.4617
+20day low: 0.3666
+10day high: 0.4617
+10dat low: 0.3804
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-04-19 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3824
+20day high: 0.4617
+20day low: 0.3697
+10day high: 0.4617
+10dat low: 0.384
+-----------------------------------
+date: 2023-04-20 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3956
+20day high: 0.4617
+20day low: 0.3708
+10day high: 0.4617
+10dat low: 0.3847
+-----------------------------------
+date: 2023-04-21 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3886
+20day high: 0.4617
+20day low: 0.3708
+10day high: 0.4617
+10dat low: 0.3886
+-----------------------------------
+date: 2023-04-22 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3835
+20day high: 0.4617
+20day low: 0.3708
+10day high: 0.4617
+10dat low: 0.3789
+-----------------------------------
+date: 2023-04-23 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3945
+20day high: 0.4617
+20day low: 0.3708
+10day high: 0.4617
+10dat low: 0.3789
+-----------------------------------
+date: 2023-04-24 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.4014
+20day high: 0.4617
+20day low: 0.3756
+10day high: 0.4617
+10dat low: 0.3789
+-----------------------------------
+date: 2023-04-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.4101
+20day high: 0.4617
+20day low: 0.3756
+10day high: 0.4617
+10dat low: 0.3789
+-----------------------------------
+date: 2023-04-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.4043
+20day high: 0.4617
+20day low: 0.3756
+10day high: 0.4579
+10dat low: 0.3761
+-----------------------------------
+date: 2023-04-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.4024
+20day high: 0.4617
+20day low: 0.3756
+10day high: 0.4515
+10dat low: 0.3761
+-----------------------------------
+date: 2023-04-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3956
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.448
+10dat low: 0.3761
+-----------------------------------
+date: 2023-04-29 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3868
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4435
+10dat low: 0.3761
+-----------------------------------
+date: 2023-04-30 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3916
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4221
+10dat low: 0.3761
+-----------------------------------
+date: 2023-05-01 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.394
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3761
+-----------------------------------
+date: 2023-05-02 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3873
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3761
+-----------------------------------
+date: 2023-05-03 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3942
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3761
+-----------------------------------
+date: 2023-05-04 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3787
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3761
+-----------------------------------
+date: 2023-05-05 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.376
+20day high: 0.4617
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3761
+USDT Value: 61.506080000000004
+Order executed successfully!
+quantity: 163.0
+-----------------------------------
+date: 2023-05-06 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.41268
+add position: 0.36683
+current price: 0.3653
+20day high: 0.4579
+20day low: 0.3761
+10day high: 0.4193
+10dat low: 0.3778
+USDT Value: 60.917428
+Order executed successfully!
+quantity: 166.0
+-----------------------------------
+date: 2023-05-07 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3633
+20day high: 0.4515
+20day low: 0.3735
+10day high: 0.4186
+10dat low: 0.3735
+-----------------------------------
+date: 2023-05-08 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3693
+20day high: 0.448
+20day low: 0.3735
+10day high: 0.415
+10dat low: 0.3735
+-----------------------------------
+date: 2023-05-09 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3598
+20day high: 0.4435
+20day low: 0.3531
+10day high: 0.415
+10dat low: 0.3531
+-----------------------------------
+date: 2023-05-10 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3705
+20day high: 0.4221
+20day low: 0.3531
+10day high: 0.415
+10dat low: 0.3531
+-----------------------------------
+date: 2023-05-11 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3646
+20day high: 0.4193
+20day low: 0.3531
+10day high: 0.3979
+10dat low: 0.3531
+-----------------------------------
+date: 2023-05-12 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3711
+20day high: 0.4193
+20day low: 0.3485
+10day high: 0.397
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-13 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3669
+20day high: 0.4193
+20day low: 0.3485
+10day high: 0.397
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-14 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3682
+20day high: 0.4193
+20day low: 0.3485
+10day high: 0.397
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-15 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3755
+20day high: 0.4193
+20day low: 0.3485
+10day high: 0.397
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-16 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3714
+20day high: 0.4193
+20day low: 0.3485
+10day high: 0.3968
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-17 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3681
+20day high: 0.4186
+20day low: 0.3485
+10day high: 0.3833
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-18 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3662
+20day high: 0.415
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-19 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3602
+20day high: 0.415
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-20 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3679
+20day high: 0.415
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-21 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3704
+20day high: 0.3979
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3485
+-----------------------------------
+date: 2023-05-22 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3638
+20day high: 0.397
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3533
+-----------------------------------
+date: 2023-05-23 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3581
+20day high: 0.397
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.356
+-----------------------------------
+date: 2023-05-24 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3626
+20day high: 0.397
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.356
+-----------------------------------
+date: 2023-05-25 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3667
+20day high: 0.397
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.356
+-----------------------------------
+date: 2023-05-26 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.40128
+add position: 0.356305
+current price: 0.3828
+20day high: 0.3968
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.355
+close position successfully!
+quantity: True
+-----------------------------------
+date: 2023-05-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3786
+20day high: 0.3833
+20day low: 0.3485
+10day high: 0.3807
+10dat low: 0.3535
+-----------------------------------
+date: 2023-05-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3779
+20day high: 0.3807
+20day low: 0.3485
+10day high: 0.3803
+10dat low: 0.3535
+-----------------------------------
+date: 2023-05-29 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3744
+20day high: 0.3846
+20day low: 0.3485
+10day high: 0.3846
+10dat low: 0.3535
+-----------------------------------
+date: 2023-05-30 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3644
+20day high: 0.3863
+20day low: 0.3485
+10day high: 0.3863
+10dat low: 0.3535
+-----------------------------------
+date: 2023-05-31 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3782
+20day high: 0.3863
+20day low: 0.3485
+10day high: 0.3863
+10dat low: 0.3535
+-----------------------------------
+date: 2023-06-01 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3759
+20day high: 0.3863
+20day low: 0.3533
+10day high: 0.3863
+10dat low: 0.3535
+-----------------------------------
+date: 2023-06-02 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3773
+20day high: 0.3863
+20day low: 0.3535
+10day high: 0.3863
+10dat low: 0.3535
+-----------------------------------
+date: 2023-06-03 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 0.3514
+20day high: 0.3863
+20day low: 0.3535
+10day high: 0.3863
+10dat low: 0.3535
+USDT Value: 86.55333399999999
+Order executed successfully!
+quantity: 246.0
+-----------------------------------
+date: 2023-06-04 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.37576
+add position: 0.34531
+current price: 0.3531
+20day high: 0.3863
+20day low: 0.3535
+10day high: 0.3863
+10dat low: 0.3535
+-----------------------------------
+date: 2023-06-05 00:00:00
+position units: 1
+side: SELL
+stop loss: 0.37576
+add position: 0.34531
+current price: 0.3223
+20day high: 0.3863
+20day low: 0.3535
+10day high: 0.3863
+10dat low: 0.3535
+USDT Value: 84.816468
+Order executed successfully!
+quantity: 263.0
+-----------------------------------
+date: 2023-06-06 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.3450999999999999
+add position: 0.3166
+current price: 0.3228
+20day high: 0.3863
+20day low: 0.3467
+10day high: 0.3863
+10dat low: 0.3467
+-----------------------------------
+date: 2023-06-07 00:00:00
+position units: 2
+side: SELL
+stop loss: 0.3450999999999999
+add position: 0.3166
+current price: 0.2951
+20day high: 0.3863
+20day low: 0.3365
+10day high: 0.3863
+10dat low: 0.3365
+USDT Value: 60.38926399999999
+Order executed successfully!
+quantity: 204.0
+-----------------------------------
+date: 2023-06-08 00:00:00
+position units: 3
+side: SELL
+stop loss: 0.32442
+add position: 0.2877699999999999
+current price: 0.2747
+20day high: 0.3863
+20day low: 0.3177
+10day high: 0.3863
+10dat low: 0.3177
+USDT Value: 50.404703000000005
+Order executed successfully!
+quantity: 183.0
+-----------------------------------
+date: 2023-06-09 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.272
+20day high: 0.3863
+20day low: 0.3177
+10day high: 0.3834
+10dat low: 0.3177
+-----------------------------------
+date: 2023-06-10 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2748
+20day high: 0.3863
+20day low: 0.2902
+10day high: 0.3819
+10dat low: 0.2902
+-----------------------------------
+date: 2023-06-11 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2752
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3819
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-12 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2633
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3819
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-13 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.262
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3819
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-14 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2632
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3819
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-15 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2667
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3791
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-16 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.261
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3569
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-17 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2634
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3531
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-18 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2705
+20day high: 0.3863
+20day low: 0.22
+10day high: 0.3308
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-19 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2862
+20day high: 0.3834
+20day low: 0.22
+10day high: 0.324
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-20 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2899
+20day high: 0.3819
+20day low: 0.22
+10day high: 0.2953
+10dat low: 0.22
+-----------------------------------
+date: 2023-06-21 00:00:00
+position units: 4
+side: SELL
+stop loss: 0.3074
+add position: 0.266525
+current price: 0.2951
+20day high: 0.3819
+20day low: 0.22
+10day high: 0.2896
+10dat low: 0.2522
+close position successfully!
+quantity: True
+-----------------------------------
