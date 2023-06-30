@@ -1,8 +1,8 @@
 # Trading System
 ## Table of contents  
   ### Version   
-  *current version: trading_system_v3.1  
-  *version update: 
+  * current version: trading_system_v3.1  
+  * version update: 
                     1. Resolve system trading failures caused by Binance's different trading precision restrictions on different trading pairs.  
                     2. add turtle strategy   
                     3. optimized system code   
