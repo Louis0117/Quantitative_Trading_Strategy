@@ -155,8 +155,10 @@ run python code
   4. k_value (days) -> portfolio holding period. Typically set to three months, six months, nine months, and twelve months. To convert the number of months to days, you can multiply the number of months by 30.  
   
   5. mode -> there are two mode 'normal' and 'close', 'normal' mode is used to execute the regular version of the long-short strategy. 'close' mode is used to allow the original investment portfolio to be held until the specified K_value time expires without generating new investment portfolios.
-
-
+   
+'''
+python long_short_v3.py 10 1 90 90 normal  
+'''
 
     
   ### System Test
