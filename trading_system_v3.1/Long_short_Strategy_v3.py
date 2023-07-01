@@ -27,8 +27,8 @@ from binance_api_v3 import Binance_transaction
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-BINANCE_KEY = 'd6WYUJFQgaZEvHAP7vkveJqdvgI7F6Hj0PFLUnWcVdPtOpJdFz3DOfgaw0ekGUjt'
-BINANCE_SECRET = 'trVJQjpNSE610xqEsfgYAmt4YmswzWBiUgshgYVa9KaHriOQTH4Y1BSy78Jaf4mk'
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 
 if len(sys.argv)!=6:
     print('input parameter number error')
@@ -235,7 +235,7 @@ def _build_short_position(client, price_list, pct=0.2):
             print('symbol:', price_list[i][0])
             quantity = client.future_perpetual_sell(price_list[i][0],'USDT', price_list[i][0][:-4],POSITION_SIZE)
             #client.binance_future_adjust_leverage(price_list[i][0], leverage)
-            if quantity != None:
+            if quantity != False:
                     count+=1
                     short_position.append(price_list[i][0])
                     current_time = pd.to_datetime(datetime.now())
