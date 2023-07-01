@@ -18,8 +18,8 @@ import os
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-BINANCE_KEY = 'd6WYUJFQgaZEvHAP7vkveJqdvgI7F6Hj0PFLUnWcVdPtOpJdFz3DOfgaw0ekGUjt'
-BINANCE_SECRET = 'trVJQjpNSE610xqEsfgYAmt4YmswzWBiUgshgYVa9KaHriOQTH4Y1BSy78Jaf4mk'
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 LOG_FILE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3/turtle_strategy_test_log_file.csv'
 TEST_LILE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3/turtle_strategy_all_log_file.csv'
 
