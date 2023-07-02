@@ -1,3 +1,0 @@
-timestamp,symbol,side,strategy,quantity,USDT_value,add_position_price,stop_loss_price
-2023-06-19,BTCUSDT,BUY,turtle_spot,0.0024,73.43784851827323,30402.3155,28360.188
-2023-06-21 00:00:00,BTCUSDT,BUY,turtle_spot,0.0018,57.70148339202605,31140.572,28880.212
