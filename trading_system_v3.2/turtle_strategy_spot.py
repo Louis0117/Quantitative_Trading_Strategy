@@ -23,8 +23,8 @@ import pytz
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-BINANCE_KEY = '4kDloHwQ4mjovNK2r93bUfe42R3zhPQad28HfRdAhidYMI77jiF0Ik3TskOAcClR'
-BINANCE_SECRET = '5LNMivHXKi2fhF4KbsYN8Lc08H8PTVueg7RTzgRFpT6x3PRhWJ6ACXlMiiSTLlT4'
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 LOG_FILE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3.2/log_file.csv'
 TIME_ZONE = pytz.timezone("utc")
 
@@ -469,7 +469,7 @@ if __name__ == '__main__':
            hist_data = turtle_strategy_10day_high_low(turtle_strategy_20day_high_low(ATR_value(TR_value(hist_price), 10), 20), lookback_day=10)
            
            if not os.path.exists(LOG_FILE_DIR):
-               log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'strategy', 'quantity', 'add_position_price', 'stop_loss_price'])
+               log_file = pd.DataFrame(columns=['timestamp', 'symbol', 'side', 'strategy', 'quantity', 'USDT_value', 'add_position_price', 'stop_loss_price'])
                log_file.to_csv(LOG_FILE_DIR, index=False)
            update_date = str(datetime.now(TIME_ZONE))[:10]
            current_date = str(datetime.now(TIME_ZONE))[:10]
