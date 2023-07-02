@@ -1,0 +1,487 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jul  2 00:38:45 2023
+
+@author: welcome870117
+"""
+
+pairs1 = [
+    ['BTC/USDT', '0.00001 BTC', '0.00001 BTC', '0.01 USDT', '10 USDT', '138.36044787 BTC', '200', '5'],
+    ['ETH/USDT', '0.0001 ETH', '0.0001 ETH', '0.01 USDT', '10 USDT', '2339.07600708 ETH', '200', '5'],
+    ['BNB/USDT', '0.001 BNB', '0.001 BNB', '0.1 USDT', '5 USDT', '26978.45718333 BNB', '200', '5'],
+    ['NEO/USDT', '0.01 NEO', '0.01 NEO', '0.01 USDT', '10 USDT', '16106.37875 NEO', '200', '5'],
+    ['LTC/USDT', '0.001 LTC', '0.001 LTC', '0.01 USDT', '5 USDT', '22878.78880833 LTC', '200', '5'],
+    ['QTUM/USDT', '0.1 QTUM', '0.1 QTUM', '0.001 USDT', '10 USDT', '29419.84458333 QTUM', '200', '5'],
+    ['ADA/USDT', '0.1 ADA', '0.1 ADA', '0.0001 USDT', '5 USDT', '3667105.41791666 ADA', '200', '5'],
+    ['XRP/USDT', '1 XRP', '1 XRP', '0.0001 USDT', '5 USDT', '5479957.225 XRP', '200', '5'],
+    ['EOS/USDT', '0.1 EOS', '0.1 EOS', '0.001 USDT', '10 USDT', '506830.98833333 EOS', '200', '5'],
+    ['TUSD/USDT', '1 TUSD', '1 TUSD', '0.0001 USDT', '10 USDT', '14500109.7 TUSD', '200', '5'],
+    ['IOTA/USDT', '1 IOTA', '1 IOTA', '0.0001 USDT', '10 USDT', '538919.60416666 IOTA', '200', '5'],
+    ['XLM/USDT', '1 XLM', '1 XLM', '0.0001 USDT', '10 USDT', '3811634.45 XLM', '200', '5'],
+    ['ONT/USDT', '1 ONT', '1 ONT', '0.0001 USDT', '10 USDT', '597540.2875 ONT', '200', '5'],
+    ['TRX/USDT', '0.1 TRX', '0.1 TRX', '0.00001 USDT', '5 USDT', '7051174.86166665 TRX', '200', '5'],
+    ['ETC/USDT', '0.01 ETC', '0.01 ETC', '0.01 USDT', '5 USDT', '30687.20358333 ETC', '200', '5']
+]
+
+pairs2 = [
+    ['ICX/USDT', '0.1 ICX', '0.1 ICX', '0.0001 USDT', '10 USDT', '644749.3975 ICX', '200', '5'],
+    ['NULS/USDT', '1 NULS', '1 NULS', '0.0001 USDT', '10 USDT', '306414.27916666 NULS', '200', '5'],
+    ['VET/USDT', '0.1 VET', '0.1 VET', '0.00001 USDT', '10 USDT', '7641799.06 VET', '200', '5'],
+    ['USDC/USDT', '1 USDC', '1 USDC', '0.0001 USDT', '10 USDT', '27556736.875 USDC', '200', '5'],
+    ['LINK/USDT', '0.01 LINK', '0.01 LINK', '0.001 USDT', '5 USDT', '129986.42475 LINK', '200', '5'],
+    ['WAVES/USDT', '0.01 WAVES', '0.01 WAVES', '0.001 USDT', '10 USDT', '161413.06745833 WAVES', '200', '5'],
+    ['ONG/USDT', '1 ONG', '1 ONG', '0.0001 USDT', '10 USDT', '177000.45416666 ONG', '200', '5'],
+    ['HOT/USDT', '1 HOT', '1 HOT', '0.000001 USDT', '10 USDT', '53732986.26666666 HOT', '200', '5'],
+    ['ZIL/USDT', '0.1 ZIL', '0.1 ZIL', '0.00001 USDT', '10 USDT', '4643352.29416666 ZIL', '200', '5'],
+    ['ZRX/USDT', '1 ZRX', '1 ZRX', '0.0001 USDT', '10 USDT', '325633.35416666 ZRX', '200', '5'],
+    ['FET/USDT', '1 FET', '1 FET', '0.0001 USDT', '10 USDT', '1428380.8625 FET', '200', '5'],
+    ['BAT/USDT', '1 BAT', '1 BAT', '0.0001 USDT', '10 USDT', '354993.26666666 BAT', '200', '5'],
+    ['XMR/USDT', '0.001 XMR', '0.001 XMR', '0.1 USDT', '5 USDT', '5489.55972916 XMR', '200', '5'],
+    ['ZEC/USDT', '0.001 ZEC', '0.001 ZEC', '0.01 USDT', '10 USDT', '5884.05802916 ZEC', '200', '5'],
+    ['IOST/USDT', '1 IOST', '1 IOST', '0.00001 USDT', '10 USDT', '16680362.775 IOST', '200', '5']
+]
+
+pairs3 = [
+    ['CELR/USDT', '0.1 CELR', '0.1 CELR', '0.00001 USDT', '10 USDT', '5431401.33833333 CELR', '200', '5'],
+    ['DASH/USDT', '0.001 DASH', '0.001 DASH', '0.01 USDT', '10 USDT', '5609.9238625 DASH', '200', '5'],
+    ['OMG/USDT', '0.1 OMG', '0.1 OMG', '0.001 USDT', '10 USDT', '177190.69583333 OMG', '200', '5'],
+    ['THETA/USDT', '0.1 THETA', '0.1 THETA', '0.001 USDT', '10 USDT', '153763.48125 THETA', '200', '5'],
+    ['ENJ/USDT', '0.1 ENJ', '0.1 ENJ', '0.0001 USDT', '10 USDT', '151676.34125 ENJ', '200', '5'],
+    ['MATIC/USDT', '0.1 MATIC', '0.1 MATIC', '0.0001 USDT', '5 USDT', '1770395.93333333 MATIC', '200', '5'],
+    ['ATOM/USDT', '0.01 ATOM', '0.01 ATOM', '0.001 USDT', '5 USDT', '57241.57258333 ATOM', '200', '5'],
+    ['TFUEL/USDT', '1 TFUEL', '1 TFUEL', '0.0001 USDT', '10 USDT', '1238649.7625 TFUEL', '200', '5'],
+    ['ONE/USDT', '0.1 ONE', '0.1 ONE', '0.00001 USDT', '10 USDT', '8182298.3225 ONE', '200', '5'],
+    ['FTM/USDT', '1 FTM', '1 FTM', '0.0001 USDT', '5 USDT', '1772202.15416666 FTM', '200', '5'],
+    ['ALGO/USDT', '1 ALGO', '1 ALGO', '0.0001 USDT', '5 USDT', '922327 ALGO', '200', '5'],
+    ['DOGE/USDT', '1 DOGE', '1 DOGE', '0.00001 USDT', '5 USDT', '19733898.92083333 DOGE', '200', '5'],
+    ['DUSK/USDT', '1 DUSK', '1 DUSK', '0.0001 USDT', '10 USDT', '1072057.98333333 DUSK', '200', '5'],
+    ['ANKR/USDT', '0.1 ANKR', '0.1 ANKR', '0.00001 USDT', '10 USDT', '4161216.88166666 ANKR', '200', '5'],
+    ['WIN/USDT', '1 WIN', '1 WIN', '0.0000001 USDT', '10 USDT', '414863870.7125 WIN', '200', '5']
+]
+
+pairs4 = [
+    ['COS/USDT', '0.1 COS', '0.1 COS', '0.00001 USDT', '10 USDT', '15495063.94958333 COS', '200', '5'],
+    ['MTL/USDT', '0.1 MTL', '0.1 MTL', '0.001 USDT', '10 USDT', '263111.36791666 MTL', '200', '5'],
+    ['TOMO/USDT', '0.1 TOMO', '0.1 TOMO', '0.0001 USDT', '10 USDT', '255953.24333333 TOMO', '200', '5'],
+    ['PERL/USDT', '0.1 PERL', '0.1 PERL', '0.00001 USDT', '10 USDT', '3436312.86833333 PERL', '200', '5'],
+    ['DENT/USDT', '1 DENT', '1 DENT', '0.000001 USDT', '10 USDT', '78371964.73333333 DENT', '200', '5'],
+    ['KEY/USDT', '1 KEY', '1 KEY', '0.000001 USDT', '10 USDT', '24957659.625 KEY', '200', '5'],
+    ['DOCK/USDT', '1 DOCK', '1 DOCK', '0.00001 USDT', '10 USDT', '1382452.80416666 DOCK', '200', '5'],
+    ['WAN/USDT', '1 WAN', '1 WAN', '0.0001 USDT', '10 USDT', '62876.77916666 WAN', '200', '5'],
+    ['FUN/USDT', '1 FUN', '1 FUN', '0.000001 USDT', '10 USDT', '4684901.6875 FUN', '200', '5'],
+    ['CVC/USDT', '1 CVC', '1 CVC', '0.0001 USDT', '10 USDT', '170476.98333333 CVC', '200', '5'],
+    ['CHZ/USDT', '1 CHZ', '1 CHZ', '0.0001 USDT', '5 USDT', '2529757.05 CHZ', '200', '5'],
+    ['BAND/USDT', '0.1 BAND', '0.1 BAND', '0.001 USDT', '10 USDT', '68369.01875 BAND', '200', '5'],
+    ['BUSD/USDT', '1 BUSD', '1 BUSD', '0.0001 USDT', '10 USDT', '12980676.96666666 BUSD', '200', '5'],
+    ['XTZ/USDT', '0.1 XTZ', '0.1 XTZ', '0.001 USDT', '10 USDT', '80223.23125 XTZ', '200', '5'],
+    ['REN/USDT', '1 REN', '1 REN', '0.000001 USDT', '10 USDT', '1255458.3625 REN', '200', '5']
+]
+
+pairs5 = [
+    ['RVN/USDT', '0.1 RVN', '0.1 RVN', '0.00001 USDT', '10 USDT', '4343848.02833333 RVN', '200', '5'],
+    ['HBAR/USDT', '1 HBAR', '1 HBAR', '0.0001 USDT', '10 USDT', '4656594.53333333 HBAR', '200', '5'],
+    ['NKN/USDT', '1 NKN', '1 NKN', '0.0001 USDT', '10 USDT', '866511.00416666 NKN', '200', '5'],
+    ['STX/USDT', '0.1 STX', '0.1 STX', '0.0001 USDT', '10 USDT', '385941.91125 STX', '200', '5'],
+    ['KAVA/USDT', '0.1 KAVA', '0.1 KAVA', '0.001 USDT', '10 USDT', '404713.9375 KAVA', '200', '5'],
+    ['ARPA/USDT', '0.1 ARPA', '0.1 ARPA', '0.00001 USDT', '10 USDT', '5128807.085 ARPA', '200', '5'],
+    ['IOTX/USDT', '1 IOTX', '1 IOTX', '0.00001 USDT', '10 USDT', '2260785.8375 IOTX', '200', '5'],
+    ['RLC/USDT', '0.1 RLC', '0.1 RLC', '0.001 USDT', '10 USDT', '86850.58708333 RLC', '200', '5'],
+    ['CTXC/USDT', '1 CTXC', '1 CTXC', '0.0001 USDT', '10 USDT', '650405.9 CTXC', '200', '5'],
+    ['BCH/USDT', '0.001 BCH', '0.001 BCH', '0.1 USDT', '10 USDT', '6107.03709583 BCH', '200', '5'],
+    ['TROY/USDT', '1 TROY', '1 TROY', '0.000001 USDT', '10 USDT', '11522774.4875 TROY', '200', '5'],
+    ['VITE/USDT', '0.1 VITE', '0.1 VITE', '0.00001 USDT', '10 USDT', '4798434.61833333 VITE', '200', '5'],
+    ['EUR/USDT', '0.1 EUR', '0.1 EUR', '0.0001 USDT', '10 USDT', '786042.57291666 EUR', '200', '5'],
+    ['OGN/USDT', '1 OGN', '1 OGN', '0.0001 USDT', '10 USDT', '1721462.375 OGN', '200', '5'],
+    ['DREP/USDT', '1 DREP', '1 DREP', '0.0001 USDT', '10 USDT', '205729.60833333 DREP', '200', '5']
+]
+
+
+pairs6 = [
+    ['WRX/USDT', '0.1 WRX', '0.1 WRX', '0.0001 USDT', '10 USDT', '824088.66458333 WRX', '200', '5'],
+    ['BTS/USDT', '0.1 BTS', '0.1 BTS', '0.00001 USDT', '10 USDT', '4733212.93375 BTS', '200', '5'],
+    ['LSK/USDT', '0.1 LSK', '0.1 LSK', '0.001 USDT', '10 USDT', '21401.15958333 LSK', '200', '5'],
+    ['BNT/USDT', '0.1 BNT', '0.1 BNT', '0.0001 USDT', '10 USDT', '81834.25833333 BNT', '200', '5'],
+    ['LTO/USDT', '1 LTO', '1 LTO', '0.0001 USDT', '10 USDT', '516711.2625 LTO', '200', '5'],
+    ['MBL/USDT', '1 MBL', '1 MBL', '0.000001 USDT', '10 USDT', '16745750.4875 MBL', '200', '5'],
+    ['COTI/USDT', '1 COTI', '1 COTI', '0.0001 USDT', '10 USDT', '3360953.0875 COTI', '200', '5'],
+    ['STPT/USDT', '0.1 STPT', '0.1 STPT', '0.00001 USDT', '10 USDT', '686626.195 STPT', '200', '5'],
+    ['WTC/USDT', '1 WTC', '1 WTC', '0.0001 USDT', '10 USDT', '326737.05416666 WTC', '200', '5'],
+    ['DATA/USDT', '0.1 DATA', '0.1 DATA', '0.00001 USDT', '10 USDT', '2346458.41083333 DATA', '200', '5'],
+    ['SOL/USDT', '0.01 SOL', '0.01 SOL', '0.01 USDT', '5 USDT', '78979.84408333 SOL', '200', '5'],
+    ['CTSI/USDT', '1 CTSI', '1 CTSI', '0.0001 USDT', '10 USDT', '430647.1375 CTSI', '200', '5'],
+    ['HIVE/USDT', '1 HIVE', '1 HIVE', '0.0001 USDT', '10 USDT', '84807.82916666 HIVE', '200', '5'],
+    ['CHR/USDT', '1 CHR', '1 CHR', '0.0001 USDT', '10 USDT', '814921.84166666 CHR', '200', '5'],
+    ['BTCUP/USDT', '0.01 BTCUP', '0.01 BTCUP', '0.001 USDT', '10 USDT', '3000 BTCUP', '200', '5']
+]
+  
+pairs7 = [
+    ['BTCDOWN/USDT', '0.01 BTCDOWN', '0.01 BTCDOWN', '0.000001 USDT', '10 USDT', '921415 BTCDOWN', '200', '5'],
+    ['ARDR/USDT', '1 ARDR', '1 ARDR', '0.0001 USDT', '10 USDT', '286093.62916666 ARDR', '200', '5'],
+    ['MDT/USDT', '0.1 MDT', '0.1 MDT', '0.00001 USDT', '10 USDT', '2081830.50916666 MDT', '200', '5'],
+    ['STMX/USDT', '1 STMX', '1 STMX', '0.000001 USDT', '10 USDT', '30451300.99583333 STMX', '200', '5'],
+    ['KNC/USDT', '0.1 KNC', '0.1 KNC', '0.001 USDT', '10 USDT', '337727.15166666 KNC', '200', '5'],
+    ['LRC/USDT', '1 LRC', '1 LRC', '0.0001 USDT', '10 USDT', '555913.04583333 LRC', '200', '5'],
+    ['PNT/USDT', '1 PNT', '1 PNT', '0.0001 USDT', '10 USDT', '379506.475 PNT', '200', '5'],
+    ['COMP/USDT', '0.001 COMP', '0.001 COMP', '0.01 USDT', '10 USDT', '5869.60780416 COMP', '200', '5'],
+    ['SC/USDT', '1 SC', '1 SC', '0.000001 USDT', '10 USDT', '11197073.65416666 SC', '200', '5'],
+    ['ZEN/USDT', '0.01 ZEN', '0.01 ZEN', '0.01 USDT', '10 USDT', '20593.52154166 ZEN', '200', '5'],
+    ['SNX/USDT', '0.1 SNX', '0.1 SNX', '0.001 USDT', '10 USDT', '73035.47125 SNX', '200', '5'],
+    ['ETHUP/USDT', '0.01 ETHUP', '0.01 ETHUP', '0.001 USDT', '10 USDT', '3000 ETHUP', '200', '5'],
+    ['ETHDOWN/USDT', '0.01 ETHDOWN', '0.01 ETHDOWN', '0.0001 USDT', '10 USDT', '698064.14295833 ETHDOWN', '200', '5'],
+    ['ADAUP/USDT', '0.01 ADAUP', '0.01 ADAUP', '0.001 USDT', '10 USDT', '300434.98683333 ADAUP', '200', '5'],
+    ['ADADOWN/USDT', '0.01 ADADOWN', '0.01 ADADOWN', '0.000001 USDT', '10 USDT', '20418618.78316666 ADADOWN', '200', '5']
+]
+   
+
+pairs8 = [
+    ['VTHO/USDT', '1 VTHO', '1 VTHO', '0.000001 USDT', '10 USDT', '47515643.59166666 VTHO', '200', '5'],
+    ['DGB/USDT', '0.1 DGB', '0.1 DGB', '0.00001 USDT', '10 USDT', '9301036.26041666 DGB', '200', '5'],
+    ['GBP/USDT', '0.1 GBP', '0.1 GBP', '0.001 USDT', '10 USDT', '349682.03541666 GBP', '200', '5'],
+    ['SXP/USDT', '0.1 SXP', '0.1 SXP', '0.0001 USDT', '10 USDT', '255510.57041666 SXP', '200', '5'],
+    ['MKR/USDT', '0.0001 MKR', '0.0001 MKR', '1 USDT', '10 USDT', '398.52082416 MKR', '200', '5'],
+    ['DCR/USDT', '0.001 DCR', '0.001 DCR', '0.01 USDT', '10 USDT', '1519.791925 DCR', '200', '5'],
+    ['STORJ/USDT', '1 STORJ', '1 STORJ', '0.0001 USDT', '10 USDT', '455441.18333333 STORJ', '200', '5'],
+    ['BNBUP/USDT', '0.01 BNBUP', '0.01 BNBUP', '0.01 USDT', '10 USDT', '500 BNBUP', '200', '5'],
+    ['BNBDOWN/USDT', '0.01 BNBDOWN', '0.01 BNBDOWN', '0.00001 USDT', '10 USDT', '594204.18945833 BNBDOWN', '200', '5'],
+    ['MANA/USDT', '1 MANA', '1 MANA', '0.0001 USDT', '5 USDT', '555346.1625 MANA', '200', '5'],
+    ['YFI/USDT', '0.00001 YFI', '0.00001 YFI', '1 USDT', '10 USDT', '18.41478645 YFI', '200', '5'],
+    ['BAL/USDT', '0.01 BAL', '0.01 BAL', '0.001 USDT', '10 USDT', '10229.197375 BAL', '200', '5'],
+    ['BLZ/USDT', '1 BLZ', '1 BLZ', '0.0001 USDT', '10 USDT', '1565771.65833333 BLZ', '200', '5'],
+    ['IRIS/USDT', '0.1 IRIS', '0.1 IRIS', '0.00001 USDT', '10 USDT', '2466961.03416666 IRIS', '200', '5'],
+    ['KMD/USDT', '1 KMD', '1 KMD', '0.0001 USDT', '10 USDT', '174176.725 KMD', '200', '5']
+]
+
+pairs9 = [
+    ['JST/USDT', '0.1 JST', '0.1 JST', '0.00001 USDT', '10 USDT', '1113809.75416666 JST', '200', '5'],
+    ['ANT/USDT', '0.1 ANT', '0.1 ANT', '0.001 USDT', '10 USDT', '24048.92041666 ANT', '200', '5'],
+    ['CRV/USDT', '0.1 CRV', '0.1 CRV', '0.001 USDT', '10 USDT', '290080.355 CRV', '200', '5'],
+    ['SAND/USDT', '1 SAND', '1 SAND', '0.0001 USDT', '5 USDT', '459600.475 SAND', '200', '5'],
+    ['OCEAN/USDT', '1 OCEAN', '1 OCEAN', '0.0001 USDT', '10 USDT', '633069.60416666 OCEAN', '200', '5'],
+    ['NMR/USDT', '0.01 NMR', '0.01 NMR', '0.01 USDT', '10 USDT', '3701.80820833 NMR', '200', '5'],
+    ['DOT/USDT', '0.01 DOT', '0.01 DOT', '0.001 USDT', '5 USDT', '148231.18625 DOT', '200', '5'],
+    ['LUNA/USDT', '0.01 LUNA', '0.01 LUNA', '0.0001 USDT', '10 USDT', '243406.627375 LUNA', '200', '5'],
+    ['RSR/USDT', '0.1 RSR', '0.1 RSR', '0.000001 USDT', '10 USDT', '19250495.5425 RSR', '200', '5'],
+    ['PAXG/USDT', '0.0001 PAXG', '0.0001 PAXG', '1 USDT', '10 USDT', '439.9064725 PAXG', '200', '5'],
+    ['WNXM/USDT', '0.01 WNXM', '0.01 WNXM', '0.01 USDT', '10 USDT', '814.103375 WNXM', '200', '5'],
+    ['TRB/USDT', '0.01 TRB', '0.01 TRB', '0.01 USDT', '10 USDT', '4554.01133333 TRB', '200', '5'],
+    ['SUSHI/USDT', '0.1 SUSHI', '0.1 SUSHI', '0.001 USDT', '10 USDT', '187145.625 SUSHI', '200', '5'],
+    ['YFII/USDT', '0.0001 YFII', '0.0001 YFII', '0.1 USDT', '10 USDT', '57.22254541 YFII', '200', '5'],
+    ['KSM/USDT', '0.001 KSM', '0.001 KSM', '0.01 USDT', '10 USDT', '2357.39376666 KSM', '200', '5']
+]
+
+pairs10 = [
+    ['EGLD/USDT', '0.01 EGLD', '0.01 EGLD', '0.01 USDT', '10 USDT', '9384.98375 EGLD', '200', '5'],
+    ['DIA/USDT', '0.1 DIA', '0.1 DIA', '0.0001 USDT', '10 USDT', '161483.62083333 DIA', '200', '5'],
+    ['RUNE/USDT', '0.1 RUNE', '0.1 RUNE', '0.001 USDT', '10 USDT', '98715.4025 RUNE', '200', '5'],
+    ['FIO/USDT', '1 FIO', '1 FIO', '0.00001 USDT', '10 USDT', '1561613.125 FIO', '200', '5'],
+    ['UMA/USDT', '0.1 UMA', '0.1 UMA', '0.001 USDT', '10 USDT', '45302.41333333 UMA', '200', '5'],
+    ['BEL/USDT', '0.1 BEL', '0.1 BEL', '0.0001 USDT', '10 USDT', '155572.33125 BEL', '200', '5'],
+    ['WING/USDT', '0.01 WING', '0.01 WING', '0.01 USDT', '10 USDT', '14552.83291666 WING', '200', '5'],
+    ['UNI/USDT', '0.01 UNI', '0.01 UNI', '0.001 USDT', '5 USDT', '56053.71033333 UNI', '200', '5'],
+    ['OXT/USDT', '1 OXT', '1 OXT', '0.0001 USDT', '10 USDT', '1340344.77083333 OXT', '200', '5'],
+    ['SUN/USDT', '1 SUN', '1 SUN', '0.00001 USDT', '10 USDT', '2267596.2125 SUN', '200', '5'],
+    ['AVAX/USDT', '0.01 AVAX', '0.01 AVAX', '0.01 USDT', '5 USDT', '67602.37679166 AVAX', '200', '5'],
+    ['FLM/USDT', '1 FLM', '1 FLM', '0.0001 USDT', '10 USDT', '2267564.96666666 FLM', '200', '5'],
+    ['ORN/USDT', '0.1 ORN', '0.1 ORN', '0.0001 USDT', '10 USDT', '49290.19 ORN', '200', '5'],
+    ['UTK/USDT', '1 UTK', '1 UTK', '0.0001 USDT', '10 USDT', '552546.87916666 UTK', '200', '5'],
+    ['XVS/USDT', '0.01 XVS', '0.01 XVS', '0.01 USDT', '10 USDT', '13077.7545 XVS', '200', '5']
+]
+
+pairs11 = [
+    ['ALPHA/USDT', '1 ALPHA', '1 ALPHA', '0.0001 USDT', '10 USDT', '1765527.9 ALPHA', '200', '5'],
+    ['AAVE/USDT', '0.001 AAVE', '0.001 AAVE', '0.01 USDT', '5 USDT', '3810.84659583 AAVE', '200', '5'],
+    ['NEAR/USDT', '0.1 NEAR', '0.1 NEAR', '0.001 USDT', '5 USDT', '177054.17125 NEAR', '200', '5'],
+    ['FIL/USDT', '0.01 FIL', '0.01 FIL', '0.001 USDT', '5 USDT', '174645.32008333 FIL', '200', '5'],
+    ['INJ/USDT', '0.1 INJ', '0.1 INJ', '0.001 USDT', '10 USDT', '48302.835 INJ', '200', '5'],
+    ['AUDIO/USDT', '0.1 AUDIO', '0.1 AUDIO', '0.0001 USDT', '10 USDT', '368257.1825 AUDIO', '200', '5'],
+    ['CTK/USDT', '0.1 CTK', '0.1 CTK', '0.001 USDT', '10 USDT', '80847.64666666 CTK', '200', '5'],
+    ['AKRO/USDT', '1 AKRO', '1 AKRO', '0.00001 USDT', '10 USDT', '13206991.08333333 AKRO', '200', '5'],
+    ['AXS/USDT', '0.01 AXS', '0.01 AXS', '0.01 USDT', '5 USDT', '36753.216125 AXS', '200', '5'],
+    ['HARD/USDT', '1 HARD', '1 HARD', '0.0001 USDT', '10 USDT', '394534.57916666 HARD', '200', '5'],
+    ['STRAX/USDT', '0.1 STRAX', '0.1 STRAX', '0.001 USDT', '10 USDT', '73439.67791666 STRAX', '200', '5'],
+    ['UNFI/USDT', '0.1 UNFI', '0.1 UNFI', '0.001 USDT', '10 USDT', '61024.54125 UNFI', '200', '5'],
+    ['ROSE/USDT', '0.1 ROSE', '0.1 ROSE', '0.00001 USDT', '10 USDT', '3649944.65875 ROSE', '200', '5'],
+    ['AVA/USDT', '0.1 AVA', '0.1 AVA', '0.001 USDT', '10 USDT', '79109.515 AVA', '200', '5'],
+    ['XEM/USDT', '1 XEM', '1 XEM', '0.00001 USDT', '10 USDT', '2908789.05 XEM', '200', '5']
+]
+
+pairs12 = [
+    ['SKL/USDT', '1 SKL', '1 SKL', '0.00001 USDT', '10 USDT', '5282695.52916666 SKL', '200', '5'],
+    ['GRT/USDT', '1 GRT', '1 GRT', '0.0001 USDT', '10 USDT', '1690899.625 GRT', '200', '5'],
+    ['JUV/USDT', '0.01 JUV', '0.01 JUV', '0.001 USDT', '10 USDT', '27931.25870833 JUV', '200', '5'],
+    ['PSG/USDT', '0.01 PSG', '0.01 PSG', '0.01 USDT', '10 USDT', '19913.00725 PSG', '200', '5'],
+    ['1INCH/USDT', '0.1 1INCH', '0.1 1INCH', '0.0001 USDT', '10 USDT', '314475.42625 1INCH', '200', '5'],
+    ['REEF/USDT', '1 REEF', '1 REEF', '0.000001 USDT', '10 USDT', '79736041.52916666 REEF', '200', '5'],
+    ['OG/USDT', '0.1 OG', '0.1 OG', '0.001 USDT', '10 USDT', '25044.07875 OG', '200', '5'],
+    ['ATM/USDT', '0.01 ATM', '0.01 ATM', '0.001 USDT', '10 USDT', '15177.42808333 ATM', '200', '5'],
+    ['ASR/USDT', '0.1 ASR', '0.1 ASR', '0.001 USDT', '10 USDT', '21321.03916666 ASR', '200', '5'],
+    ['CELO/USDT', '0.1 CELO', '0.1 CELO', '0.001 USDT', '10 USDT', '176311.38875 CELO', '200', '5'],
+    ['RIF/USDT', '1 RIF', '1 RIF', '0.0001 USDT', '10 USDT', '606438.3375 RIF', '200', '5'],
+    ['TRU/USDT', '1 TRU', '1 TRU', '0.0001 USDT', '10 USDT', '2901251.09583333 TRU', '200', '5'],
+    ['CKB/USDT', '1 CKB', '1 CKB', '0.00001 USDT', '10 USDT', '27716294.24166666 CKB', '200', '5'],
+    ['TWT/USDT', '1 TWT', '1 TWT', '0.0001 USDT', '5 USDT', '201606.02083333 TWT', '200', '5'],
+    ['FIRO/USDT', '0.1 FIRO', '0.1 FIRO', '0.001 USDT', '10 USDT', '27816.835 FIRO', '200', '5']
+]
+
+pairs13 = [
+    ['LIT/USDT', '0.1 LIT', '0.1 LIT', '0.001 USDT', '10 USDT', '287276.20416666 LIT', '200', '5'],
+    ['SFP/USDT', '1 SFP', '1 SFP', '0.0001 USDT', '10 USDT', '118040.07083333 SFP', '200', '5'],
+    ['DODO/USDT', '0.1 DODO', '0.1 DODO', '0.0001 USDT', '10 USDT', '912894.22958333 DODO', '200', '5'],
+    ['CAKE/USDT', '0.01 CAKE', '0.01 CAKE', '0.001 USDT', '10 USDT', '79491.96133333 CAKE', '200', '5'],
+    ['ACM/USDT', '0.1 ACM', '0.1 ACM', '0.001 USDT', '10 USDT', '12470.99041666 ACM', '200', '5'],
+    ['BADGER/USDT', '0.01 BADGER', '0.01 BADGER', '0.001 USDT', '10 USDT', '18100.884625 BADGER', '200', '5'],
+    ['FIS/USDT', '1 FIS', '1 FIS', '0.0001 USDT', '10 USDT', '322003.16666666 FIS', '200', '5'],
+    ['OM/USDT', '1 OM', '1 OM', '0.00001 USDT', '10 USDT', '1629895.94583333 OM', '200', '5'],
+    ['POND/USDT', '0.01 POND', '0.01 POND', '0.00001 USDT', '10 USDT', '8178593.81375 POND', '200', '5'],
+    ['DEGO/USDT', '0.01 DEGO', '0.01 DEGO', '0.001 USDT', '10 USDT', '40426.931875 DEGO', '200', '5'],
+    ['ALICE/USDT', '0.01 ALICE', '0.01 ALICE', '0.001 USDT', '10 USDT', '131458.99325 ALICE', '200', '5'],
+    ['LINA/USDT', '0.01 LINA', '0.01 LINA', '0.000001 USDT', '10 USDT', '9222449 LINA', '200', '5'],
+    ['PERP/USDT', '0.01 PERP', '0.01 PERP', '0.00001 USDT', '10 USDT', '151721.25391666 PERP', '200', '5'],
+    ['SUPER/USDT', '1 SUPER', '1 SUPER', '0.0001 USDT', '10 USDT', '660543.31666666 SUPER', '200', '5'],
+    ['CFX/USDT', '1 CFX', '1 CFX', '0.0001 USDT', '10 USDT', '3298667.975 CFX', '200', '5']
+]
+
+pairs14 = [
+    ['TKO/USDT', '0.1 TKO', '0.1 TKO', '0.0001 USDT', '10 USDT', '205306.84333333 TKO', '200', '5'],
+    ['PUNDIX/USDT', '0.1 PUNDIX', '0.1 PUNDIX', '0.001 USDT', '10 USDT', '76460.65 PUNDIX', '200', '5'],
+    ['TLM/USDT', '1 TLM', '1 TLM', '0.00001 USDT', '10 USDT', '4695684.17083333 TLM', '200', '5'],
+    ['BAR/USDT', '0.01 BAR', '0.01 BAR', '0.001 USDT', '10 USDT', '25893.311125 BAR', '200', '5'],
+    ['FORTH/USDT', '0.01 FORTH', '0.01 FORTH', '0.001 USDT', '10 USDT', '15366.26058333 FORTH', '200', '5'],
+    ['BAKE/USDT', '0.1 BAKE', '0.1 BAKE', '0.0001 USDT', '10 USDT', '723328.76125 BAKE', '200', '5'],
+    ['BURGER/USDT', '0.1 BURGER', '0.1 BURGER', '0.0001 USDT', '10 USDT', '166489.42458333 BURGER', '200', '5'],
+    ['SLP/USDT', '1 SLP', '1 SLP', '0.000001 USDT', '10 USDT', '52237877.7125 SLP', '200', '5'],
+    ['SHIB/USDT', '1 SHIB', '1 SHIB', '0.00000001 USDT', '5 USDT', '46116860414 SHIB', '200', '5'],
+    ['ICP/USDT', '0.01 ICP', '0.01 ICP', '0.001 USDT', '10 USDT', '48799.68329166 ICP', '200', '5'],
+    ['AR/USDT', '0.01 AR', '0.01 AR', '0.01 USDT', '10 USDT', '28653.71329166 AR', '200', '5'],
+    ['POLS/USDT', '0.1 POLS', '0.1 POLS', '0.0001 USDT', '10 USDT', '72890.39125 POLS', '200', '5'],
+    ['MDX/USDT', '0.1 MDX', '0.1 MDX', '0.0001 USDT', '10 USDT', '617688.94458333 MDX', '200', '5'],
+    ['MASK/USDT', '0.1 MASK', '0.1 MASK', '0.001 USDT', '10 USDT', '82725.99 MASK', '200', '5'],
+    ['LPT/USDT', '0.01 LPT', '0.01 LPT', '0.01 USDT', '10 USDT', '19226.37479166 LPT', '200', '5']
+]
+
+pairs15 = [
+    ['XVG/USDT', '1 XVG', '1 XVG', '0.000001 USDT', '10 USDT', '9222449 XVG', '200', '5'],
+    ['ATA/USDT', '1 ATA', '1 ATA', '0.0001 USDT', '10 USDT', '402550.225 ATA', '200', '5'],
+    ['GTC/USDT', '0.1 GTC', '0.1 GTC', '0.001 USDT', '10 USDT', '95005.25708333 GTC', '200', '5'],
+    ['ERN/USDT', '0.1 ERN', '0.1 ERN', '0.001 USDT', '10 USDT', '55933.4125 ERN', '200', '5'],
+    ['KLAY/USDT', '0.1 KLAY', '0.1 KLAY', '0.0001 USDT', '10 USDT', '298489.00583333 KLAY', '200', '5'],
+    ['PHA/USDT', '1 PHA', '1 PHA', '0.0001 USDT', '10 USDT', '468181.71666666 PHA', '200', '5'],
+    ['BOND/USDT', '0.01 BOND', '0.01 BOND', '0.001 USDT', '10 USDT', '21937.33091666 BOND', '200', '5'],
+    ['MLN/USDT', '0.001 MLN', '0.001 MLN', '0.01 USDT', '10 USDT', '1207.59664166 MLN', '200', '5'],
+    ['DEXE/USDT', '0.01 DEXE', '0.01 DEXE', '0.001 USDT', '10 USDT', '9778.52341666 DEXE', '200', '5'],
+    ['C98/USDT', '0.1 C98', '0.1 C98', '0.0001 USDT', '10 USDT', '652715.36416666 C98', '200', '5'],
+    ['CLV/USDT', '0.1 CLV', '0.1 CLV', '0.00001 USDT', '10 USDT', '2100790.76083333 CLV', '200', '5'],
+    ['QNT/USDT', '0.001 QNT', '0.001 QNT', '0.1 USDT', '10 USDT', '1926.64162083 QNT', '200', '5'],
+    ['FLOW/USDT', '0.01 FLOW', '0.01 FLOW', '0.001 USDT', '10 USDT', '170907.2205 FLOW', '200', '5'],
+    ['TVK/USDT', '1 TVK', '1 TVK', '0.00001 USDT', '10 USDT', '2156530.69166666 TVK', '200', '5'],
+    ['MINA/USDT', '0.1 MINA', '0.1 MINA', '0.001 USDT', '10 USDT', '353002.56291666 MINA', '200', '5']
+]
+
+pairs16 = [
+    ['RAY/USDT', '0.1 RAY', '0.1 RAY', '0.0001 USDT', '10 USDT', '226431.40375 RAY', '200', '5'],
+    ['FARM/USDT', '0.001 FARM', '0.001 FARM', '0.01 USDT', '10 USDT', '1987.4569125 FARM', '200', '5'],
+    ['ALPACA/USDT', '0.1 ALPACA', '0.1 ALPACA', '0.0001 USDT', '10 USDT', '325340.015 ALPACA', '200', '5'],
+    ['QUICK/USDT', '0.001 QUICK', '0.001 QUICK', '0.1 USDT', '10 USDT', '944.18574166 QUICK', '200', '5'],
+    ['MBOX/USDT', '0.1 MBOX', '0.1 MBOX', '0.001 USDT', '10 USDT', '197118.95541666 MBOX', '200', '5'],
+    ['FOR/USDT', '1 FOR', '1 FOR', '0.00001 USDT', '10 USDT', '2311255.64166666 FOR', '200', '5'],
+    ['REQ/USDT', '1 REQ', '1 REQ', '0.0001 USDT', '10 USDT', '598268.325 REQ', '200', '5'],
+    ['GHST/USDT', '0.1 GHST', '0.1 GHST', '0.001 USDT', '10 USDT', '23041.86916666 GHST', '200', '5'],
+    ['WAXP/USDT', '1 WAXP', '1 WAXP', '0.0001 USDT', '10 USDT', '642008.54166666 WAXP', '200', '5'],
+    ['GNO/USDT', '0.001 GNO', '0.001 GNO', '0.1 USDT', '10 USDT', '112.13805 GNO', '200', '5'],
+    ['XEC/USDT', '1 XEC', '1 XEC', '0.00000001 USDT', '10 USDT', '3821564915.05 XEC', '200', '5'],
+    ['ELF/USDT', '0.1 ELF', '0.1 ELF', '0.0001 USDT', '10 USDT', '528043.09416666 ELF', '200', '5'],
+    ['DYDX/USDT', '0.01 DYDX', '0.01 DYDX', '0.001 USDT', '10 USDT', '179295.16616666 DYDX', '200', '5'],
+    ['IDEX/USDT', '0.1 IDEX', '0.1 IDEX', '0.00001 USDT', '10 USDT', '1029502.4775 IDEX', '200', '5'],
+    ['VIDT/USDT', '1 VIDT', '1 VIDT', '0.00001 USDT', '10 USDT', '1987892.64166666 VIDT', '200', '5']
+]
+
+pairs17 = [
+    ['USDP/USDT', '1 USDP', '1 USDP', '0.0001 USDT', '10 USDT', '603765.63333333 USDP', '200', '5'],
+    ['GALA/USDT', '1 GALA', '1 GALA', '0.00001 USDT', '5 USDT', '11706065.80416666 GALA', '200', '5'],
+    ['ILV/USDT', '0.001 ILV', '0.001 ILV', '0.01 USDT', '10 USDT', '836.5188 ILV', '200', '5'],
+    ['YGG/USDT', '0.1 YGG', '0.1 YGG', '0.0001 USDT', '10 USDT', '501238.83875 YGG', '200', '5'],
+    ['SYS/USDT', '1 SYS', '1 SYS', '0.0001 USDT', '10 USDT', '301239.28333333 SYS', '200', '5'],
+    ['DF/USDT', '1 DF', '1 DF', '0.0001 USDT', '10 USDT', '1404458.1125 DF', '200', '5'],
+    ['FIDA/USDT', '0.1 FIDA', '0.1 FIDA', '0.0001 USDT', '10 USDT', '441381.87166666 FIDA', '200', '5'],
+    ['FRONT/USDT', '1 FRONT', '1 FRONT', '0.0001 USDT', '10 USDT', '181761.075 FRONT', '200', '5'],
+    ['CVP/USDT', '0.1 CVP', '0.1 CVP', '0.0001 USDT', '10 USDT', '89882.61708333 CVP', '200', '5'],
+    ['AGLD/USDT', '0.1 AGLD', '0.1 AGLD', '0.001 USDT', '10 USDT', '129487.78666666 AGLD', '200', '5'],
+    ['RAD/USDT', '0.1 RAD', '0.1 RAD', '0.001 USDT', '10 USDT', '76662.55708333 RAD', '200', '5'],
+    ['BETA/USDT', '1 BETA', '1 BETA', '0.00001 USDT', '10 USDT', '1102667.17916666 BETA', '200', '5'],
+    ['RARE/USDT', '0.1 RARE', '0.1 RARE', '0.0001 USDT', '10 USDT', '549002.51541666 RARE', '200', '5'],
+    ['LAZIO/USDT', '0.01 LAZIO', '0.01 LAZIO', '0.0001 USDT', '10 USDT', '29112.83179166 LAZIO', '200', '5'],
+    ['CHESS/USDT', '0.1 CHESS', '0.1 CHESS', '0.0001 USDT', '10 USDT', '322666.24208333 CHESS', '200', '5']
+]
+
+pairs18 = [
+    ['ADX/USDT', '1 ADX', '1 ADX', '0.0001 USDT', '10 USDT', '404615.8625 ADX', '200', '5'],
+    ['AUCTION/USDT', '0.01 AUCTION', '0.01 AUCTION', '0.01 USDT', '10 USDT', '20654.54966666 AUCTION', '200', '5'],
+    ['DAR/USDT', '1 DAR', '1 DAR', '0.00001 USDT', '10 USDT', '863275.1 DAR', '200', '5'],
+    ['BNX/USDT', '0.1 BNX', '0.1 BNX', '0.001 USDT', '10 USDT', '393902.36916666 BNX', '200', '5'],
+    ['MOVR/USDT', '0.001 MOVR', '0.001 MOVR', '0.01 USDT', '10 USDT', '7744.94762083 MOVR', '200', '5'],
+    ['CITY/USDT', '0.01 CITY', '0.01 CITY', '0.01 USDT', '10 USDT', '27524.65533333 CITY', '200', '5'],
+    ['ENS/USDT', '0.01 ENS', '0.01 ENS', '0.01 USDT', '10 USDT', '22229.043875 ENS', '200', '5'],
+    ['KP3R/USDT', '0.01 KP3R', '0.01 KP3R', '0.01 USDT', '10 USDT', '1236.54983333 KP3R', '200', '5'],
+    ['QI/USDT', '1 QI', '1 QI', '0.00001 USDT', '10 USDT', '9452738.025 QI', '200', '5'],
+    ['PORTO/USDT', '0.01 PORTO', '0.01 PORTO', '0.0001 USDT', '10 USDT', '44705.28704166 PORTO', '200', '5'],
+    ['POWR/USDT', '1 POWR', '1 POWR', '0.0001 USDT', '10 USDT', '161458.15833333 POWR', '200', '5'],
+    ['VGX/USDT', '0.1 VGX', '0.1 VGX', '0.0001 USDT', '10 USDT', '546264.01166666 VGX', '200', '5'],
+    ['JASMY/USDT', '0.1 JASMY', '0.1 JASMY', '0.000001 USDT', '10 USDT', '39465747.17291668 JASMY', '200', '5'],
+    ['AMP/USDT', '1 AMP', '1 AMP', '0.000001 USDT', '10 USDT', '20283627.6625 AMP', '200', '5'],
+    ['PLA/USDT', '0.01 PLA', '0.01 PLA', '0.0001 USDT', '10 USDT', '184404.21470833 PLA', '200', '5']
+]
+
+pairs19 = [
+    ['PYR/USDT', '0.001 PYR', '0.001 PYR', '0.001 USDT', '10 USDT', '37579.097825 PYR', '200', '5'],
+    ['RNDR/USDT', '0.01 RNDR', '0.01 RNDR', '0.001 USDT', '10 USDT', '245542.29408333 RNDR', '200', '5'],
+    ['ALCX/USDT', '0.0001 ALCX', '0.0001 ALCX', '0.01 USDT', '10 USDT', '2381.940295 ALCX', '200', '5'],
+    ['SANTOS/USDT', '0.01 SANTOS', '0.01 SANTOS', '0.001 USDT', '10 USDT', '29308.93975 SANTOS', '200', '5'],
+    ['MC/USDT', '0.01 MC', '0.01 MC', '0.0001 USDT', '10 USDT', '105012.15345833 MC', '200', '5'],
+    ['BICO/USDT', '0.01 BICO', '0.01 BICO', '0.0001 USDT', '10 USDT', '167266.77366666 BICO', '200', '5'],
+    ['FLUX/USDT', '0.01 FLUX', '0.01 FLUX', '0.001 USDT', '10 USDT', '180900.61791666 FLUX', '200', '5'],
+    ['FXS/USDT', '0.1 FXS', '0.1 FXS', '0.001 USDT', '10 USDT', '22351.905 FXS', '200', '5'],
+    ['VOXEL/USDT', '0.1 VOXEL', '0.1 VOXEL', '0.0001 USDT', '10 USDT', '201011.14666666 VOXEL', '200', '5'],
+    ['HIGH/USDT', '0.001 HIGH', '0.001 HIGH', '0.001 USDT', '10 USDT', '97019.2521875 HIGH', '200', '5'],
+    ['CVX/USDT', '0.001 CVX', '0.001 CVX', '0.001 USDT', '10 USDT', '9115.79878333 CVX', '200', '5'],
+    ['PEOPLE/USDT', '0.1 PEOPLE', '0.1 PEOPLE', '0.00001 USDT', '10 USDT', '12080032.91791666 PEOPLE', '200', '5'],
+    ['OOKI/USDT', '1 OOKI', '1 OOKI', '0.000001 USDT', '10 USDT', '11625386.375 OOKI', '200', '5'],
+    ['SPELL/USDT', '1 SPELL', '1 SPELL', '0.0000001 USDT', '10 USDT', '92141578 SPELL', '200', '5'],
+    ['JOE/USDT', '0.01 JOE', '0.01 JOE', '0.0001 USDT', '10 USDT', '249432.39608333 JOE', '200', '5']
+]
+
+pairs20 = [
+    ['ACH/USDT', '1 ACH', '1 ACH', '0.00001 USDT', '10 USDT', '8826920.35 ACH', '200', '5'],
+    ['IMX/USDT', '0.01 IMX', '0.01 IMX', '0.001 USDT', '10 USDT', '287559.70375 IMX', '200', '5'],
+    ['GLMR/USDT', '0.1 GLMR', '0.1 GLMR', '0.0001 USDT', '10 USDT', '170551.47083333 GLMR', '200', '5'],
+    ['LOKA/USDT', '0.1 LOKA', '0.1 LOKA', '0.0001 USDT', '10 USDT', '136278.29875 LOKA', '200', '5'],
+    ['SCRT/USDT', '0.1 SCRT', '0.1 SCRT', '0.001 USDT', '10 USDT', '82118.515 SCRT', '200', '5'],
+    ['API3/USDT', '0.01 API3', '0.01 API3', '0.001 USDT', '10 USDT', '99749.07833333 API3', '200', '5'],
+    ['BTTC/USDT', '1 BTTC', '1 BTTC', '0.00000001 USDT', '10 USDT', '92233720368 BTTC', '200', '5'],
+    ['ACA/USDT', '0.01 ACA', '0.01 ACA', '0.0001 USDT', '10 USDT', '1394737.00029166 ACA', '200', '5'],
+    ['XNO/USDT', '0.01 XNO', '0.01 XNO', '0.001 USDT', '10 USDT', '67525.14379166 XNO', '200', '5'],
+    ['WOO/USDT', '0.1 WOO', '0.1 WOO', '0.0001 USDT', '10 USDT', '785478.82708333 WOO', '200', '5'],
+    ['ALPINE/USDT', '0.01 ALPINE', '0.01 ALPINE', '0.0001 USDT', '10 USDT', '37049.64845833 ALPINE', '200', '5'],
+    ['T/USDT', '0.1 T', '0.1 T', '0.00001 USDT', '10 USDT', '2265185.23375 T', '200', '5'],
+    ['ASTR/USDT', '0.1 ASTR', '0.1 ASTR', '0.0001 USDT', '10 USDT', '1561558.47958333 ASTR', '200', '5'],
+    ['GMT/USDT', '0.1 GMT', '0.1 GMT', '0.0001 USDT', '5 USDT', '1050033.62833333 GMT', '200', '5'],
+    ['KDA/USDT', '0.01 KDA', '0.01 KDA', '0.001 USDT', '10 USDT', '75003.23354166 KDA', '200', '5']
+]
+
+pairs21 = [
+    ['APE/USDT', '0.01 APE', '0.01 APE', '0.001 USDT', '5 USDT', '190551.89795833 APE', '200', '5'],
+    ['BSW/USDT', '0.1 BSW', '0.1 BSW', '0.0001 USDT', '10 USDT', '728445.23583333 BSW', '200', '5'],
+    ['BIFI/USDT', '0.001 BIFI', '0.001 BIFI', '0.1 USDT', '10 USDT', '33.6264375 BIFI', '200', '5'],
+    ['MULTI/USDT', '0.001 MULTI', '0.001 MULTI', '0.01 USDT', '10 USDT', '20900.73940416 MULTI', '200', '5'],
+    ['STEEM/USDT', '0.1 STEEM', '0.1 STEEM', '0.0001 USDT', '10 USDT', '101830.34083333 STEEM', '200', '5'],
+    ['MOB/USDT', '0.01 MOB', '0.01 MOB', '0.001 USDT', '10 USDT', '90477.61654166 MOB', '200', '5'],
+    ['NEXO/USDT', '0.01 NEXO', '0.01 NEXO', '0.001 USDT', '10 USDT', '85288.38608333 NEXO', '200', '5'],
+    ['REI/USDT', '0.1 REI', '0.1 REI', '0.00001 USDT', '10 USDT', '2180268.94333333 REI', '200', '5'],
+    ['GAL/USDT', '0.001 GAL', '0.001 GAL', '0.001 USDT', '10 USDT', '82204.79470833 GAL', '200', '5'],
+    ['LDO/USDT', '0.01 LDO', '0.01 LDO', '0.001 USDT', '10 USDT', '233310.08804166 LDO', '200', '5'],
+    ['EPX/USDT', '1 EPX', '1 EPX', '0.0000001 USDT', '10 USDT', '197535502.84583333 EPX', '200', '5'],
+    ['OP/USDT', '0.01 OP', '0.01 OP', '0.001 USDT', '5 USDT', '581044.209625 OP', '200', '5'],
+    ['LEVER/USDT', '1 LEVER', '1 LEVER', '0.000001 USDT', '10 USDT', '74567182.07916666 LEVER', '200', '5'],
+    ['STG/USDT', '0.1 STG', '0.1 STG', '0.0001 USDT', '10 USDT', '247207.4575 STG', '200', '5'],
+    ['LUNC/USDT', '0.01 LUNC', '0.01 LUNC', '0.00000001 USDT', '5 USDT', '3876062560.13608251 LUNC', '200', '5']
+]
+
+pairs22 = [
+    ['GMX/USDT', '0.001 GMX', '0.001 GMX', '0.01 USDT', '10 USDT', '2513.41975 GMX', '200', '5'],
+    ['POLYX/USDT', '0.1 POLYX', '0.1 POLYX', '0.0001 USDT', '10 USDT', '329710.92625 POLYX', '200', '5'],
+    ['APT/USDT', '0.01 APT', '0.01 APT', '0.0001 USDT', '10 USDT', '136271.2735 APT', '200', '5'],
+    ['OSMO/USDT', '0.01 OSMO', '0.01 OSMO', '0.001 USDT', '10 USDT', '107087.27491666 OSMO', '200', '5'],
+    ['HFT/USDT', '0.1 HFT', '0.1 HFT', '0.0001 USDT', '10 USDT', '368246.76333333 HFT', '200', '5'],
+    ['PHB/USDT', '1 PHB', '1 PHB', '0.0001 USDT', '10 USDT', '143790.875 PHB', '200', '5'],
+    ['HOOK/USDT', '0.1 HOOK', '0.1 HOOK', '0.0001 USDT', '10 USDT', '149262.91708333 HOOK', '200', '5'],
+    ['MAGIC/USDT', '0.1 MAGIC', '0.1 MAGIC', '0.0001 USDT', '10 USDT', '273461.74958333 MAGIC', '200', '5'],
+    ['HIFI/USDT', '0.1 HIFI', '0.1 HIFI', '0.0001 USDT', '10 USDT', '137626.49958333 HIFI', '200', '5'],
+    ['RPL/USDT', '0.01 RPL', '0.01 RPL', '0.01 USDT', '10 USDT', '1031.00395833 RPL', '200', '5'],
+    ['PROS/USDT', '1 PROS', '1 PROS', '0.0001 USDT', '10 USDT', '167129.85833333 PROS', '200', '5'],
+    ['AGIX/USDT', '1 AGIX', '1 AGIX', '0.00001 USDT', '10 USDT', '1220704.54166666 AGIX', '200', '5'],
+    ['GNS/USDT', '0.01 GNS', '0.01 GNS', '0.001 USDT', '10 USDT', '7982.00466666 GNS', '200', '5'],
+    ['SYN/USDT', '0.1 SYN', '0.1 SYN', '0.0001 USDT', '10 USDT', '126771.63875 SYN', '200', '5'],
+    ['VIB/USDT', '1 VIB', '1 VIB', '0.00001 USDT', '10 USDT', '808326.925 VIB', '200', '5']
+]
+
+pairs23 = [
+    ['SSV/USDT', '0.001 SSV', '0.001 SSV', '0.01 USDT', '10 USDT', '6045.77981666 SSV', '200', '5'],
+    ['LQTY/USDT', '0.1 LQTY', '0.1 LQTY', '0.001 USDT', '10 USDT', '104126.31416666 LQTY', '200', '5'],
+    ['AMB/USDT', '1 AMB', '1 AMB', '0.00001 USDT', '10 USDT', '8359277.20833333 AMB', '200', '5'],
+    ['BETH/USDT', '0.0001 BETH', '0.0001 BETH', '0.01 USDT', '10 USDT', '80.37384291 BETH', '200', '5'],
+    ['USTC/USDT', '1 USTC', '1 USTC', '0.00000001 USDT', '10 USDT', '4589413.1875 USTC', '200', '5'],
+    ['GAS/USDT', '0.1 GAS', '0.1 GAS', '0.001 USDT', '10 USDT', '13594.3525 GAS', '200', '5'],
+    ['GLM/USDT', '0.1 GLM', '0.1 GLM', '0.0001 USDT', '10 USDT', '80460.6825 GLM', '200', '5'],
+    ['PROM/USDT', '0.01 PROM', '0.01 PROM', '0.01 USDT', '10 USDT', '5315.461375 PROM', '200', '5'],
+    ['QKC/USDT', '1 QKC', '1 QKC', '0.000001 USDT', '10 USDT', '4805107.78333333 QKC', '200', '5'],
+    ['UFT/USDT', '1 UFT', '1 UFT', '0.0001 USDT', '10 USDT', '105055.4625 UFT', '200', '5'],
+    ['ID/USDT', '1 ID', '1 ID', '0.00001 USDT', '10 USDT', '1024634.8375 ID', '200', '5'],
+    ['ARB/USDT', '0.1 ARB', '0.1 ARB', '0.0001 USDT', '10 USDT', '1471667.84375 ARB', '200', '5'],
+    ['LOOM/USDT', '1 LOOM', '1 LOOM', '0.00001 USDT', '10 USDT', '274899.0375 LOOM', '200', '5'],
+    ['OAX/USDT', '1 OAX', '1 OAX', '0.0001 USDT', '10 USDT', '200984.98333333 OAX', '200', '5'],
+    ['RDNT/USDT', '1 RDNT', '1 RDNT', '0.0001 USDT', '10 USDT', '883362.3625 RDNT', '200', '5']
+]
+
+pairs24 = [
+    ['WBTC/USDT', '0.00001 WBTC', '0.00001 WBTC', '0.01 USDT', '10 USDT', '1.32989612 WBTC', '200', '5'],
+    ['EDU/USDT', '1 EDU', '1 EDU', '0.00001 USDT', '10 USDT', '375655.6625 EDU', '200', '5'],
+    ['SUI/USDT', '0.1 SUI', '0.1 SUI', '0.0001 USDT', '10 USDT', '1047568.57458333 SUI', '200', '5'],
+    ['AERGO/USDT', '1 AERGO', '1 AERGO', '0.0001 USDT', '10 USDT', '138753.42916666 AERGO', '200', '5'],
+    ['PEPE/USDT', '1 PEPE', '1 PEPE', '0.00000001 USDT', '10 USDT', '92233720368 PEPE', '200', '5'],
+    ['FLOKI/USDT', '1 FLOKI', '1 FLOKI', '0.00000001 USDT', '10 USDT', '4076965236.25 FLOKI', '200', '5'],
+    ['AST/USDT', '1 AST', '1 AST', '0.0001 USDT', '10 USDT', '322247.51666666 AST', '200', '5'],
+    ['SNT/USDT', '1 SNT', '1 SNT', '0.00001 USDT', '10 USDT', '782704.575 SNT', '200', '5'],
+    ['COMBO/USDT', '0.1 COMBO', '0.1 COMBO', '0.001 USDT', '10 USDT', '119859.90291666 COMBO', '200', '5'],
+    ['MAV/USDT', '1 MAV', '1 MAV', '0.0001 USDT', '10 USDT', '502993.49166666 MAV', '200', '5']
+]
+
+import pandas as pd
+
+binance_role = pd.DataFrame(columns=['trading_pair', 'min_order_quantity', 'min_quantity_volatility', 'min_price_volatility', 'min_order', 'market_order_max_quantity', 'limit_order_max_quantity'])
+
+
+pair_list = [pairs1, pairs2, pairs3, pairs4, pairs5, pairs6, pairs7, pairs8, pairs9, pairs10,
+             pairs11, pairs12, pairs13, pairs14, pairs15, pairs16, pairs17, pairs18, pairs19, pairs20,
+             pairs21, pairs22, pairs23, pairs24]
+
+for list_ in pair_list:
+    for info in list_:
+        row = {'trading_pair':info[0], 'min_order_quantity':info[1], 'min_quantity_volatility':info[2], 'min_price_volatility':info[3], 'min_order':info[4], 'market_order_max_quantity':info[5], 'limit_order_max_quantity':info[6]}
+        binance_role = binance_role.append(row, ignore_index=True)
+
+
+#binance_role.to_csv('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3.2/binance_spot_role.csv', index=False)
+
+
+#%%
+
+for i in range(len(binance_role)):
+    binance_role['trading_pair'][i] = binance_role['trading_pair'][i].replace('/', "")
+
+
+#%%
+
+import re
+
+for i in range(len(binance_role)):
+    try:
+        string = binance_role['min_order_quantity'][i]
+        pattern = r'[a-zA-Z]'
+        result = re.sub(pattern, '', string)
+        print(result)
+        binance_role['min_order_quantity'][i] = float(result)
+    except:
+        pass
+
+
+#219, 262, 290
+#binance_role['min_order_quantity'][290] = 0.01 
+
+
+binance_role.to_csv('/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3.2/binance_spot_role.csv', index=False)
+
+
+
+
+
+

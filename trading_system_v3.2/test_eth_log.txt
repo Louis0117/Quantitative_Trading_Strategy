@@ -1,0 +1,957 @@
+date: 2023-04-13 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 333.0
+20day high: 333.0
+20day low: 299.5
+10day high: 333.0
+10day low: 299.5
+remain_position_size: 200.0
+=================================
+date: 2023-04-14 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 347.7
+20day high: 333.0
+20day low: 299.5
+10day high: 333.0
+10day low: 308.2
+remain_position_size: 200.0
+=================================
+create long position.....
+check available USDT balance.....
+available USDT: 395.68073331
+USDT requirement: 112.16129032258064
+min_q: 0.001
+q_p: 1000.0
+place BNB spot buying order.....
+date: 2023-04-15 00:00:00
+position units: 1
+side: BUY
+stop loss: 335.3
+add position: 350.8
+current price: 340.0
+20day high: 335.5
+20day low: 299.5
+10day high: 335.5
+10day low: 309.5
+remain_position_size: 87.83870967741936
+=================================
+date: 2023-04-16 00:00:00
+position units: 1
+side: BUY
+stop loss: 335.3
+add position: 350.8
+current price: 343.1
+20day high: 336.0
+20day low: 299.5
+10day high: 336.0
+10day low: 309.5
+remain_position_size: 87.83870967741936
+=================================
+date: 2023-04-17 00:00:00
+position units: 1
+side: BUY
+stop loss: 335.3
+add position: 350.8
+current price: 322.4
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 309.5
+remain_position_size: 87.83870967741936
+=================================
+available_spot_USDT_value: 103.73543044799999
+place USDT spot selling order.....
+date: 2023-04-18 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 318.1
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 309.5
+remain_position_size: 200.0
+=================================
+date: 2023-04-19 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 321.2
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 309.5
+remain_position_size: 200.0
+=================================
+date: 2023-04-20 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 332.2
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 311.5
+remain_position_size: 200.0
+=================================
+date: 2023-04-21 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 330.7
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-22 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 331.2
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-23 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 338.4
+20day high: 350.0
+20day low: 299.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-24 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 330.6
+20day high: 350.0
+20day low: 308.2
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 330.9
+20day high: 350.0
+20day low: 309.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 324.1
+20day high: 350.0
+20day low: 309.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 321.9
+20day high: 350.0
+20day low: 309.5
+10day high: 350.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 337.5
+20day high: 350.0
+20day low: 309.5
+10day high: 346.7
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-29 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 328.5
+20day high: 350.0
+20day low: 309.5
+10day high: 345.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-04-30 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 321.5
+20day high: 350.0
+20day low: 311.5
+10day high: 345.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-05-01 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 325.9
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 315.3
+remain_position_size: 200.0
+=================================
+date: 2023-05-02 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 323.8
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-03 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 326.5
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-04 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 321.9
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-05 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 321.0
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-06 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 313.8
+20day high: 350.0
+20day low: 315.3
+10day high: 345.0
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-07 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 312.1
+20day high: 350.0
+20day low: 315.3
+10day high: 339.6
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-08 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 314.3
+20day high: 346.7
+20day low: 315.3
+10day high: 339.6
+10day low: 318.7
+remain_position_size: 200.0
+=================================
+date: 2023-05-09 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 307.5
+20day high: 345.0
+20day low: 311.1
+10day high: 339.6
+10day low: 311.1
+remain_position_size: 200.0
+=================================
+date: 2023-05-10 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 308.5
+20day high: 345.0
+20day low: 311.1
+10day high: 339.6
+10day low: 311.1
+remain_position_size: 200.0
+=================================
+date: 2023-05-11 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 310.7
+20day high: 345.0
+20day low: 308.0
+10day high: 339.6
+10day low: 308.0
+remain_position_size: 200.0
+=================================
+date: 2023-05-12 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 312.1
+20day high: 345.0
+20day low: 304.4
+10day high: 329.1
+10day low: 304.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-13 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 313.4
+20day high: 345.0
+20day low: 301.2
+10day high: 329.1
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-14 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 311.4
+20day high: 345.0
+20day low: 301.2
+10day high: 329.1
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-15 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 314.3
+20day high: 345.0
+20day low: 301.2
+10day high: 329.1
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-16 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 309.3
+20day high: 345.0
+20day low: 301.2
+10day high: 328.5
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-17 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 308.9
+20day high: 339.6
+20day low: 301.2
+10day high: 325.4
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-18 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 310.6
+20day high: 339.6
+20day low: 301.2
+10day high: 322.1
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-19 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 306.4
+20day high: 339.6
+20day low: 301.2
+10day high: 316.7
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-20 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 309.0
+20day high: 339.6
+20day low: 301.2
+10day high: 316.7
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-21 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 313.5
+20day high: 339.6
+20day low: 301.2
+10day high: 316.3
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-22 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 306.0
+20day high: 329.1
+20day low: 301.2
+10day high: 316.3
+10day low: 301.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-23 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 304.5
+20day high: 329.1
+20day low: 301.2
+10day high: 316.3
+10day low: 304.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-24 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 306.8
+20day high: 329.1
+20day low: 301.2
+10day high: 316.3
+10day low: 304.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 307.4
+20day high: 329.1
+20day low: 301.2
+10day high: 316.3
+10day low: 303.6
+remain_position_size: 200.0
+=================================
+date: 2023-05-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 314.1
+20day high: 328.5
+20day low: 301.2
+10day high: 315.4
+10day low: 302.2
+remain_position_size: 200.0
+=================================
+date: 2023-05-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 311.6
+20day high: 325.4
+20day low: 301.2
+10day high: 315.4
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 311.5
+20day high: 322.1
+20day low: 301.2
+10day high: 315.4
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-29 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 306.8
+20day high: 316.7
+20day low: 301.2
+10day high: 315.4
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-30 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 304.9
+20day high: 317.3
+20day low: 301.2
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-05-31 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 307.2
+20day high: 317.3
+20day low: 301.2
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-01 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 306.6
+20day high: 317.3
+20day low: 301.2
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-02 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 305.0
+20day high: 317.3
+20day low: 301.4
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-03 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 276.9
+20day high: 317.3
+20day low: 301.4
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-04 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 281.2
+20day high: 317.3
+20day low: 301.4
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-05 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 259.3
+20day high: 317.3
+20day low: 301.4
+10day high: 317.3
+10day low: 301.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-06 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 262.0
+20day high: 317.3
+20day low: 272.0
+10day high: 317.3
+10day low: 272.0
+remain_position_size: 200.0
+=================================
+date: 2023-06-07 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 260.5
+20day high: 317.3
+20day low: 272.0
+10day high: 317.3
+10day low: 272.0
+remain_position_size: 200.0
+=================================
+date: 2023-06-08 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 238.7
+20day high: 317.3
+20day low: 253.4
+10day high: 317.3
+10day low: 253.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-09 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 235.4
+20day high: 317.3
+20day low: 253.4
+10day high: 314.2
+10day low: 253.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-10 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 231.3
+20day high: 317.3
+20day low: 253.4
+10day high: 311.9
+10day low: 253.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-11 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 244.2
+20day high: 317.3
+20day low: 228.4
+10day high: 308.4
+10day low: 228.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-12 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 237.9
+20day high: 317.3
+20day low: 228.4
+10day high: 308.4
+10day low: 228.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-13 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 236.4
+20day high: 317.3
+20day low: 220.4
+10day high: 308.2
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-14 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 239.3
+20day high: 317.3
+20day low: 220.4
+10day high: 307.6
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-15 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 244.5
+20day high: 317.3
+20day low: 220.4
+10day high: 305.1
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-16 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 244.1
+20day high: 317.3
+20day low: 220.4
+10day high: 285.8
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-17 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 243.1
+20day high: 317.3
+20day low: 220.4
+10day high: 281.8
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-18 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 247.7
+20day high: 317.3
+20day low: 220.4
+10day high: 267.5
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-19 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 248.8
+20day high: 314.2
+20day low: 220.4
+10day high: 264.4
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-20 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 240.8
+20day high: 311.9
+20day low: 220.4
+10day high: 260.7
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-21 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 244.3
+20day high: 308.4
+20day low: 220.4
+10day high: 252.8
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-22 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 236.4
+20day high: 308.4
+20day low: 220.4
+10day high: 254.7
+10day low: 220.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-23 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 238.8
+20day high: 308.2
+20day low: 220.4
+10day high: 257.0
+10day low: 228.7
+remain_position_size: 200.0
+=================================
+date: 2023-06-24 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 236.1
+20day high: 307.6
+20day low: 220.4
+10day high: 257.0
+10day low: 230.6
+remain_position_size: 200.0
+=================================
+date: 2023-06-25 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 237.5
+20day high: 305.1
+20day low: 220.4
+10day high: 257.0
+10day low: 230.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-26 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 230.6
+20day high: 285.8
+20day low: 220.4
+10day high: 257.0
+10day low: 230.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-27 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 233.1
+20day high: 281.8
+20day low: 220.4
+10day high: 257.0
+10day low: 230.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-28 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 240.3
+20day high: 267.5
+20day low: 220.4
+10day high: 257.0
+10day low: 230.4
+remain_position_size: 200.0
+=================================
+date: 2023-06-29 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 247.9
+20day high: 264.4
+20day low: 220.4
+10day high: 257.0
+10day low: 224.6
+remain_position_size: 200.0
+=================================
+date: 2023-06-30 00:00:00
+position units: 0
+side: 0
+stop loss: 0
+add position: 0
+current price: 245.8
+20day high: 260.7
+20day low: 220.4
+10day high: 257.0
+10day low: 224.6
+remain_position_size: 200.0
+=================================
