@@ -110,6 +110,15 @@ class Binance_transaction:
                 #msg = f'Subject:Trading system notification email\n--------------------------------------\nUnexpected error: {e}'
                 #sent_mail(self.sys_mail_address, self.app_pwd, self.clinet_mail_adress, msg)
 
+    def current_crypto_price_binance_api(self, symbol):
+        # get current info
+        ticker = self.binance_client.get_symbol_ticker(symbol=symbol)
+        # get current price
+        price = ticker['price']
+        # print
+        print(f"The current price of {symbol} is: {price}")
+        
+        return float(price)
     
     #### only limit order!!!
     def spot_sell(self, symbol, coin_buy, coin_sell, order_size = None, quantity = None, order_price = None):
