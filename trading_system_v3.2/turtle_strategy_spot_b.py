@@ -23,8 +23,8 @@ import pytz
 SYS_MAIL_ADDRESS = ''
 CLINET_MAIL_ADDRESS = ''
 APP_PWD = ''
-BINANCE_KEY = '4kDloHwQ4mjovNK2r93bUfe42R3zhPQad28HfRdAhidYMI77jiF0Ik3TskOAcClR'
-BINANCE_SECRET = '5LNMivHXKi2fhF4KbsYN8Lc08H8PTVueg7RTzgRFpT6x3PRhWJ6ACXlMiiSTLlT4'
+BINANCE_KEY = ''
+BINANCE_SECRET = ''
 LOG_FILE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3.2/log_file.csv'
 TIME_ZONE = pytz.timezone("utc")
 
@@ -300,6 +300,7 @@ def turtle_strategy(client, symbol, log_file, history_data, current_price):
                         log_file.reset_index(inplace=True, drop=True) 
                         # save file
                         log_file.to_csv(LOG_FILE_DIR, index=False)
+                        
 # strategy 
 def turtle_strategy__(client, symbol, log_file, history_data, current_price):
     position_units = 0

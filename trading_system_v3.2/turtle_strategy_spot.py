@@ -125,7 +125,7 @@ def turtle_strategy(client, symbol, log_file, history_data, current_price):
     print('=================================')
     
     if position_units == 0:
-        if current_price > history_data['20day_high'].iloc[-1]: 
+        if current_price > history_data['20day_high'].iloc[-1]*0.9: 
             # check account USDT balance 
             #wallet_USDT = _wallet_USDT(client)
             # calculate order size
