@@ -464,6 +464,7 @@ if __name__ == '__main__':
         else:
             print(f'available USDT: {available_USDT}, Insufficient USDT balance, if a transaction signal is generated, the order may not be established')
         
+        current_price = 999999
         while 1:
            # get hist price data
            hist_price = hist_crypto_price(SYMBOL, '1d')
