@@ -8,7 +8,67 @@
                     2. add turtle strategy   
                     3. optimized system code   
 
-  ### Strategy    
+  ### Strategy  
+  ##### Turtle_strategy_spot_final.py ( Turtle Strategy )  
+  ###### Requirement  
+  (python package)  
+   * pandas   
+   * numpy  
+   * argparse  
+   * os 
+   * time  
+   * datetime  
+   * pytz  
+   * python-binance  
+   * math  
+   * requests  
+   * json  
+  (API KEY)  
+   * binance API Key  
+    
+  (python file)  
+   * binance_api_v3  
+   * utils.py  
+   ###### Execute program  
+     
+`step1.`  
+      
+If the mentioned package is not installed.  
+  
+```  
+pip install (python package)   
+``` 
+    
+`step2.`  
+     
+download this repository code 
+   
+  
+`step3.`  
+  
+add your Binance API key   
+    
+```  
+BINANCE_KEY = ''   
+BINANCE_SECRET = ''  
+```  
+
+  
+`step4.`   
+   
+run python code  
+  
+   
+   there is one parameter:  
+   
+  *symbol* : The trading pairs of USDT (Tether) against cryptocurrencies.  
+  *asset_value* : asset value set
+  
+   
+```
+python Turtle_Strategy_v3.py --symbol XXXUSDT --asset_value 200  
+```  
+
   ##### Turtle_Strategy_v3.py ( Turtle Strategy )
   ###### Requirement  
   (python package)  
