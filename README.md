@@ -9,7 +9,7 @@
                     3. optimized system code   
 
   ### Strategy  
-  ##### Turtle_strategy_spot_final.py ( Turtle Strategy )  
+  ##### Turtle_strategy_spot_final.py ( Turtle Strategy for spot)  
   ###### Requirement  
   (python package)  
    * pandas   
@@ -69,7 +69,7 @@ run python code
 python Turtle_Strategy_v3.py --symbol XXXUSDT --asset_value 200  
 ```  
 
-  ##### Turtle_Strategy_v3.py ( Turtle Strategy for spot)
+  ##### Turtle_Strategy_v3.py ( Turtle Strategy )
   ###### Requirement  
   (python package)  
    * pandas   
