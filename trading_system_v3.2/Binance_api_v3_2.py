@@ -18,6 +18,7 @@ import math
 import pandas as pd
 
 
+
 cur_pwd = os.getcwd()
 
 BINANCE_ROLE_DIR = cur_pwd + '/binance_trading_role.csv'
