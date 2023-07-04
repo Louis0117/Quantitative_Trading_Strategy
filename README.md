@@ -59,7 +59,7 @@ BINANCE_SECRET = ''
 run python code  
   
    
-   there is one parameter:  
+   there is two parameters:  
    
   *symbol* : The trading pairs of USDT (Tether) against cryptocurrencies.  
   *asset_value* : asset value set
