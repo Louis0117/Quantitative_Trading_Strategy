@@ -16,7 +16,7 @@ from binance.enums import *
 from binance.exceptions import BinanceAPIException, BinanceOrderException
 import math 
 import pandas as pd
-
+import os
 
 
 cur_pwd = os.getcwd()
