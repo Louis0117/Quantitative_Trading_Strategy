@@ -69,7 +69,7 @@ run python code
 python Turtle_Strategy_v3.py --symbol XXXUSDT --asset_value 200  
 ```  
 
-  ##### Turtle_Strategy_v3.py ( Turtle Strategy )
+  ##### Turtle_Strategy_v3.py ( Turtle Strategy for spot)
   ###### Requirement  
   (python package)  
    * pandas   
