@@ -18,8 +18,10 @@ import math
 import pandas as pd
 
 
-BINANCE_ROLE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3/binance_trading_role.csv'
-BINANCE_SPOT_ROLE_DIR = '/Users/welcome870117/Desktop/git_project/Quantitative_trading_strategy/trading_system_v3.2/binance_spot_role.csv'
+cur_pwd = os.getcwd()
+
+BINANCE_ROLE_DIR = cur_pwd + '/binance_trading_role.csv'
+BINANCE_SPOT_ROLE_DIR = cur_pwd + '/binance_spot_role.csv'
 
 class Binance_transaction:
     def __init__(self, api_key, api_secret, sys_mail_address, app_pwd, clinet_mail_adress):
