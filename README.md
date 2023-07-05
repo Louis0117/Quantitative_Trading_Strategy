@@ -9,7 +9,8 @@
                     3. optimized system code   
 
   ### Strategy  
-  ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot in **trading_system_v3.2** )  
+  ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot )   
+  * in file trading trading_system_v3.2  
   ###### Requirement  
   (python package)  
    * pandas   
@@ -28,8 +29,9 @@
    * binance API Key / Secret Key   
     
   (python file)  
-   * binance_api_v3  
+   * binance_api_v3_2    
    * utils.py  
+     
    ###### Execute program  
      
 `step1.`  
@@ -63,7 +65,7 @@ run python code
    there is two parameters:  
    
   *symbol* : The trading pairs of USDT (Tether) against cryptocurrencies.  
-  *asset_value* : asset value set
+  *asset_value* : The asset_value parameter is used to set how much USDT allocation should be allocated for trading the target cryptocurrency. ( Please ensure that you have sufficient USDT, as insufficient funds may result in failed orders when generating trading signals. )  
   
    
 ```
