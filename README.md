@@ -10,7 +10,7 @@
 
   ### Strategy  
   ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot )   
-  * in file trading trading_system_v3.2  
+  * in file trading_system_v3.2  
   ###### Requirement  
   (python package)  
    * pandas   
