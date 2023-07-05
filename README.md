@@ -65,7 +65,7 @@ run python code
    there is two parameters:  
    
   *symbol* : The trading pairs of USDT (Tether) against cryptocurrencies.  
-  *asset_value* : The asset_value parameter is used to set how much USDT allocation should be allocated for trading the target cryptocurrency. ( Please ensure that you have sufficient USDT, as insufficient funds may result in failed orders when generating trading signals. )  
+  *asset_value* : The asset_value parameter is used to set how much USDT allocation should be allocated for trading the target cryptocurrency. ( Please ensure that you have sufficient USDT, as insufficient funds may result in failed orders when generating trading signals. It is recommended to set at least 150 USDT.)  
   
    
 ```
