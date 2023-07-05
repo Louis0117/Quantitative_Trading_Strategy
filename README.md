@@ -9,7 +9,7 @@
                     3. optimized system code   
 
   ### Strategy  
-  ##### Turtle_strategy_spot_final.py ( Turtle Strategy for spot)  
+  ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot in **trading_system_v3.2 )  
   ###### Requirement  
   (python package)  
    * pandas   
@@ -23,8 +23,9 @@
    * math  
    * requests  
    * json  
-  (API KEY)  
-   * binance API Key  
+     
+  (API)  
+   * binance API Key / Secret Key   
     
   (python file)  
    * binance_api_v3  
@@ -66,7 +67,7 @@ run python code
   
    
 ```
-python Turtle_Strategy_v3.py --symbol XXXUSDT --asset_value 200  
+turtle_strategy_spot_final.py --symbol XXXUSDT --asset_value 200  
 ```  
 
   ##### Turtle_Strategy_v3.py ( Turtle Strategy )
