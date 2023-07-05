@@ -9,7 +9,7 @@
                     3. optimized system code   
 
   ### Strategy  
-  ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot in **trading_system_v3.2 )  
+  ##### turtle_strategy_spot_final.py ( Turtle Strategy for spot in **trading_system_v3.2** )  
   ###### Requirement  
   (python package)  
    * pandas   
@@ -47,7 +47,7 @@ download this repository code
   
 `step3.`  
   
-add your Binance API key   
+add your Binance API key / Secret Key (in turtle_strategy_spot_final.py)  
     
 ```  
 BINANCE_KEY = ''   
