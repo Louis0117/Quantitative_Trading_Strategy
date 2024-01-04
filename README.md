@@ -12,7 +12,7 @@
   ## Strategy  
   ### Long_Short_Strategy_v3.py ( Long-Short Strategy )  
   #### Introduction
-Introduction to strategy and detailed experiments can be found in the Long-short_strategy_research.pdf.
+    Introduction to strategy and detailed experiments can be found in the Long-short_strategy_research.pdf.
   #### Requirement   
   (python package)   
   * numpy   
