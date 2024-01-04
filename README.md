@@ -239,8 +239,10 @@ python Turtle_Strategy_v3.py --symbol XXXUSDT
   
 ## Test Log txt  
   + Turtle Strategy ->  turtle_strategy_test_ADA_log.txt  ( strategy test )  
-turtle_strategy_test_ADA_order_log.txt ( order test )  
+
+    turtle_strategy_test_ADA_order_log.txt ( order test )  
                          
 
   + Long Short Strategy ->  long_short_test_mode_normal.txt ( strategy normal mode test )  
-                            long_short_test_mode_close.txt ( strategy close mode test ) 
+
+    long_short_test_mode_close.txt ( strategy close mode test ) 
